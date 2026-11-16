@@ -1,0 +1,1258 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f5ed;
+    color: #17351f;
+    overflow-x: hidden;
+}
+
+body.darkMode {
+    background: #101712;
+    color: #f4f4ef;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.pageLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: #228b22;
+    z-index: 9999;
+    transition: width 0.8s ease;
+}
+
+.siteHeader {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    z-index: 1000;
+}
+
+.darkMode .siteHeader {
+    background: #121b15;
+    border-bottom-color: #29352d;
+}
+
+.mainNavigation {
+    width: min(1200px, 92%);
+    min-height: 78px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.brandLogo,
+.footerLogo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.brandLogo span,
+.footerLogo span {
+    color: #228b22;
+}
+
+.navigationLinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 27px;
+}
+
+.navigationLinks a {
+    position: relative;
+    color: #333333;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 0;
+}
+
+.darkMode .navigationLinks a {
+    color: #eeeeee;
+}
+
+.navigationLinks a:hover,
+.navigationLinks .activeLink {
+    color: #228b22;
+}
+
+.navigationLinks .activeLink::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: #228b22;
+}
+
+.navigationActions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.themeToggle {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #d8d8d8;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #17351f;
+}
+
+.darkMode .themeToggle {
+    background: #1c271f;
+    color: #ffffff;
+    border-color: #3b473f;
+}
+
+.desktopProfileLink {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.loginLink {
+    color: #17351f;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.darkMode .loginLink {
+    color: #ffffff;
+}
+
+.signupButton,
+.primaryButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 20px;
+    border-radius: 7px;
+    background: #228b22;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    border: 1px solid #228b22;
+}
+
+.signupButton:hover,
+.primaryButton:hover {
+    background: #176b1b;
+    border-color: #176b1b;
+}
+
+.cartButton {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #d8d8d8;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #17351f;
+    font-size: 17px;
+}
+
+.cartButton:hover {
+    border-color: #228b22;
+    color: #228b22;
+}
+
+.darkMode .cartButton {
+    background: #1c271f;
+    color: #ffffff;
+    border-color: #3b473f;
+}
+
+.cartCount {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #228b22;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.cartIcon {
+    line-height: 1;
+}
+
+.mobileMenuButton,
+.closeMenuButton,
+.mobileProfileLink,
+.mobileCartLink {
+    display: none;
+}
+
+.agroHero {
+    position: relative;
+    min-height: 470px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.agroHeroImage {
+    position: absolute;
+    inset: 0;
+    background-image: url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85");
+    background-position: center;
+    background-size: cover;
+}
+
+.agroHeroOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 31, 17, 0.56);
+}
+
+.agroHeroContent {
+    position: relative;
+    z-index: 2;
+    width: min(1200px, 92%);
+    margin: auto;
+    color: #ffffff;
+    padding: 80px 0;
+}
+
+.sectionEyebrow {
+    margin-bottom: 13px;
+    color: #228b22;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.agroHero .sectionEyebrow {
+    color: #d8f3d8;
+}
+
+.agroHero h1 {
+    max-width: 700px;
+    margin-bottom: 20px;
+    font-size: clamp(42px, 6vw, 70px);
+    line-height: 1.02;
+    letter-spacing: -2px;
+}
+
+.agroHeroContent > p:last-child {
+    max-width: 650px;
+    color: #f2f2f2;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.agroSection {
+    width: min(1200px, 92%);
+    margin: auto;
+    padding: 85px 0;
+}
+
+.agroTop {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 35px;
+    margin-bottom: 30px;
+}
+
+.agroTop h2 {
+    max-width: 620px;
+    font-size: 40px;
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+.darkMode .agroTop h2 {
+    color: #ffffff;
+}
+
+.agroSearch {
+    display: flex;
+    width: 330px;
+    min-width: 280px;
+    height: 48px;
+    border: 1px solid #d3d3d3;
+    border-radius: 7px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.darkMode .agroSearch {
+    background: #182119;
+    border-color: #374239;
+}
+
+.agroSearch input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 0 15px;
+    color: #17351f;
+    background: transparent;
+}
+
+.darkMode .agroSearch input {
+    color: #ffffff;
+}
+
+.agroSearch button {
+    width: 52px;
+    border: 0;
+    background: #228b22;
+    color: #ffffff;
+}
+.searchIcon {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+.agroFilters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+}
+
+.filterButton {
+    min-height: 40px;
+    padding: 0 17px;
+    border: 1px solid #d3d3d3;
+    border-radius: 20px;
+    background: #ffffff;
+    color: #333333;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.darkMode .filterButton {
+    background: #182119;
+    border-color: #374239;
+    color: #eeeeee;
+}
+
+.filterButton:hover,
+.filterButton.activeFilter {
+    background: #228b22;
+    border-color: #228b22;
+    color: #ffffff;
+}
+
+.agroGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.agroCard {
+    min-width: 0;
+    background: #ffffff;
+    border: 1px solid #e3e3e3;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.darkMode .agroCard {
+    background: #182119;
+    border-color: #2d3931;
+}
+
+.agroCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.agroImage {
+    position: relative;
+    height: 220px;
+    background-position: center;
+    background-size: cover;
+}
+
+.agroImageOne {
+    background-image: url("https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=900&q=80");
+}
+
+.agroImageTwo {
+    background-image: url("https://images.unsplash.com/photo-1592841200221-a6898f307baa?auto=format&fit=crop&w=900&q=80");
+}
+
+.agroImageThree {
+    background-image: url("https://images.unsplash.com/photo-1628352081506-83c43123ed6d?auto=format&fit=crop&w=900&q=80");
+}
+
+.agroImageFour {
+    background-image: url("https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=900&q=80");
+}
+
+.agroImageFive {
+    background-image: url("https://images.unsplash.com/photo-1592982537447-6f2a6a0a9f1b?auto=format&fit=crop&w=900&q=80");
+}
+
+.agroImageSix {
+    background-image: url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=900&q=80");
+}
+
+.agroImageSeven {
+    background-image: url("https://images.unsplash.com/photo-1588250677789-4f5f4f4f8d7a?auto=format&fit=crop&w=900&q=80");
+}
+
+.agroImageEight {
+    background-image: url("https://images.unsplash.com/photo-1592398855677-efb0f7f5f1a4?auto=format&fit=crop&w=900&q=80");
+}
+
+.productBadge {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: #ffffff;
+    color: #228b22;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.agroDetails {
+    padding: 20px;
+}
+
+.agroLocation {
+    margin-bottom: 7px;
+    color: #228b22;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.agroDetails h3 {
+    margin-bottom: 9px;
+    color: #17351f;
+    font-size: 21px;
+}
+
+.darkMode .agroDetails h3 {
+    color: #ffffff;
+}
+
+.agroDescription {
+    min-height: 58px;
+    margin-bottom: 20px;
+    color: #666666;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.darkMode .agroDescription {
+    color: #c5cbc7;
+}
+
+.agroBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.priceAmount {
+    color: #17351f;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.darkMode .priceAmount {
+    color: #ffffff;
+}
+
+.pricePeriod {
+    color: #777777;
+    font-size: 11px;
+}
+
+.viewButton {
+    min-height: 38px;
+    padding: 0 13px;
+    border: 1px solid #228b22;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #228b22;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.viewButton:hover {
+    background: #228b22;
+    color: #ffffff;
+}
+
+.darkMode .viewButton {
+    background: transparent;
+}
+
+.noResults {
+    display: none;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.noResults h3 {
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.noResults p {
+    color: #666666;
+}
+
+.agroCta {
+    width: min(1200px, 92%);
+    min-height: 360px;
+    margin: 0 auto 85px;
+    display: flex;
+    align-items: center;
+    background: #17351f;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.agroCtaContent {
+    max-width: 700px;
+    padding: 65px;
+    color: #ffffff;
+}
+
+.agroCta .sectionEyebrow {
+    color: #9ed79e;
+}
+
+.agroCta h2 {
+    margin-bottom: 17px;
+    font-size: 42px;
+    line-height: 1.1;
+}
+
+.agroCta p:not(.sectionEyebrow) {
+    max-width: 580px;
+    margin-bottom: 25px;
+    color: #d5ddd6;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.siteFooter {
+    background: #122019;
+    color: #ffffff;
+}
+
+.footerMain {
+    width: min(1200px, 92%);
+    margin: auto;
+    padding: 70px 0 55px;
+    display: grid;
+    grid-template-columns: 1.6fr repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footerBrand p {
+    max-width: 330px;
+    margin-top: 17px;
+    color: #bdc7bf;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.footerBrand .footerCompany {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.footerColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footerColumn h3 {
+    margin-bottom: 7px;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.footerColumn a,
+.footerColumn p {
+    color: #bdc7bf;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.footerColumn a:hover {
+    color: #ffffff;
+}
+
+.footerBottom {
+    width: min(1200px, 92%);
+    margin: auto;
+    padding: 22px 0;
+    border-top: 1px solid #304039;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footerBottom p,
+.footerBottomLinks a {
+    color: #9ea9a1;
+    font-size: 12px;
+}
+
+.footerBottomLinks {
+    display: flex;
+    gap: 20px;
+}
+
+.backToTop {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 45px;
+    height: 45px;
+    border: 0;
+    border-radius: 50%;
+    background: #228b22;
+    color: #ffffff;
+    font-size: 21px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.25s ease;
+    z-index: 900;
+}
+
+.backToTop.showButton {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.modalBackdrop {
+    position: fixed;
+    inset: 0;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.68);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.25s ease;
+    z-index: 3000;
+}
+
+.modalBackdrop.showModal {
+    opacity: 1;
+    visibility: visible;
+}
+
+.agroModal {
+    position: relative;
+    width: min(850px, 100%);
+    max-height: 90vh;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    overflow: auto;
+    border-radius: 14px;
+    background: #ffffff;
+}
+
+.darkMode .agroModal {
+    background: #182119;
+    color: #ffffff;
+}
+
+.modalCloseButton {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #17351f;
+    font-size: 25px;
+    z-index: 5;
+}
+
+.modalImage {
+    min-height: 500px;
+    background-position: center;
+    background-size: cover;
+}
+
+.modalContent {
+    padding: 55px 40px 40px;
+}
+
+.modalLocation {
+    margin-bottom: 10px;
+    color: #228b22;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.modalContent h2 {
+    margin-bottom: 15px;
+    font-size: 34px;
+}
+
+.modalAvailability {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    color: #228b22;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.modalAvailability span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #228b22;
+}
+
+.modalDescription {
+    margin-bottom: 25px;
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.darkMode .modalDescription {
+    color: #c5cbc7;
+}
+
+.modalPrice {
+    margin-bottom: 28px;
+}
+
+.modalPrice strong {
+    color: #17351f;
+    font-size: 25px;
+}
+
+.darkMode .modalPrice strong {
+    color: #ffffff;
+}
+
+.modalPrice span {
+    color: #777777;
+    font-size: 13px;
+}
+
+.modalFeatures {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.modalFeatures div {
+    padding: 13px;
+    border: 1px solid #e0e0e0;
+    border-radius: 7px;
+}
+
+.darkMode .modalFeatures div {
+    border-color: #354139;
+}
+
+.modalFeatures span {
+    display: block;
+    margin-bottom: 8px;
+    color: #228b22;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.modalFeatures p {
+    color: #555555;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.darkMode .modalFeatures p {
+    color: #d2d7d3;
+}
+
+.modalActions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.addToCartButton,
+.buyNowButton {
+    min-height: 47px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.addToCartButton {
+    border: 1px solid #228b22;
+    background: #ffffff;
+    color: #228b22;
+}
+
+.addToCartButton:hover {
+    background: #228b22;
+    color: #ffffff;
+}
+
+.buyNowButton {
+    border: 1px solid #228b22;
+    background: #228b22;
+    color: #ffffff;
+}
+
+.buyNowButton:hover {
+    background: #176b1b;
+    border-color: #176b1b;
+}
+
+.contactSellerButton {
+    width: 100%;
+    min-height: 47px;
+    border: 1px solid #228b22;
+    border-radius: 7px;
+    background: #228b22;
+    color: #ffffff;
+    font-weight: 800;
+}
+
+.loginNotice {
+    margin-top: 12px;
+    text-align: center;
+    color: #777777;
+    font-size: 11px;
+}
+
+@media (max-width: 1050px) {
+    .navigationLinks {
+        gap: 18px;
+    }
+
+    .agroGrid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .footerMain {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footerBrand {
+        grid-column: span 3;
+    }
+}
+
+@media (max-width: 800px) {
+    .mainNavigation {
+        min-height: 70px;
+    }
+
+    .navigationLinks {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(320px, 86%);
+        height: 100vh;
+        padding: 75px 30px 30px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 7px;
+        background: #ffffff;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.12);
+        transition: right 0.3s ease;
+        z-index: 2000;
+    }
+
+    .darkMode .navigationLinks {
+        background: #121b15;
+    }
+
+    .navigationLinks.menuOpen {
+        right: 0;
+    }
+
+    .navigationLinks a {
+        width: 100%;
+        padding: 13px 0;
+        font-size: 15px;
+    }
+
+    .navigationLinks .activeLink::after {
+        width: 30px;
+        right: auto;
+    }
+
+    .closeMenuButton {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: block;
+        width: 40px;
+        height: 40px;
+        border: 0;
+        background: transparent;
+        color: #17351f;
+        font-size: 30px;
+    }
+
+    .darkMode .closeMenuButton {
+        color: #ffffff;
+    }
+
+    .mobileProfileLink,
+    .mobileCartLink {
+        display: flex !important;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .desktopProfileLink,
+    .loginLink {
+        display: none;
+    }
+
+    .mobileMenuButton {
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        border: 0;
+        background: transparent;
+    }
+
+    .mobileMenuButton span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: #17351f;
+    }
+
+    .darkMode .mobileMenuButton span {
+        background: #ffffff;
+    }
+
+    .signupButton {
+        min-height: 38px;
+        padding: 0 14px;
+    }
+
+    .agroHero {
+        min-height: 430px;
+    }
+
+    .agroHero h1 {
+        font-size: 45px;
+    }
+
+    .agroTop {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .agroSearch {
+        width: 100%;
+    }
+
+    .agroGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .agroImage {
+        height: 200px;
+    }
+
+    .agroCtaContent {
+        padding: 50px 35px;
+    }
+
+    .footerMain {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footerBrand {
+        grid-column: span 2;
+    }
+
+    .footerBottom {
+        flex-direction: column;
+    }
+
+    .agroModal {
+        grid-template-columns: 1fr;
+    }
+
+    .modalImage {
+        min-height: 250px;
+    }
+
+    .modalContent {
+        padding: 35px 25px;
+    }
+
+    .modalActions {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .mainNavigation {
+        width: 94%;
+        gap: 10px;
+    }
+
+    .brandLogo {
+        font-size: 22px;
+    }
+
+    .navigationActions {
+        gap: 7px;
+    }
+
+    .themeToggle,
+    .cartButton {
+        width: 33px;
+        height: 33px;
+    }
+
+    .signupButton {
+        min-height: 35px;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+
+    .agroHero {
+        min-height: 390px;
+    }
+
+    .agroHeroContent {
+        width: 94%;
+        padding: 55px 0;
+    }
+
+    .agroHero h1 {
+        max-width: 500px;
+        font-size: 37px;
+        letter-spacing: -1px;
+    }
+
+    .agroHeroContent > p:last-child {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .agroSection {
+        width: 94%;
+        padding: 60px 0;
+    }
+
+    .agroTop h2 {
+        font-size: 30px;
+    }
+
+    .agroFilters {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 5px;
+        scrollbar-width: none;
+    }
+
+    .agroFilters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filterButton {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+
+    .agroGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .agroImage {
+        height: 145px;
+    }
+
+    .agroDetails {
+        padding: 13px;
+    }
+
+    .agroLocation {
+        font-size: 10px;
+    }
+
+    .agroDetails h3 {
+        font-size: 16px;
+    }
+
+    .agroDescription {
+        min-height: 65px;
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .agroBottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .priceAmount {
+        font-size: 13px;
+    }
+
+    .viewButton {
+        width: 100%;
+        min-height: 34px;
+        font-size: 10px;
+    }
+
+    .agroCta {
+        width: 94%;
+        margin-bottom: 55px;
+        border-radius: 12px;
+    }
+
+    .agroCtaContent {
+        padding: 40px 25px;
+    }
+
+    .agroCta h2 {
+        font-size: 30px;
+    }
+
+    .agroCta p:not(.sectionEyebrow) {
+        font-size: 16px;
+    }
+
+    .footerMain {
+        width: 94%;
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 20px;
+        padding: 55px 0 40px;
+    }
+
+    .footerBrand {
+        grid-column: span 2;
+    }
+
+    .footerBrand p {
+        font-size: 13px;
+    }
+
+    .footerColumn h3 {
+        font-size: 14px;
+    }
+
+    .footerColumn a,
+    .footerColumn p {
+        font-size: 12px;
+    }
+
+    .footerBottom {
+        width: 94%;
+    }
+
+    .modalBackdrop {
+        padding: 15px;
+    }
+
+    .agroModal {
+        max-height: 94vh;
+    }
+
+    .modalImage {
+        min-height: 190px;
+    }
+
+    .modalContent h2 {
+        font-size: 27px;
+    }
+
+    .modalFeatures {
+        grid-template-columns: 1fr;
+    }
+
+    .modalFeatures div {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .modalFeatures span {
+        margin: 0;
+    }
+
+    .backToTop {
+        right: 15px;
+        bottom: 15px;
+        width: 40px;
+        height: 40px;
+    }
+}

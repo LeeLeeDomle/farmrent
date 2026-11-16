@@ -1,0 +1,734 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmRent | My Profile</title>
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+
+    <div class="pageLoader" id="pageLoader"></div>
+
+    <header class="siteHeader">
+
+        <nav class="mainNavigation">
+
+            <a href="index.html" class="brandLogo">
+                Farm<span>Rent</span>
+            </a>
+
+            <div class="navigationLinks" id="navigationLinks">
+
+                <button class="closeMenuButton" id="closeMenuButton" aria-label="Close menu">
+                    ×
+                </button>
+
+                <a href="index.html">Home</a>
+                <a href="equipment.html">Equipment</a>
+                <a href="agro-products.html">Agro Products</a>
+                <a href="about.html">About</a>
+                <a href="help.html">Help</a>
+
+                <a href="profile.html" class="mobileProfileLink activeProfileLink">
+                    <span>♙</span>
+                    Profile
+                </a>
+<a href="#" class="mobileLogoutLink" id="mobileLogoutLink">
+    Log Out
+</a>
+            </div>
+
+            <div class="navigationActions">
+
+                <button class="themeToggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span id="themeIcon">☾</span>
+                </button>
+
+                <a href="profile.html" class="desktopProfileLink activeProfileLink" aria-label="Profile">
+                    ♙
+                </a>
+
+                <a href="login.html" class="loginLink">
+                    Login
+                </a>
+<!-- 
+                <a href="register.html" class="signupButton">
+                    Sign Up
+                </a> -->
+
+                <button class="mobileMenuButton" id="mobileMenuButton" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="profileHero">
+
+            <div class="profileHeroContent">
+
+                <p class="sectionEyebrow">
+                    MY ACCOUNT
+                </p>
+
+                <h1>
+                    Welcome back, Leelee.
+                </h1>
+
+                <p>
+                    Manage your FarmRent account, rentals, listings and personal information.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="profileSection">
+
+            <div class="profileLayout">
+
+                <aside class="profileSidebar">
+
+                    <div class="profileCard">
+
+                        <div class="profileAvatar">
+                            L
+                        </div>
+
+                        <h2>
+                            Leelee
+                        </h2>
+
+                        <p>
+                            Farmer / Renter
+                        </p>
+
+                        <div class="verificationBadge">
+                            <span></span>
+                            Account Verified
+                        </div>
+
+                        <button class="editProfileButton" id="editProfileButton">
+                            Edit Profile
+                        </button>
+
+                    </div>
+
+                    <div class="profileMenu">
+
+                        <button class="profileMenuButton activeMenu" data-section="personalSection">
+                            Personal Information
+                        </button>
+
+                        <button class="profileMenuButton" data-section="activitySection">
+                            My Activity
+                        </button>
+
+                        <button class="profileMenuButton" data-section="settingsSection">
+                            Account Settings
+                        </button>
+
+                    </div>
+
+                </aside>
+
+                <div class="profileMain">
+
+                    <section class="profilePanel" id="personalSection">
+
+                        <div class="panelHeading">
+
+                            <div>
+                                <p class="sectionEyebrow">
+                                    PERSONAL INFORMATION
+                                </p>
+
+                                <h2>
+                                    Your account details
+                                </h2>
+                            </div>
+
+                            <button class="smallEditButton" id="personalEditButton">
+                                Edit
+                            </button>
+
+                        </div>
+
+                        <div class="informationGrid">
+
+                            <div class="informationItem">
+                                <span>First Name</span>
+                                <strong id="profileFirstName">Leelee</strong>
+                            </div>
+
+                            <div class="informationItem">
+                                <span>Last Name</span>
+                                <strong id="profileLastName">Domle</strong>
+                            </div>
+
+                            <div class="informationItem">
+                                <span>Email Address</span>
+                                <strong id="profileEmail">
+                                    example@email.com
+                                </strong>
+                            </div>
+
+                            <div class="informationItem">
+                                <span>Phone Number</span>
+                                <strong id="profilePhone">
+                                    08012345678
+                                </strong>
+                            </div>
+
+                            <div class="informationItem">
+                                <span>NIN</span>
+                                <strong id="profileNin">
+                                    ********123
+                                </strong>
+                            </div>
+
+                            <div class="informationItem">
+                                <span>Account Type</span>
+                                <strong id="profileAccountType">
+                                    Farmer / Renter
+                                </strong>
+                            </div>
+
+                            <div class="informationItem fullWidth">
+                                <span>Address</span>
+                                <strong id="profileAddress">
+                                    Your registered address
+                                </strong>
+                            </div>
+
+                            <div class="informationItem">
+                                <span>State</span>
+                                <strong id="profileState">
+                                    Plateau
+                                </strong>
+                            </div>
+
+                            <div class="informationItem">
+                                <span>Location / City</span>
+                                <strong id="profileLocation">
+                                    Jos
+                                </strong>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                    
+<section class="myRentalsSection">
+
+    <div class="myRentalsHeader">
+
+        <div>
+            <p class="sectionEyebrow">
+                RENTAL ACTIVITY
+            </p>
+
+            <h2>
+                My Rentals
+            </h2>
+
+            <p>
+                Keep track of your equipment bookings and rental history.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="rentalTabs">
+
+        <button
+            class="rentalTab activeRentalTab"
+            data-status="all"
+        >
+            All
+        </button>
+
+        <button
+            class="rentalTab"
+            data-status="Pending"
+        >
+            Pending
+        </button>
+
+        <button
+            class="rentalTab"
+            data-status="Active"
+        >
+            Active
+        </button>
+
+        <button
+            class="rentalTab"
+            data-status="Completed"
+        >
+            Completed
+        </button>
+
+    </div>
+
+    <div
+        class="rentalHistory"
+        id="rentalHistory"
+    >
+
+        <div class="emptyRentalState" id="emptyRentalState">
+
+            <div class="emptyRentalIcon">
+                
+            </div>
+
+            <h3>
+                No rentals yet
+            </h3>
+
+            <p>
+                Your equipment bookings will appear here once you make a rental.
+            </p>
+
+            <a
+                href="equipment.html"
+                class="browseEquipmentButton"
+            >
+                Browse Equipment
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+                    <section class="profilePanel" id="activitySection">
+
+                        <div class="panelHeading">
+
+                            <div>
+                                <p class="sectionEyebrow">
+                                    MY ACTIVITY
+                                </p>
+
+                                <h2>
+                                    Your FarmRent activity
+                                </h2>
+                            </div>
+
+                        </div>
+
+                        <div class="activityGrid">
+
+                            <div class="activityCard">
+
+                                <div class="activityIcon">
+                                    R
+                                </div>
+
+                                <div>
+                                    <span>Active Rentals</span>
+                                    <strong>0</strong>
+                                </div>
+
+                                <a href="equipment.html">
+                                    Browse Equipment
+                                </a>
+
+                            </div>
+
+                            <div class="activityCard">
+
+                                <div class="activityIcon">
+                                    H
+                                </div>
+
+                                <div>
+                                    <span>Rental History</span>
+                                    <strong>0</strong>
+                                </div>
+
+                                <a href="#">
+                                    View History
+                                </a>
+
+                            </div>
+
+                            <div class="activityCard">
+
+                                <div class="activityIcon">
+                                    S
+                                </div>
+
+                                <div>
+                                    <span>Saved Equipment</span>
+                                    <strong>0</strong>
+                                </div>
+
+                                <a href="equipment.html">
+                                    Browse Equipment
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="ownerSection">
+
+                            <div class="ownerSectionHeader">
+
+                                <div>
+                                    <p class="sectionEyebrow">
+                                        FOR OWNERS
+                                    </p>
+
+                                    <h3>
+                                        Want to list your equipment?
+                                    </h3>
+
+                                    <p>
+                                        Make your agricultural equipment available
+                                        to farmers looking to rent.
+                                    </p>
+                                </div>
+
+                                <a href="list-equipment.html" class="primaryButton">
+                                    List Equipment
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="ownerSection">
+
+                            <div class="ownerSectionHeader">
+
+                                <div>
+                                    <p class="sectionEyebrow">
+                                        AGRO PRODUCTS
+                                    </p>
+
+                                    <h3>
+                                        Sell agricultural products
+                                    </h3>
+
+                                    <p>
+                                        List your agricultural products and connect
+                                        with potential buyers.
+                                    </p>
+                                </div>
+
+                                <a href="agro-products.html" class="primaryButton">
+                                    View Products
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                    <section class="profilePanel" id="settingsSection">
+
+                        <div class="panelHeading">
+
+                            <div>
+                                <p class="sectionEyebrow">
+                                    ACCOUNT SETTINGS
+                                </p>
+
+                                <h2>
+                                    Manage your account
+                                </h2>
+                            </div>
+
+                        </div>
+
+                        <div class="settingsList">
+
+                            <div class="settingItem">
+
+                                <div>
+                                    <h3>Change Password</h3>
+                                    <p>
+                                        Update your FarmRent account password.
+                                    </p>
+                                </div>
+
+                                <button class="settingButton" id="changePasswordButton">
+                                    Change
+                                </button>
+
+                            </div>
+
+                            <div class="settingItem">
+
+                                <div>
+                                    <h3>Notifications</h3>
+                                    <p>
+                                        Receive updates about rentals, bookings and account activity.
+                                    </p>
+                                </div>
+
+                                <label class="toggleSwitch">
+                                    <input type="checkbox" id="notificationToggle" checked>
+                                    <span></span>
+                                </label>
+
+                            </div>
+
+                            <div class="settingItem dangerSetting">
+
+                                <div>
+                                    <h3>Log Out</h3>
+                                    <p>
+                                        Sign out of your FarmRent account on this device.
+                                    </p>
+                                </div>
+
+                                <button class="logoutButton" id="logoutButton">
+                                    Log Out
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+        </section>
+<button type="button" class="logoutButton" id="logoutButton">
+    Log Out
+</button>
+    </main>
+
+    <footer class="siteFooter">
+
+        <div class="footerMain">
+
+            <div class="footerBrand">
+
+                <a href="index.html" class="footerLogo">
+                    Farm<span>Rent</span>
+                </a>
+
+                <p>
+                    A farm equipment rental and agricultural marketplace
+                    connecting farmers, equipment owners and agro product sellers.
+                </p>
+
+                <p class="footerCompany">
+                    Domsal&Bonks Nigeria Limited
+                </p>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>FarmRent</h3>
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                
+                <a href="help.html">Help Center</a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>Equipment</h3>
+
+                <a href="equipment.html">Browse Equipment</a>
+                <a href="list-equipment.html">List Equipment</a>
+                <a href="equipment.html">Rent Equipment</a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>Agro Products</h3>
+
+                <a href="agro-products.html">Browse Products</a>
+                <a href="list-agro-product.html">List Products</a>
+                <a href="register.html">Create Account</a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>Contact</h3>
+
+                <p>Jos, Plateau State</p>
+                <p>Nigeria</p>
+
+                <a href="help.html">Contact Support</a>
+
+            </div>
+
+        </div>
+
+        <div class="footerBottom">
+
+            <p>
+                © 2026 FarmRent. All rights reserved.
+            </p>
+
+            <div class="footerBottomLinks">
+                <a href="#">Terms</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <button class="backToTop" id="backToTop" aria-label="Back to top">
+        ↑
+    </button>
+
+    <div class="editModalBackdrop" id="editModalBackdrop">
+
+        <div class="editModal">
+
+            <button class="modalCloseButton" id="modalCloseButton" aria-label="Close">
+                ×
+            </button>
+
+            <p class="sectionEyebrow">
+                EDIT PROFILE
+            </p>
+
+            <h2>
+                Update your information
+            </h2>
+
+            <form id="editProfileForm">
+
+                <div class="formRow">
+
+                    <div class="formGroup">
+
+                        <label for="editFirstName">
+                            First Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editFirstName"
+                            value="Leelee"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="formGroup">
+
+                        <label for="editLastName">
+                            Last Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editLastName"
+                            value="Domle"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+                <div class="formGroup">
+
+                    <label for="editPhone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="editPhone"
+                        value="08012345678"
+                        required
+                    >
+
+                </div>
+
+                <div class="formGroup">
+
+                    <label for="editAddress">
+                        Address
+                    </label>
+
+                    <textarea
+                        id="editAddress"
+                        required
+                    >Your registered address</textarea>
+
+                </div>
+
+                <div class="formRow">
+
+                    <div class="formGroup">
+
+                        <label for="editState">
+                            State
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editState"
+                            value="Plateau"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="formGroup">
+
+                        <label for="editLocation">
+                            Location / City
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editLocation"
+                            value="Jos"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+                <button type="submit" class="saveButton">
+                    Save Changes
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="/js/profile.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,474 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #111111;
+    background-color: #f7f5ed;
+}
+
+.siteHeader {
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #dddddd;
+}
+
+.mainNavigation {
+    width: 100%;
+    max-width: 1400px;
+    min-height: 80px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.brandLogo {
+    color: #17351f;
+    font-size: 28px;
+    font-weight: 800;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.brandLogo span {
+    color: #228b22;
+}
+
+.navigationLinks {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navigationLinks a {
+    color: #111111;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navigationLinks a:hover {
+    color: #228b22;
+}
+
+.navigationActions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.loginLink {
+    color: #111111;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.loginLink:hover {
+    color: #228b22;
+}
+
+.signupButton {
+    padding: 12px 20px;
+    border-radius: 6px;
+    background-color: #17351f;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.signupButton:hover {
+    background-color: #228b22;
+}
+
+.profileLink {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #d5d5d5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #17351f;
+    text-decoration: none;
+}
+
+.profileLink:hover {
+    border-color: #228b22;
+}
+
+.profileIcon {
+    font-size: 20px;
+}
+
+.pageHero {
+    min-height: 330px;
+    padding: 70px 30px;
+    background-color: #17351f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.pageHeroContent {
+    max-width: 750px;
+}
+
+.pageHero .sectionEyebrow {
+    color: #ffffff;
+}
+
+.pageHero h1 {
+    margin: 0 0 20px;
+    color: #ffffff;
+    font-size: 52px;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.pageHero p:last-child {
+    margin: 0;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.sectionEyebrow {
+    margin: 0 0 12px;
+    color: #228b22;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.listingsSection {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 40px;
+}
+
+.sectionHeading {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.sectionHeading h2 {
+    margin: 0;
+    color: #17351f;
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.primaryButton {
+    padding: 14px 22px;
+    border-radius: 6px;
+    background-color: #17351f;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.primaryButton:hover {
+    background-color: #228b22;
+}
+
+.listingsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.listingCard {
+    overflow: hidden;
+    border: 1px solid #dedbd0;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.listingImage {
+    position: relative;
+    height: 240px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.listingImageOne {
+    background-image: url("../images/Tractor1.jpeg");
+}
+
+.listingImageTwo {
+    background-image: url("../images/tiller1.jpeg");
+}
+
+.listingImageThree {
+    background-image: url("../images/irrigator1.jpeg");
+}
+
+.statusBadge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 7px 12px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #17351f;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.listingDetails {
+    padding: 24px;
+}
+
+.listingLocation {
+    margin: 0 0 8px;
+    color: #333333;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.listingDetails h3 {
+    margin: 0 0 12px;
+    color: #17351f;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.listingDescription {
+    min-height: 55px;
+    margin: 0 0 22px;
+    color: #333333;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.listingBottom {
+    padding-top: 18px;
+    border-top: 1px solid #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.priceAmount {
+    color: #17351f;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.pricePeriod {
+    color: #333333;
+    font-size: 14px;
+}
+
+.viewButton {
+    padding: 10px 18px;
+    border: 1px solid #17351f;
+    border-radius: 5px;
+    color: #17351f;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.viewButton:hover {
+    background-color: #17351f;
+    color: #ffffff;
+}
+
+.siteFooter {
+    background-color: #17351f;
+    color: #ffffff;
+}
+
+.footerMain {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 40px 45px;
+    display: grid;
+    grid-template-columns: 1.5fr repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footerLogo {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.footerLogo span {
+    color: #228b22;
+}
+
+.footerBrand p {
+    max-width: 330px;
+    margin: 20px 0 0;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.footerBrand .footerCompany {
+    margin-top: 15px;
+    font-weight: 700;
+}
+
+.footerColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.footerColumn h3 {
+    margin: 0 0 8px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.footerColumn a {
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+.footerColumn a:hover {
+    color: #228b22;
+}
+
+.footerBottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 22px 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footerBottom p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.footerBottomLinks {
+    display: flex;
+    gap: 22px;
+}
+
+.footerBottomLinks a {
+    color: #ffffff;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.footerBottomLinks a:hover {
+    color: #228b22;
+}
+
+@media (max-width: 1000px) {
+    .mainNavigation {
+        padding: 0 25px;
+    }
+
+    .navigationLinks {
+        gap: 18px;
+    }
+
+    .listingsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footerMain {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .mainNavigation {
+        min-height: 70px;
+        padding: 0 18px;
+    }
+
+    .navigationLinks {
+        display: none;
+    }
+
+    .navigationActions {
+        gap: 10px;
+    }
+
+    .loginLink,
+    .signupButton {
+        display: none;
+    }
+
+    .pageHero {
+        min-height: 280px;
+        padding: 55px 20px;
+    }
+
+    .pageHero h1 {
+        font-size: 40px;
+    }
+
+    .pageHero p:last-child {
+        font-size: 16px;
+    }
+
+    .listingsSection {
+        padding: 55px 18px;
+    }
+
+    .sectionHeading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .sectionHeading h2 {
+        font-size: 30px;
+    }
+
+    .listingsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .listingImage {
+        height: 220px;
+    }
+
+    .footerMain {
+        grid-template-columns: 1fr;
+        padding: 45px 20px 35px;
+        gap: 30px;
+    }
+
+    .footerBottom {
+        padding: 20px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

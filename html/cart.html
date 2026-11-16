@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmRent | Cart</title>
+    <link rel="stylesheet" href="/css/cart.css">
+</head>
+<body>
+
+    <div class="pageLoader" id="pageLoader"></div>
+
+    <header class="siteHeader">
+        <nav class="mainNavigation">
+
+            <a href="index.html" class="brandLogo">
+                Farm<span>Rent</span>
+            </a>
+
+            <div class="navigationLinks" id="navigationLinks">
+
+                <button class="closeMenuButton" id="closeMenuButton" aria-label="Close menu">
+                    ×
+                </button>
+
+                <a href="index.html">Home</a>
+                <a href="equipment.html">Equipment</a>
+                <a href="agro-products.html">Agro Products</a>
+                <a href="about.html">About</a>
+                <a href="help.html">Help</a>
+
+                <a href="profile.html" class="mobileProfileLink">
+                    <span class="profileIcon">♙</span>
+                    Profile
+                </a>
+
+                <a href="cart.html" class="mobileCartLink activeLink">
+                    🛒 Cart
+                    <span class="mobileCartCount" id="mobileCartCount">0</span>
+                </a>
+
+                <a href="#" class="mobileLogoutLink" id="mobileLogoutLink">
+                    Log out
+                </a>
+
+            </div>
+
+            <div class="navigationActions">
+
+                <button class="themeToggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span id="themeIcon">☾</span>
+                </button>
+
+                <a href="profile.html" class="desktopProfileLink" aria-label="Profile">
+                    ♙
+                </a>
+
+                <a href="cart.html" class="desktopCartLink activeCart" aria-label="Shopping cart">
+                    🛒
+                    <span id="cartCount">0</span>
+                </a>
+
+                <a href="login.html" class="loginLink">
+                    Login
+                </a>
+
+                <a href="register.html" class="signupButton">
+                    Sign Up
+                </a>
+
+                <button class="mobileMenuButton" id="mobileMenuButton" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="cartHero">
+
+            <div class="cartHeroContent">
+
+                <p class="sectionEyebrow">
+                    SHOPPING CART
+                </p>
+
+                <h1>
+                    Your selected products.
+                </h1>
+
+                <p>
+                    Review your agricultural products before you continue
+                    to checkout.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="cartSection">
+
+            <div class="cartTop">
+
+                <div>
+                    <p class="sectionEyebrow">
+                        YOUR CART
+                    </p>
+
+                    <h2>
+                        Products ready for checkout
+                    </h2>
+                </div>
+
+                <a href="agro-products.html" class="continueShoppingButton">
+                    Continue Shopping
+                </a>
+
+            </div>
+
+            <div class="cartLayout">
+
+                <div class="cartItemsArea">
+
+                    <div class="cartItems" id="cartItems"></div>
+
+                    <div class="emptyCart" id="emptyCart">
+
+                        <div class="emptyCartIcon">
+                            🛒
+                        </div>
+
+                        <h3>
+                            Your cart is empty
+                        </h3>
+
+                        <p>
+                            You have not added any agro products yet.
+                            Browse our available products and add what
+                            you need.
+                        </p>
+
+                        <a href="agro-products.html" class="primaryButton">
+                            Browse Agro Products
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <aside class="cartSummary" id="cartSummary">
+
+                    <div class="summaryHeader">
+                        <h3>
+                            Order Summary
+                        </h3>
+
+                        <span id="summaryItemCount">
+                            0 items
+                        </span>
+                    </div>
+
+                    <div class="summaryRows">
+
+                        <div class="summaryRow">
+                            <span>Subtotal</span>
+                            <strong id="cartSubtotal">
+                                ₦0
+                            </strong>
+                        </div>
+
+                        <div class="summaryRow">
+                            <span>Delivery</span>
+                            <strong id="deliveryFee">
+                                ₦0
+                            </strong>
+                        </div>
+
+                    </div>
+
+                    <div class="summaryDivider"></div>
+
+                    <div class="summaryTotal">
+                        <span>Total</span>
+                        <strong id="cartTotal">
+                            ₦0
+                        </strong>
+                    </div>
+
+                    <button class="checkoutButton" id="checkoutButton">
+                        Proceed to Checkout
+                    </button>
+
+                    <p class="checkoutNotice">
+                        You will review your delivery details and order
+                        information before payment.
+                    </p>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+        <section class="cartTrust">
+
+            <div class="trustItem">
+
+                <span class="trustNumber">
+                    01
+                </span>
+
+                <div>
+                    <h3>
+                        Review your order
+                    </h3>
+
+                    <p>
+                        Check your selected products and quantities before
+                        checkout.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="trustItem">
+
+                <span class="trustNumber">
+                    02
+                </span>
+
+                <div>
+                    <h3>
+                        Confirm delivery
+                    </h3>
+
+                    <p>
+                        Add and confirm the information needed to receive
+                        your products.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="trustItem">
+
+                <span class="trustNumber">
+                    03
+                </span>
+
+                <div>
+                    <h3>
+                        Make payment
+                    </h3>
+
+                    <p>
+                        Complete your payment and receive your order
+                        confirmation.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="siteFooter">
+
+        <div class="footerMain">
+
+            <div class="footerBrand">
+
+                <a href="index.html" class="footerLogo">
+                    Farm<span>Rent</span>
+                </a>
+
+                <p>
+                    A farm rental and agricultural marketplace connecting
+                    farmers, equipment owners and agro product sellers.
+                </p>
+
+                <p class="footerCompany">
+                    Domsal&Bonks Nigeria Limited
+                </p>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>
+                    FarmRent
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="help.html">
+                    Help Center
+                </a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>
+                    Equipment
+                </h3>
+
+                <a href="equipment.html">
+                    Browse Equipment
+                </a>
+
+                <a href="list-equipment.html">
+                    List Equipment
+                </a>
+
+                <a href="equipment.html">
+                    Rent Equipment
+                </a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>
+                    Agro Products
+                </h3>
+
+                <a href="agro-products.html">
+                    Browse Products
+                </a>
+
+                <a href="list-agro-product.html">
+                    List Products
+                </a>
+
+                <a href="cart.html">
+                    Shopping Cart
+                </a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    Jos, Plateau State
+                </p>
+
+                <p>
+                    Nigeria
+                </p>
+
+                <a href="help.html">
+                    Contact Support
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footerBottom">
+
+            <p>
+                © 2026 FarmRent. All rights reserved.
+            </p>
+
+            <div class="footerBottomLinks">
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <button class="backToTop" id="backToTop" aria-label="Back to top">
+        ↑
+    </button>
+
+    <script src="/js/cart.js"></script>
+
+</body>
+</html>
+

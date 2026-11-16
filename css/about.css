@@ -1,0 +1,1435 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f5ed;
+    color: #17351f;
+    overflow-x: hidden;
+}
+
+body.darkMode {
+    background: #101712;
+    color: #f4f4ef;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    font: inherit;
+}
+
+.pageLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: #228b22;
+    z-index: 9999;
+    transition: width 0.8s ease;
+}
+
+.siteHeader {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #dddddd;
+    z-index: 1000;
+}
+
+.darkMode .siteHeader {
+    background: #121b15;
+    border-bottom-color: #303b34;
+}
+
+.mainNavigation {
+    width: min(1200px, 92%);
+    min-height: 78px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.brandLogo,
+.footerLogo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.brandLogo span,
+.footerLogo span {
+    color: #228b22;
+}
+
+.navigationLinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 27px;
+}
+
+.navigationLinks a {
+    position: relative;
+    padding: 8px 0;
+    color: #222222;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.darkMode .navigationLinks a {
+    color: #eeeeee;
+}
+
+.navigationLinks a:hover,
+.navigationLinks .activeLink {
+    color: #228b22;
+}
+
+.navigationLinks .activeLink::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: #228b22;
+}
+
+.navigationActions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.themeToggle {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #cccccc;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #17351f;
+}
+
+.darkMode .themeToggle {
+    background: #1b261f;
+    border-color: #3c473f;
+    color: #ffffff;
+}
+
+.desktopProfileLink {
+    font-size: 24px;
+}
+
+.loginLink {
+    color: #17351f;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.darkMode .loginLink {
+    color: #ffffff;
+}
+
+.signupButton,
+.primaryButton,
+.supportButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 43px;
+    padding: 10 10px;
+    border: 1px solid #228b22;
+    border-radius: 5px;
+    background: #228b22;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.signupButton:hover,
+.primaryButton:hover,
+.supportButton:hover {
+    background: #176b1b;
+    border-color: #176b1b;
+}
+
+.mobileMenuButton,
+.closeMenuButton,
+.mobileProfileLink {
+    display: none;
+}
+
+.aboutHero {
+    position: relative;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.aboutHeroImage {
+    position: absolute;
+    inset: 0;
+    background-image: url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1800&q=85");
+    background-position: center;
+    background-size: cover;
+}
+
+.aboutHeroOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 31, 17, 0.57);
+}
+
+.aboutHeroContent {
+    position: relative;
+    z-index: 2;
+    width: min(1200px, 92%);
+    margin: auto;
+    padding: 80px 0;
+    color: #ffffff;
+}
+
+.sectionEyebrow {
+    margin-bottom: 13px;
+    color: #228b22;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.aboutHero .sectionEyebrow {
+    color: #d7f0d7;
+}
+
+.aboutHero h1 {
+    max-width: 780px;
+    margin-bottom: 20px;
+    font-size: clamp(43px, 6vw, 70px);
+    line-height: 1.03;
+    letter-spacing: -2px;
+}
+
+.aboutHeroContent > p:last-child {
+    max-width: 700px;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.aboutIntro,
+.whatWeDo,
+.certificateSection,
+.operationSection,
+.whoWeServe,
+.supportSection {
+    width: min(1200px, 92%);
+    margin: auto;
+}
+
+.aboutIntro {
+    padding: 90px 0;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.introText h2,
+.sectionHeading h2 {
+    max-width: 750px;
+    margin-bottom: 22px;
+    color: #17351f;
+    font-size: 46px;
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+.darkMode .introText h2,
+.darkMode .sectionHeading h2 {
+    color: #ffffff;
+}
+
+.introText p:not(.sectionEyebrow) {
+    max-width: 720px;
+    margin-bottom: 17px;
+    color: #222222;
+    font-size: 19px;
+    line-height: 1.75;
+}
+
+.darkMode .introText p:not(.sectionEyebrow) {
+    color: #eeeeee;
+}
+
+.introHighlight {
+    min-height: 390px;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 15px;
+    background: #17351f;
+    color: #ffffff;
+}
+
+.introHighlight > span {
+    margin-bottom: 20px;
+    color: #a9dda9;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.introHighlight h3 {
+    margin-bottom: 20px;
+    font-size: 34px;
+    line-height: 1.2;
+}
+
+.introHighlight p {
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.whatWeDo {
+    padding: 25px 0 90px;
+}
+
+.sectionHeading {
+    margin-bottom: 40px;
+}
+
+.serviceGrid,
+.serveGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.serviceCard,
+.serveCard {
+    padding: 32px;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+.darkMode .serviceCard,
+.darkMode .serveCard {
+    background: #182119;
+    border-color: #344039;
+}
+
+.serviceNumber {
+    margin-bottom: 55px;
+    color: #228b22;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.serviceCard h3,
+.serveCard h3 {
+    margin-bottom: 13px;
+    color: #17351f;
+    font-size: 22px;
+}
+
+.darkMode .serviceCard h3,
+.darkMode .serveCard h3 {
+    color: #ffffff;
+}
+
+.serviceCard p,
+.serveCard p {
+    color: #222222;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.darkMode .serviceCard p,
+.darkMode .serveCard p {
+    color: #eeeeee;
+}
+
+.certificateSection {
+    margin-bottom: 90px;
+    padding: 70px;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 70px;
+    align-items: center;
+    border-radius: 15px;
+    background: #e8eadf;
+}
+
+.darkMode .certificateSection {
+    background: #1a251e;
+}
+
+.certificateContent h2 {
+    margin-bottom: 20px;
+    color: #17351f;
+    font-size: 40px;
+    line-height: 1.15;
+}
+
+.darkMode .certificateContent h2 {
+    color: #ffffff;
+}
+
+.certificateContent p:not(.sectionEyebrow) {
+    max-width: 600px;
+    margin-bottom: 17px;
+    color: #222222;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.darkMode .certificateContent p:not(.sectionEyebrow) {
+    color: #eeeeee;
+}
+
+.certificateBox {
+    padding: 35px;
+    border-radius: 12px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.darkMode .certificateBox {
+    background: #101712;
+}
+
+.certificateIcon {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #dff1df;
+    color: #228b22;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.certificateBox h3 {
+    margin-bottom: 8px;
+    color: #17351f;
+    font-size: 22px;
+}
+
+.darkMode .certificateBox h3 {
+    color: #ffffff;
+}
+
+.certificateBox > p {
+    margin-bottom: 20px;
+    color: #222222;
+    font-size: 14px;
+}
+
+.darkMode .certificateBox > p {
+    color: #eeeeee;
+}
+
+.certificatePlaceholder {
+    min-height: 110px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #228b22;
+    border-radius: 8px;
+    color: #17351f;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.darkMode .certificatePlaceholder {
+    color: #ffffff;
+}
+
+.certificateButton {
+    width: 100%;
+    min-height: 43px;
+    border: 1px solid #228b22;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #228b22;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.certificateButton:hover {
+    background: #228b22;
+    color: #ffffff;
+}
+
+.darkMode .certificateButton {
+    background: transparent;
+}
+
+.operationSection {
+    padding-bottom: 90px;
+}
+
+.operationSteps {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+    align-items: start;
+    gap: 16px;
+}
+
+.operationStep {
+    min-width: 0;
+}
+
+.stepCircle {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #228b22;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.operationStep h3 {
+    margin-bottom: 10px;
+    color: #17351f;
+    font-size: 20px;
+}
+
+.darkMode .operationStep h3 {
+    color: #ffffff;
+}
+
+.operationStep p {
+    color: #222222;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.darkMode .operationStep p {
+    color: #eeeeee;
+}
+
+.stepLine {
+    width: 35px;
+    height: 2px;
+    margin-top: 24px;
+    background: #b7c4b9;
+}
+
+.whoWeServe {
+    padding-bottom: 90px;
+}
+
+.serveCard {
+    min-height: 210px;
+}
+
+.missionSection {
+    background: #17351f;
+}
+
+.missionContent {
+    width: min(1000px, 92%);
+    margin: auto;
+    padding: 90px 0;
+    text-align: center;
+}
+
+.missionContent .sectionEyebrow {
+    color: #a9dda9;
+}
+
+.missionContent h2 {
+    margin-bottom: 22px;
+    color: #ffffff;
+    font-size: 43px;
+    line-height: 1.2;
+}
+
+.missionContent p:last-child {
+    max-width: 750px;
+    margin: auto;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.supportSection {
+    padding: 90px 0;
+    text-align: center;
+}
+
+.supportContent {
+    max-width: 800px;
+    margin: auto;
+}
+
+.supportContent h2 {
+    margin-bottom: 18px;
+    color: #17351f;
+    font-size: 40px;
+    line-height: 1.15;
+}
+
+.darkMode .supportContent h2 {
+    color: #ffffff;
+}
+
+.supportContent > p:not(.sectionEyebrow) {
+    margin-bottom: 25px;
+    color: #222222;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.darkMode .supportContent > p:not(.sectionEyebrow) {
+    color: #eeeeee;
+}
+
+.aboutCta {
+    width: min(1200px, 92%);
+    margin: 0 auto 90px;
+    border-radius: 15px;
+    background: #e8eadf;
+}
+
+.darkMode .aboutCta {
+    background: #1a251e;
+}
+
+.aboutCtaContent {
+    padding: 70px;
+    text-align: center;
+}
+
+.aboutCta h2 {
+    margin-bottom: 17px;
+    color: #17351f;
+    font-size: 42px;
+}
+
+.darkMode .aboutCta h2 {
+    color: #ffffff;
+}
+
+.aboutCta p:not(.sectionEyebrow) {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    color: #222222;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.darkMode .aboutCta p:not(.sectionEyebrow) {
+    color: #eeeeee;
+}
+
+.ctaButtons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.secondaryButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 43px;
+    padding: 0 20px;
+    border: 1px solid #17351f;
+    border-radius: 7px;
+    background: transparent;
+    color: #17351f;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.secondaryButton:hover {
+    background: #17351f;
+    color: #ffffff;
+}
+
+.darkMode .secondaryButton {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.darkMode .secondaryButton:hover {
+    background: #ffffff;
+    color: #17351f;
+}
+
+.siteFooter {
+    background: #122019;
+    color: #ffffff;
+}
+
+.footerMain {
+    width: min(1200px, 92%);
+    margin: auto;
+    padding: 70px 0 55px;
+    display: grid;
+    grid-template-columns: 1.6fr repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footerBrand p {
+    max-width: 340px;
+    margin-top: 17px;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.footerBrand .footerCompany {
+    color: #ffffff;
+    font-weight: 800;
+}
+
+.footerColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footerColumn h3 {
+    margin-bottom: 7px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.footerColumn a,
+.footerColumn p {
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.footerColumn a:hover {
+    color: #a9dda9;
+}
+
+.footerBottom {
+    width: min(1200px, 92%);
+    margin: auto;
+    padding: 22px 0;
+    border-top: 1px solid #3a4940;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footerBottom p,
+.footerBottomLinks a {
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.footerBottomLinks {
+    display: flex;
+    gap: 20px;
+}
+
+.backToTop {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 45px;
+    height: 45px;
+    border: 0;
+    border-radius: 50%;
+    background: #228b22;
+    color: #ffffff;
+    font-size: 21px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.25s ease;
+    z-index: 900;
+}
+
+.backToTop.showButton {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.certificateModal {
+    position: fixed;
+    inset: 0;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 3000;
+    transition: 0.25s ease;
+}
+
+.certificateModal.showModal {
+    opacity: 1;
+    visibility: visible;
+}
+
+.certificateModalContent {
+    position: relative;
+    width: min(850px, 100%);
+    max-height: 90vh;
+    overflow: auto;
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+.certificateModalClose {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 38px;
+    height: 38px;
+    border: 0;
+    border-radius: 50%;
+    background: #17351f;
+    color: #ffffff;
+    font-size: 25px;
+    z-index: 2;
+}
+
+.certificateDocument {
+    padding: 60px;
+    text-align: center;
+}
+
+.certificateTitle {
+    color: #17351f;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.certificateLine {
+    width: 70px;
+    height: 3px;
+    margin: 15px auto 25px;
+    background: #228b22;
+}
+
+.certificateDocument h2 {
+    margin-bottom: 15px;
+    color: #17351f;
+    font-size: 30px;
+}
+
+.certificateDocument > p {
+    color: #222222;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.certificateArea {
+    min-height: 350px;
+    margin: 30px 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #228b22;
+    background: #f7f5ed;
+    color: #17351f;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.certificateNote {
+    font-size: 13px !important;
+}
+
+@media (max-width: 1050px) {
+    .navigationLinks {
+        gap: 17px;
+    }
+
+    .aboutIntro {
+        gap: 40px;
+    }
+
+    .serviceGrid,
+    .serveGrid {
+        gap: 15px;
+    }
+
+    .footerMain {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footerBrand {
+        grid-column: span 3;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .mainNavigation {
+        min-height: 70px;
+    }
+
+    .navigationLinks {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(320px, 86%);
+        height: 100vh;
+        padding: 75px 30px 30px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 7px;
+        background: #ffffff;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+        transition: right 0.3s ease;
+        z-index: 2000;
+    }
+
+    .darkMode .navigationLinks {
+        background: #121b15;
+    }
+
+    .navigationLinks.menuOpen {
+        right: 0;
+    }
+
+    .navigationLinks a {
+        width: 100%;
+        padding: 13px 0;
+        font-size: 15px;
+    }
+
+    .closeMenuButton {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: block;
+        width: 40px;
+        height: 40px;
+        border: 0;
+        background: transparent;
+        color: #17351f;
+        font-size: 30px;
+    }
+
+    .darkMode .closeMenuButton {
+        color: #ffffff;
+    }
+
+    .mobileProfileLink {
+        display: flex !important;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .desktopProfileLink,
+    .loginLink {
+        display: none;
+    }
+
+    .mobileMenuButton {
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        border: 0;
+        background: transparent;
+    }
+
+    .mobileMenuButton span {
+        width: 24px;
+        height: 2px;
+        background: #17351f;
+    }
+
+    .darkMode .mobileMenuButton span {
+        background: #ffffff;
+    }
+
+    .aboutHero {
+        min-height: 410px;
+    }
+
+    .aboutHeroContent {
+        padding: 60px 0;
+    }
+
+    .aboutHero h1 {
+        font-size: 47px;
+    }
+
+    .aboutIntro {
+        grid-template-columns: 1fr;
+        padding: 65px 0;
+    }
+
+    .introHighlight {
+        min-height: 280px;
+    }
+
+    .serviceGrid,
+    .serveGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .certificateSection {
+        padding: 45px;
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .operationSteps {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .stepLine {
+        display: none;
+    }
+
+    .operationStep {
+        padding-bottom: 20px;
+        border-bottom: 1px solid #cbd3cd;
+    }
+
+    .missionContent {
+        padding: 65px 0;
+    }
+
+    .missionContent h2 {
+        font-size: 37px;
+    }
+
+    .aboutCtaContent {
+        padding: 55px 35px;
+    }
+
+    .footerMain {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footerBrand {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 560px) {
+
+    .mainNavigation {
+        width: 94%;
+        min-height: 64px;
+    }
+
+    .brandLogo {
+        font-size: 21px;
+    }
+
+    .navigationActions {
+        gap: 6px;
+    }
+
+    .themeToggle {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .signupButton {
+        min-height: 34px;
+        padding: 0 10px;
+        font-size: 11px;
+    }
+
+    .mobileMenuButton {
+        width: 35px;
+        height: 35px;
+    }
+
+    .mobileMenuButton span {
+        width: 21px;
+    }
+
+    .aboutHero {
+        min-height: 350px;
+    }
+
+    .aboutHeroContent {
+        width: 94%;
+        padding: 45px 0;
+    }
+
+    .aboutHero .sectionEyebrow {
+        margin-bottom: 9px;
+        font-size: 14px;
+    }
+
+    .aboutHero h1 {
+        max-width: 340px;
+        margin-bottom: 15px;
+        font-size: 35px;
+        line-height: 1.08;
+        letter-spacing: -1px;
+    }
+
+    .aboutHeroContent > p:last-child {
+        max-width: 350px;
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    .aboutIntro,
+    .whatWeDo,
+    .operationSection,
+    .whoWeServe,
+    .supportSection {
+        width: 94%;
+    }
+
+    .aboutIntro {
+        padding: 50px 0;
+        gap: 30px;
+    }
+
+    .sectionEyebrow {
+        margin-bottom: 9px;
+        font-size: 16px;
+        letter-spacing: 1.5px;
+    }
+
+    .introText h2,
+    .sectionHeading h2 {
+        margin-bottom: 17px;
+        font-size: 28px;
+        line-height: 1.17;
+    }
+
+    .introText p:not(.sectionEyebrow) {
+        margin-bottom: 13px;
+        font-size: 19px;
+        line-height: 1.65;
+    }
+
+    .introHighlight {
+        min-height: 230px;
+        padding: 27px;
+        border-radius: 10px;
+    }
+
+    .introHighlight h3 {
+        margin-bottom: 13px;
+        font-size: 26px;
+    }
+
+    .introHighlight p {
+        font-size: 13px;
+    }
+
+    .whatWeDo {
+        padding: 0 0 50px;
+    }
+
+    .sectionHeading {
+        margin-bottom: 25px;
+    }
+
+    .serviceGrid,
+    .serveGrid {
+        gap: 10px;
+    }
+
+    .serviceCard,
+    .serveCard {
+        min-height: 0;
+        padding: 22px;
+        border-radius: 9px;
+    }
+
+    .serviceNumber {
+        margin-bottom: 28px;
+        font-size: 11px;
+    }
+
+    .serviceCard h3,
+    .serveCard h3 {
+        margin-bottom: 9px;
+        font-size: 18px;
+    }
+
+    .serviceCard p,
+    .serveCard p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .certificateSection {
+        width: 94%;
+        margin-bottom: 50px;
+        padding: 30px 20px;
+        gap: 25px;
+        border-radius: 10px;
+    }
+
+    .certificateContent h2 {
+        margin-bottom: 14px;
+        font-size: 27px;
+    }
+
+    .certificateContent p:not(.sectionEyebrow) {
+        margin-bottom: 13px;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .certificateBox {
+        padding: 23px 17px;
+    }
+
+    .certificateBox h3 {
+        font-size: 19px;
+    }
+
+    .certificateBox > p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .certificatePlaceholder {
+        min-height: 90px;
+        font-size: 13px;
+    }
+
+    .operationSection {
+        padding-bottom: 50px;
+    }
+
+    .operationSteps {
+        gap: 13px;
+    }
+
+    .operationStep {
+        padding-bottom: 17px;
+    }
+
+    .stepCircle {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 11px;
+        font-size: 10px;
+    }
+
+    .operationStep h3 {
+        margin-bottom: 7px;
+        font-size: 18px;
+    }
+
+    .operationStep p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .whoWeServe {
+        padding-bottom: 50px;
+    }
+
+    .missionContent {
+        width: 94%;
+        padding: 55px 0;
+    }
+
+    .missionContent h2 {
+        margin-bottom: 15px;
+        font-size: 29px;
+        line-height: 1.18;
+    }
+
+    .missionContent p:last-child {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .supportSection {
+        padding: 50px 0;
+    }
+
+    .supportContent h2 {
+        margin-bottom: 13px;
+        font-size: 28px;
+    }
+
+    .supportContent > p:not(.sectionEyebrow) {
+        margin-bottom: 20px;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .supportButton {
+        min-height: 40px;
+        padding: 0 16px;
+        font-size: 12px;
+    }
+
+    .aboutCta {
+        width: 94%;
+        margin-bottom: 50px;
+        border-radius: 10px;
+    }
+
+    .aboutCtaContent {
+        padding: 38px 20px;
+    }
+
+    .aboutCta h2 {
+        margin-bottom: 12px;
+        font-size: 28px;
+        line-height: 1.15;
+    }
+
+    .aboutCta p:not(.sectionEyebrow) {
+        margin-bottom: 20px;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .ctaButtons {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .primaryButton,
+    .secondaryButton {
+        width: 100%;
+        min-height: 40px;
+        font-size: 12px;
+    }
+
+    .footerMain {
+        width: 94%;
+        grid-template-columns: 1fr 1fr;
+        gap: 27px 18px;
+        padding: 42px 0 32px;
+    }
+
+    .footerBrand {
+        grid-column: span 2;
+    }
+
+    .footerBrand p {
+        max-width: 100%;
+        margin-top: 12px;
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+    .footerBrand .footerCompany {
+        font-size: 12px;
+    }
+
+    .footerColumn {
+        gap: 8px;
+    }
+
+    .footerColumn h3 {
+        margin-bottom: 4px;
+        font-size: 13px;
+    }
+
+    .footerColumn a,
+    .footerColumn p {
+        font-size: 11px;
+        line-height: 1.45;
+    }
+
+    .footerBottom {
+        width: 94%;
+        padding: 17px 0;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footerBottom p,
+    .footerBottomLinks a {
+        font-size: 10px;
+    }
+
+    .footerBottomLinks {
+        gap: 15px;
+    }
+
+    .backToTop {
+        right: 14px;
+        bottom: 14px;
+        width: 38px;
+        height: 38px;
+        font-size: 17px;
+    }
+
+    .certificateModal {
+        padding: 10px;
+    }
+
+    .certificateModalContent {
+        max-height: 94vh;
+        border-radius: 9px;
+    }
+
+    .certificateDocument {
+        padding: 45px 18px 25px;
+    }
+
+    .certificateTitle {
+        font-size: 13px;
+    }
+
+    .certificateDocument h2 {
+        font-size: 23px;
+    }
+
+    .certificateDocument > p {
+        font-size: 13px;
+    }
+
+    .certificateArea {
+        min-height: 230px;
+        margin: 22px 0 12px;
+        font-size: 13px;
+    }
+}
+

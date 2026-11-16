@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FarmRent | Farm Equipment Rental</title>
+
+    <meta name="description" content="FarmRent connects farmers with reliable farm equipment and agro products, making agricultural resources easier to access in Nigeria.">
+
+    <link rel="canonical" href="https://yourdomain.com/">
+    <link rel="stylesheet" href="/css/index.css">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FarmRent | Farm Equipment Rental">
+    <meta property="og:description" content="FarmRent connects farmers with farm equipment and agro products.">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:image" content="https://yourdomain.com/images/social-share.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FarmRent | Farm Equipment Rental">
+    <meta name="twitter:description" content="FarmRent connects farmers with farm equipment and agro products.">
+    <meta name="twitter:image" content="https://yourdomain.com/images/social-share.png">
+</head>
+
+<body>
+
+    <div class="splashScreen" id="splashScreen">
+        <div class="splashContent">
+            <div class="splashLogo">
+                Farm<span>Rent</span>
+            </div>
+
+            <p>Making farming equipment easier to access</p>
+
+            <div class="loadingSpinner"></div>
+        </div>
+    </div>
+
+    <div class="pageLoader" id="pageLoader"></div>
+
+    <header class="siteHeader">
+        <nav class="mainNavigation">
+
+            <a href="index.html" class="brandLogo">
+                Farm<span>Rent</span>
+            </a>
+
+            <div class="navigationLinks" id="navigationLinks">
+
+                <div class="mobileMenuTop">
+                    <span>Menu</span>
+
+                    <button
+                        class="closeMenuButton"
+                        id="closeMenuButton"
+                        aria-label="Close menu"
+                    >
+                        ×
+                    </button>
+                </div>
+
+                <a href="index.html" class="activeLink">Home</a>
+                <a href="equipment.html">Equipment</a>
+                <a href="agro-products.html">Agro Products</a>
+                <a href="about.html">About</a>
+                <a href="help.html">Help</a>
+
+                <div class="mobileOnlyLinks">
+                    <a href="profile.html">Profile</a>
+                    <a href="login.html">Login</a>
+                    <a href="register.html">Sign Up</a>
+                </div>
+
+            </div>
+
+            <div class="navigationActions">
+
+               
+
+                <a href="login.html" class="loginLink desktopOnlyAction">
+                    Login
+                </a>
+
+                <a href="register.html" class="signupButton desktopOnlyAction">
+                    Sign Up
+                </a>
+
+                <a
+                    href="profile.html"
+                    class="profileLink desktopOnlyAction"
+                    aria-label="Profile"
+                >
+                    <span class="profileIcon">♙</span>
+                </a>
+
+                 <button
+                    class="themeToggle"
+                    id="themeToggle"
+                    aria-label="Toggle dark mode"
+                >
+                    <span id="themeIcon">☾</span>
+                </button>
+
+                <button
+                    class="mobileMenuButton"
+                    id="mobileMenuButton"
+                    aria-label="Open menu"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="heroSection">
+
+            <div class="heroSlides">
+
+                <article class="heroSlide activeSlide">
+
+                    <div class="heroImage heroImageOne"></div>
+                    <div class="heroOverlay"></div>
+
+                    <div class="heroContent">
+
+                        <p class="heroEyebrow">
+                            FARM EQUIPMENT MARKETPLACE
+                        </p>
+
+                        <h1>
+                            Get the equipment you need to get the job done.
+                        </h1>
+
+                        <p class="heroDescription">
+                            Rent reliable farm equipment, list your own machines,
+                            and get access to agricultural products when you need them.
+                        </p>
+
+                        <div class="heroButtons">
+
+                            <a href="equipment.html" class="primaryButton">
+                                Get Started
+                            </a>
+
+                            <a href="list-equipment.html" class="secondaryButton">
+                                List Equipment
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="heroSlide">
+
+                    <div class="heroImage heroImageTwo"></div>
+                    <div class="heroOverlay"></div>
+
+                    <div class="heroContent">
+
+                        <p class="heroEyebrow">
+                            RENT WITH EASE
+                        </p>
+
+                        <h1>
+                            Find the right machine for your farm.
+                        </h1>
+
+                        <p class="heroDescription">
+                            Browse equipment available for rental and choose
+                            what works best for your farming needs.
+                        </p>
+
+                        <div class="heroButtons">
+
+                            <a href="equipment.html" class="primaryButton">
+                                Rent Equipment
+                            </a>
+
+                            <a href="about.html" class="secondaryButton">
+                                About
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="heroSlide">
+
+                    <div class="heroImage heroImageThree"></div>
+                    <div class="heroOverlay"></div>
+
+                    <div class="heroContent">
+
+                        <p class="heroEyebrow">
+                            EQUIPMENT OWNERS
+                        </p>
+
+                        <h1>
+                            Put your farm equipment to work.
+                        </h1>
+
+                        <p class="heroDescription">
+                            List your equipment on FarmRent and connect with
+                            farmers looking for machines to rent.
+                        </p>
+
+                        <div class="heroButtons">
+
+                            <a href="list-equipment.html" class="primaryButton">
+                                List Equipment
+                            </a>
+
+                            <a href="register.html" class="secondaryButton">
+                                Create Account
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="heroIndicators">
+
+                <button
+                    class="heroIndicator activeIndicator"
+                    data-slide="0"
+                    aria-label="Show first slide"
+                ></button>
+
+                <button
+                    class="heroIndicator"
+                    data-slide="1"
+                    aria-label="Show second slide"
+                ></button>
+
+                <button
+                    class="heroIndicator"
+                    data-slide="2"
+                    aria-label="Show third slide"
+                ></button>
+
+            </div>
+
+        </section>
+
+        <section class="equipmentSection" id="equipment">
+
+            <div class="sectionHeading">
+
+                <div>
+                    <p class="sectionEyebrow">
+                        EXPLORE EQUIPMENT
+                    </p>
+
+                    <h2>
+                        Equipment ready for your next farming job.
+                    </h2>
+                </div>
+
+                <a href="equipment.html" class="textButton">
+                    View All Equipment →
+                </a>
+
+            </div>
+
+            <div class="equipmentCarouselWrapper">
+
+                <button
+                    class="carouselButton carouselPrevious"
+                    id="carouselPrevious"
+                    aria-label="Previous equipment"
+                >
+                    ←
+                </button>
+
+                <div class="equipmentGrid" id="equipmentGrid">
+
+                    <article class="equipmentCard">
+
+                        <div class="equipmentImage equipmentImageOne">
+                            <span class="availabilityBadge">
+                                Available
+                            </span>
+                        </div>
+
+                        <div class="equipmentDetails">
+
+                            <p class="equipmentLocation">
+                                Jos, Plateau State
+                            </p>
+
+                            <h3>Farm Tractor</h3>
+
+                            <p class="equipmentDescription">
+                                Reliable tractor for ploughing, hauling and field preparation.
+                            </p>
+
+                            <div class="equipmentBottom">
+
+                                <div>
+                                    <span class="priceAmount">
+                                        ₦80,000
+                                    </span>
+
+                                    <span class="pricePeriod">
+                                        / day
+                                    </span>
+                                </div>
+
+                                <button
+                                    class="smallPrimaryButton rentNowButton"
+                                    data-name="Farm Tractor"
+                                    data-location="Jos, Plateau State"
+                                    data-price="₦80,000"
+                                    data-period="day"
+                                    data-image="../images/Tractor1.jpeg"
+                                    data-description="Reliable tractor for ploughing, hauling and field preparation."
+                                >
+                                    Rent Now
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <article class="equipmentCard">
+
+                        <div class="equipmentImage equipmentImageTwo">
+                            <span class="availabilityBadge">
+                                Available
+                            </span>
+                        </div>
+
+                        <div class="equipmentDetails">
+
+                            <p class="equipmentLocation">
+                                Jos, Plateau State
+                            </p>
+
+                            <h3>Power Tiller</h3>
+
+                            <p class="equipmentDescription">
+                                Compact equipment suitable for smaller farm operations.
+                            </p>
+
+                            <div class="equipmentBottom">
+
+                                <div>
+                                    <span class="priceAmount">
+                                        ₦35,000
+                                    </span>
+
+                                    <span class="pricePeriod">
+                                        / day
+                                    </span>
+                                </div>
+
+                                <button
+                                    class="smallPrimaryButton rentNowButton"
+                                    data-name="Power Tiller"
+                                    data-location="Jos, Plateau State"
+                                    data-price="₦35,000"
+                                    data-period="day"
+                                    data-image="../images/tiller1.jpeg"
+                                    data-description="Compact equipment suitable for smaller farm operations."
+                                >
+                                    Rent Now
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <article class="equipmentCard">
+
+                        <div class="equipmentImage equipmentImageThree">
+                            <span class="availabilityBadge">
+                                Available
+                            </span>
+                        </div>
+
+                        <div class="equipmentDetails">
+
+                            <p class="equipmentLocation">
+                                Jos, Plateau State
+                            </p>
+
+                            <h3>Irrigation System</h3>
+
+                            <p class="equipmentDescription">
+                                Irrigation equipment for efficient watering of your crops.
+                            </p>
+
+                            <div class="equipmentBottom">
+
+                                <div>
+                                    <span class="priceAmount">
+                                        ₦25,000
+                                    </span>
+
+                                    <span class="pricePeriod">
+                                        / day
+                                    </span>
+                                </div>
+
+                                <button
+                                    class="smallPrimaryButton rentNowButton"
+                                    data-name="Irrigation System"
+                                    data-location="Jos, Plateau State"
+                                    data-price="₦25,000"
+                                    data-period="day"
+                                    data-image="../images/irrigator1.jpeg"
+                                    data-description="Irrigation equipment for efficient watering of your crops."
+                                >
+                                    Rent Now
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <article class="equipmentCard">
+
+                        <div class="equipmentImage equipmentImageFour">
+                            <span class="availabilityBadge">
+                                Available
+                            </span>
+                        </div>
+
+                        <div class="equipmentDetails">
+
+                            <p class="equipmentLocation">
+                                Jos, Plateau State
+                            </p>
+
+                            <h3>Combine Harvester</h3>
+
+                            <p class="equipmentDescription">
+                                Efficient harvesting equipment for larger farm operations.
+                            </p>
+
+                            <div class="equipmentBottom">
+
+                                <div>
+                                    <span class="priceAmount">
+                                        ₦120,000
+                                    </span>
+
+                                    <span class="pricePeriod">
+                                        / day
+                                    </span>
+                                </div>
+
+                                <button
+                                    class="smallPrimaryButton rentNowButton"
+                                    data-name="Combine Harvester"
+                                    data-location="Jos, Plateau State"
+                                    data-price="₦120,000"
+                                    data-period="day"
+                                    data-image="../images/combine harvester2.jpeg"
+                                    data-description="Efficient harvesting equipment for larger farm operations."
+                                >
+                                    Rent Now
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+                <button
+                    class="carouselButton carouselNext"
+                    id="carouselNext"
+                    aria-label="Next equipment"
+                >
+                    →
+                </button>
+
+            </div>
+
+            <div class="equipmentExplore">
+
+                <a href="equipment.html" class="exploreEquipmentButton">
+                    Explore More Equipment <span>→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <section class="trustSection">
+
+            <div class="trustTrack">
+
+                <div class="trustCard">
+                    <div class="trustIcon">✓</div>
+
+                    <div>
+                        <h3>Reliable Service</h3>
+                        <p>Dependable support for every rental.</p>
+                    </div>
+                </div>
+
+                <div class="trustCard">
+                    <div class="trustIcon">24</div>
+
+                    <div>
+                        <h3>24/7 Access</h3>
+                        <p>Explore equipment whenever you need it.</p>
+                    </div>
+                </div>
+
+                <div class="trustCard">
+                    <div class="trustIcon">01</div>
+
+                    <div>
+                        <h3>Easy Booking</h3>
+                        <p>A simple way to request equipment.</p>
+                    </div>
+                </div>
+
+                <div class="trustCard">
+                    <div class="trustIcon">★</div>
+
+                    <div>
+                        <h3>Quality Equipment</h3>
+                        <p>Find machines ready for the job.</p>
+                    </div>
+                </div>
+
+                <div class="trustCard">
+                    <div class="trustIcon">NG</div>
+
+                    <div>
+                        <h3>Local Access</h3>
+                        <p>Built around farmers in Nigeria.</p>
+                    </div>
+                </div>
+
+                <div class="trustCard">
+                    <div class="trustIcon">+</div>
+
+                    <div>
+                        <h3>Modern Farming</h3>
+                        <p>Better access to agricultural resources.</p>
+                    </div>
+                </div>
+
+                <div class="trustCard">
+                    <div class="trustIcon">✓</div>
+
+                    <div>
+                        <h3>Reliable Service</h3>
+                        <p>Dependable support for every rental.</p>
+                    </div>
+                </div>
+
+                <div class="trustCard">
+                    <div class="trustIcon">24</div>
+
+                    <div>
+                        <h3>24/7 Access</h3>
+                        <p>Explore equipment whenever you need it.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="howItWorksSection">
+
+            <div class="centeredHeading">
+
+                <!-- <p class="sectionEyebrow">
+                    About
+                </p> -->
+
+                <h2>
+                    We make getting farm equipments easier.
+                </h2>
+
+                <p>
+                    FarmRent connects farmers with equipment owners through
+                    one simple platform.
+                </p>
+
+            </div>
+
+            <div class="stepsGrid">
+
+                <article class="stepCard">
+                    <span class="stepNumber">01</span>
+                    <h3>Search</h3>
+                    <p>Browse equipment available for your farming needs.</p>
+                </article>
+
+                <article class="stepCard">
+                    <span class="stepNumber">02</span>
+                    <h3>Choose</h3>
+                    <p>Select the equipment that works for your project.</p>
+                </article>
+
+                <article class="stepCard">
+                    <span class="stepNumber">03</span>
+                    <h3>Book</h3>
+                    <p>Make your rental request and arrange your booking.</p>
+                </article>
+
+                <article class="stepCard">
+                    <span class="stepNumber">04</span>
+                    <h3>Farm</h3>
+                    <p>Get your equipment and get the work done.</p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="plateauSection">
+
+            <div class="plateauImage"></div>
+            <div class="plateauOverlay"></div>
+
+            <div class="plateauContent">
+
+                <p class="sectionEyebrow">
+                    BUILT FOR FARMERS
+                </p>
+
+                <h2>
+                    Making agricultural equipment easier to access.
+                </h2>
+
+                <p>
+                    FarmRent helps farmers find the machines they need while
+                    giving equipment owners a way to put their machines to work.
+                </p>
+
+                <a href="about.html" class="primaryButton">
+                    Learn More
+                </a>
+
+            </div>
+
+        </section>
+
+        <section class="ownerSection">
+
+            <div class="ownerContent">
+
+                <p class="sectionEyebrow">
+                    FOR EQUIPMENT OWNERS
+                </p>
+
+                <h2>
+                    Have equipment sitting idle?
+                </h2>
+
+                <p>
+                    List your machines on FarmRent and make them available to
+                    farmers who need them.
+                </p>
+
+                <a href="list-equipment.html" class="primaryButton">
+                    List Your Equipment
+                </a>
+
+            </div>
+
+            <div class="ownerFeatures">
+
+                <div class="ownerFeature">
+                    <span>01</span>
+                    <h3>List Your Machine</h3>
+                    <p>Add your equipment and rental details.</p>
+                </div>
+
+                <div class="ownerFeature">
+                    <span>02</span>
+                    <h3>Reach Farmers</h3>
+                    <p>Make your equipment visible to people looking to rent.</p>
+                </div>
+
+                <div class="ownerFeature">
+                    <span>03</span>
+                    <h3>Put It To Work</h3>
+                    <p>Turn unused equipment into an additional opportunity.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="agroProductSection">
+
+            <div class="agroProductImage"></div>
+
+            <div class="agroProductContent">
+
+                <p class="sectionEyebrow">
+                    AGRO PRODUCTS
+                </p>
+
+                <h2>
+                    More resources for your farming journey.
+                </h2>
+
+                <p>
+                    Discover agricultural products and resources that can help
+                    you prepare, grow and manage your farm more effectively.
+                </p>
+
+                <a href="agro-products.html" class="secondaryDarkButton">
+                    Explore Agro Products
+                </a>
+
+            </div>
+
+        </section>
+
+        <section class="helpSection">
+
+            <div class="helpContent">
+
+                <p class="sectionEyebrow">
+                    NEED HELP?
+                </p>
+
+                <h2>
+                    Not sure where to start?
+                </h2>
+
+                <p>
+                    Find answers about renting equipment, listing machines,
+                    agro products and using FarmRent.
+                </p>
+
+                <a href="help.html" class="primaryButton">
+                    Visit Help Center
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="siteFooter">
+
+        <div class="footerMain">
+
+            <div class="footerBrand">
+
+                <a href="index.html" class="footerLogo">
+                    Farm<span>Rent</span>
+                </a>
+
+                <p>
+                    A farm equipment rental platform connecting farmers
+                    and equipment owners.
+                </p>
+
+                <p class="footerCompany">
+                    Domsal&Bonks Nigeria Limited
+                </p>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>FarmRent</h3>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="help.html">
+                    Help Center
+                </a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>Equipment</h3>
+
+                <a href="equipment.html">
+                    Browse Equipment
+                </a>
+
+                <a href="list-equipment.html">
+                    List Equipment
+                </a>
+
+                <a href="equipment.html">
+                    Rent Equipment
+                </a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>Agro Products</h3>
+
+                <a href="agro-products.html">
+                    Browse Products
+                </a>
+
+                <a href="agro-products.html">
+                    Explore Products
+                </a>
+
+                <a href="register.html">
+                    Create Account
+                </a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>Account</h3>
+
+                <a href="profile.html">
+                    Profile
+                </a>
+
+                <a href="register.html">
+                    Create Account
+                </a>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footerBottom">
+
+            <p>
+                © 2026 FarmRent. All rights reserved.
+            </p>
+
+            <div class="footerBottomLinks">
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <button
+        class="backToTop"
+        id="backToTop"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+    <div class="equipmentModal" id="equipmentModal">
+
+        <div class="modalBackdrop" id="modalBackdrop"></div>
+
+        <div class="equipmentModalBox">
+
+            <button
+                class="modalCloseButton"
+                id="modalCloseButton"
+                aria-label="Close equipment details"
+            >
+                ×
+            </button>
+
+            <div class="modalImage" id="modalImage"></div>
+
+            <div class="modalContent">
+
+                <p class="modalLocation" id="modalLocation"></p>
+
+                <h2 id="modalName"></h2>
+
+                <div class="modalPrice">
+
+                    <span id="modalPrice"></span>
+                    <span id="modalPeriod"></span>
+
+                </div>
+
+                <div class="modalAvailability">
+
+                    <span class="modalAvailabilityDot"></span>
+                    Available
+
+                </div>
+
+                <p
+                    class="modalDescription"
+                    id="modalDescription"
+                ></p>
+
+                <div class="modalDetailsGrid">
+
+                    <div>
+                        <span>Location</span>
+                        <strong id="modalLocationDetail"></strong>
+                    </div>
+
+                    <div>
+                        <span>Rental</span>
+                        <strong>Daily</strong>
+                    </div>
+
+                    <div>
+                        <span>Status</span>
+                        <strong>Available</strong>
+                    </div>
+
+                    <div>
+                        <span>Booking</span>
+                        <strong>Required</strong>
+                    </div>
+
+                </div>
+
+                <button
+                    class="bookNowButton"
+                    id="bookNowButton"
+                >
+                    Book Now
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="/js/script.js"></script>
+
+</body>
+</html>

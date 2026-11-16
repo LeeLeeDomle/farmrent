@@ -1,0 +1,1447 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #111111;
+    background-color: #f7f5ed;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.modalOpen {
+    overflow: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 3px solid #228b22;
+    outline-offset: 3px;
+}
+
+.pageLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #228b22;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.pageLoader.active {
+    opacity: 1;
+    animation: loadingBar 1s ease-in-out infinite;
+}
+
+.siteHeader {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e3e3e3;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+.mainNavigation {
+    width: 90%;
+    max-width: 1240px;
+    min-height: 74px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brandLogo {
+    flex-shrink: 0;
+    font-size: 29px;
+    font-weight: 800;
+    color: #17351f;
+    letter-spacing: -1px;
+}
+
+.brandLogo span {
+    color: #228b22;
+}
+
+.navigationLinks {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.navigationLinks a {
+    position: relative;
+    padding: 8px 0;
+    color: #111111;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navigationLinks a::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    content: "";
+    background-color: #228b22;
+    transition: width 0.3s ease;
+}
+
+.navigationLinks a:hover {
+    color: #228b22;
+}
+
+.navigationLinks a:hover::after {
+    width: 100%;
+}
+
+.navigationLinks .activeLink {
+    color: #228b22;
+}
+
+.navigationLinks .activeLink::after {
+    width: 100%;
+}
+
+.closeMenuButton {
+    display: none;
+}
+
+.mobileAccountLinks {
+    display: none;
+}
+
+.navigationActions {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.themeToggle {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: 1px solid #d5d5d5;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #17351f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.themeToggle:hover {
+    background-color: #228b22;
+    border-color: #228b22;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.desktopProfileLink {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #17351f;
+    font-size: 21px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.desktopProfileLink:hover {
+    color: #228b22;
+    transform: translateY(-2px);
+}
+
+.loginLink {
+    color: #111111;
+    font-size: 14px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.loginLink:hover {
+    color: #228b22;
+}
+
+.signupButton {
+    padding: 10px 18px;
+    border-radius: 5px;
+    background-color: #228b22;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.signupButton:hover {
+    background-color: #176b17;
+    transform: translateY(-2px);
+}
+
+.mobileMenuButton {
+    display: none;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+.mobileMenuButton span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 5px auto;
+    background-color: #17351f;
+}
+
+.equipmentHero {
+    position: relative;
+    min-height: 440px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.equipmentHeroImage {
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/Tractor1.jpeg");
+    background-position: center;
+    background-size: cover;
+}
+
+.equipmentHeroOverlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(10, 31, 17, 0.55);
+}
+
+.equipmentHeroContent {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+.equipmentHeroContent h1 {
+    max-width: 650px;
+    margin: 0;
+    font-size: 52px;
+    line-height: 1.08;
+    letter-spacing: -2px;
+}
+
+.equipmentHeroContent p:not(.sectionEyebrow) {
+    max-width: 570px;
+    margin: 18px 0 0;
+    color: #eeeeee;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.sectionEyebrow {
+    margin: 0 0 9px;
+    color: #228b22;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+.equipmentHeroContent .sectionEyebrow {
+    color: #ffffff;
+}
+
+.equipmentSection {
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 58px 0 65px;
+}
+
+.equipmentTop {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 24px;
+}
+
+.equipmentTop h2 {
+    max-width: 650px;
+    margin: 0;
+    color: #111111;
+    font-size: 39px;
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+.equipmentSearch {
+    width: 320px;
+    height: 44px;
+    display: flex;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.equipmentSearch input {
+    width: 100%;
+    min-width: 0;
+    padding: 0 13px;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    color: #111111;
+    font-size: 13px;
+}
+
+.equipmentSearch button {
+    width: 48px;
+    flex-shrink: 0;
+    border: 0;
+    background-color: #228b22;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.searchIcon {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+.equipmentFilters {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 25px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.equipmentFilters::-webkit-scrollbar {
+    display: none;
+}
+
+.filterButton {
+    flex-shrink: 0;
+    padding: 9px 15px;
+    border: 1px solid #d5d5d5;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #333333;
+    font-size: 12px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.filterButton:hover,
+.filterButton.activeFilter {
+    border-color: #228b22;
+    background-color: #228b22;
+    color: #ffffff;
+}
+
+.equipmentGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.equipmentCard {
+    overflow: hidden;
+    border: 1px solid #dddddd;
+    border-radius: 7px;
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.equipmentCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(23, 53, 31, 0.1);
+}
+
+.equipmentImage {
+    position: relative;
+    height: 210px;
+    background-position: center;
+    background-size: cover;
+    background-color: #dce3d9;
+}
+
+.equipmentImageOne,
+.equipmentImageFive {
+    background-image: url("../images/Tractor1.jpeg");
+}
+
+.equipmentImageTwo,
+.equipmentImageSix {
+    background-image: url("../images/tiller1.jpeg");
+}
+
+.equipmentImageThree,
+.equipmentImageSeven {
+    background-image: url("../images/irrigator1.jpeg");
+}
+
+.equipmentImageFour,
+.equipmentImageEight {
+    background-image: url("../images/combine harvester2.jpeg");
+}
+
+.availabilityBadge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #228b22;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.equipmentDetails {
+    padding: 17px;
+}
+
+.equipmentLocation {
+    margin: 0 0 6px;
+    color: #555555;
+    font-size: 12px;
+}
+
+.equipmentDetails h3 {
+    margin: 0 0 8px;
+    color: #111111;
+    font-size: 20px;
+}
+
+.equipmentDescription {
+    min-height: 39px;
+    margin: 0 0 17px;
+    color: #444444;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.equipmentBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 13px;
+    border-top: 1px solid #e1e1e1;
+}
+
+.priceAmount {
+    color: #17351f;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.pricePeriod {
+    color: #555555;
+    font-size: 11px;
+}
+
+.rentButton {
+    min-height: 36px;
+    padding: 0 14px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #228b22;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.rentButton:hover {
+    background-color: #176b17;
+    transform: translateY(-2px);
+}
+
+.noResults {
+    display: none;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.noResults h3 {
+    margin: 0 0 7px;
+    font-size: 23px;
+}
+
+.noResults p {
+    margin: 0;
+    color: #555555;
+    font-size: 14px;
+}
+
+.equipmentCta {
+    position: relative;
+    min-height: 360px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-color: #17351f;
+}
+
+.equipmentCta::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background-image: url("../images/Plateau rocks.jpeg");
+    background-position: center;
+    background-size: cover;
+    opacity: 0.28;
+}
+
+.equipmentCtaContent {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+.equipmentCtaContent .sectionEyebrow {
+    color: #ffffff;
+}
+
+.equipmentCtaContent h2 {
+    max-width: 650px;
+    margin: 0;
+    font-size: 43px;
+    line-height: 1.12;
+}
+
+.equipmentCtaContent p:not(.sectionEyebrow) {
+    max-width: 560px;
+    margin: 14px 0 21px;
+    color: #eeeeee;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.primaryButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0 22px;
+    border-radius: 5px;
+    background-color: #228b22;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.primaryButton:hover {
+    background-color: #176b17;
+    transform: translateY(-3px);
+}
+
+.siteFooter {
+    background-color: #102719;
+    color: #ffffff;
+}
+
+.footerMain {
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 50px 0;
+    display: grid;
+    grid-template-columns: 1.5fr repeat(4, 1fr);
+    gap: 28px;
+}
+
+.footerLogo {
+    display: inline-block;
+    margin-bottom: 13px;
+    font-size: 29px;
+    font-weight: 800;
+}
+
+.footerLogo span {
+    color: #228b22;
+}
+
+.footerBrand p {
+    max-width: 300px;
+    margin: 0 0 13px;
+    color: #d2d9d3;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.footerCompany {
+    color: #eeeeee !important;
+    font-weight: 700;
+}
+
+.footerColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footerColumn h3 {
+    margin: 0 0 6px;
+    font-size: 14px;
+}
+
+.footerColumn a,
+.footerColumn p {
+    margin: 0;
+    color: #d2d9d3;
+    font-size: 13px;
+    line-height: 1.5;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footerColumn a:hover {
+    color: #228b22;
+    transform: translateX(3px);
+}
+
+.footerBottom {
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 17px 0;
+    border-top: 1px solid #304837;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footerBottom p {
+    margin: 0;
+    color: #d2d9d3;
+    font-size: 12px;
+}
+
+.footerBottomLinks {
+    display: flex;
+    gap: 17px;
+}
+
+.footerBottomLinks a {
+    color: #d2d9d3;
+    font-size: 12px;
+}
+
+.backToTop {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 43px;
+    height: 43px;
+    border: 0;
+    border-radius: 50%;
+    background-color: #17351f;
+    color: #ffffff;
+    font-size: 18px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 80;
+}
+
+.backToTop.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.backToTop:hover {
+    background-color: #228b22;
+    transform: translateY(-3px);
+}
+
+.modalBackdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modalBackdrop.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.equipmentModal {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+}
+
+.modalImage {
+    min-height: 520px;
+    background-position: center;
+    background-size: cover;
+    background-image: url("../images/Tractor1.jpeg");
+}
+
+.modalImage.tractor {
+    background-image: url("../images/Tractor1.jpeg");
+}
+
+.modalImage.tiller {
+    background-image: url("../images/tiller1.jpeg");
+}
+
+.modalImage.irrigation {
+    background-image: url("../images/irrigator1.jpeg");
+}
+
+.modalImage.harvester {
+    background-image: url("../images/combine harvester2.jpeg");
+}
+
+.modalContent {
+    padding: 42px;
+    align-self: center;
+}
+
+.modalCloseButton {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    z-index: 5;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #111111;
+    font-size: 25px;
+    line-height: 1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.modalLocation {
+    margin: 0 0 7px;
+    color: #555555;
+    font-size: 12px;
+}
+
+.modalContent h2 {
+    margin: 0;
+    color: #111111;
+    font-size: 35px;
+    line-height: 1.1;
+}
+
+.modalAvailability {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 14px 0;
+    color: #228b22;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.modalAvailability span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #228b22;
+}
+
+.modalDescription {
+    margin: 0 0 19px;
+    color: #444444;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.modalPrice {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.modalPrice strong {
+    color: #17351f;
+    font-size: 27px;
+}
+
+.modalPrice span {
+    color: #555555;
+    font-size: 12px;
+}
+
+.modalFeatures {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin: 19px 0;
+}
+
+.modalFeatures div {
+    padding: 11px 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+.modalFeatures span {
+    color: #228b22;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.modalFeatures p {
+    margin: 5px 0 0;
+    color: #333333;
+    font-size: 11px;
+    line-height: 1.3;
+}
+
+.bookButton {
+    width: 100%;
+    min-height: 47px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #228b22;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.bookButton:hover {
+    background-color: #176b17;
+    transform: translateY(-2px);
+}
+
+.loginNotice {
+    margin: 10px 0 0;
+    color: #666666;
+    font-size: 11px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+body.darkMode {
+    color: #eeeeee;
+    background-color: #111711;
+}
+
+body.darkMode .siteHeader {
+    background-color: #172019;
+    border-color: #303b33;
+}
+
+body.darkMode .brandLogo {
+    color: #ffffff;
+}
+
+body.darkMode .navigationLinks a {
+    color: #eeeeee;
+}
+
+body.darkMode .navigationLinks a:hover,
+body.darkMode .navigationLinks .activeLink {
+    color: #228b22;
+}
+
+body.darkMode .desktopProfileLink {
+    color: #ffffff;
+}
+
+body.darkMode .loginLink {
+    color: #eeeeee;
+}
+
+body.darkMode .themeToggle {
+    background-color: #243027;
+    border-color: #465349;
+    color: #ffffff;
+}
+
+body.darkMode .mobileMenuButton span {
+    background-color: #ffffff;
+}
+
+body.darkMode .equipmentTop h2 {
+    color: #ffffff;
+}
+
+body.darkMode .equipmentSearch {
+    background-color: #172019;
+    border-color: #303b33;
+}
+
+body.darkMode .equipmentSearch input {
+    color: #ffffff;
+}
+
+body.darkMode .equipmentSearch input::placeholder {
+    color: #b9c2bb;
+}
+
+body.darkMode .filterButton {
+    background-color: #172019;
+    border-color: #303b33;
+    color: #eeeeee;
+}
+
+body.darkMode .equipmentCard {
+    background-color: #172019;
+    border-color: #303b33;
+}
+
+body.darkMode .equipmentDetails h3 {
+    color: #ffffff;
+}
+
+body.darkMode .equipmentLocation,
+body.darkMode .equipmentDescription,
+body.darkMode .pricePeriod {
+    color: #c8cec9;
+}
+
+body.darkMode .equipmentBottom {
+    border-color: #303b33;
+}
+
+body.darkMode .priceAmount {
+    color: #ffffff;
+}
+
+body.darkMode .equipmentModal {
+    background-color: #172019;
+}
+
+body.darkMode .modalLocation,
+body.darkMode .modalDescription,
+body.darkMode .modalPrice span {
+    color: #c8cec9;
+}
+
+body.darkMode .modalContent h2,
+body.darkMode .modalFeatures p {
+    color: #ffffff;
+}
+
+body.darkMode .modalPrice {
+    border-color: #303b33;
+}
+
+body.darkMode .modalFeatures div {
+    border-color: #303b33;
+}
+
+body.darkMode .modalCloseButton {
+    background-color: #243027;
+    color: #ffffff;
+}
+
+body.darkMode .loginNotice {
+    color: #aeb7b0;
+}
+
+@keyframes loadingBar {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@media (max-width: 1100px) {
+
+    .navigationLinks {
+        gap: 15px;
+    }
+
+    .equipmentGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footerMain {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footerBrand {
+        grid-column: span 3;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .mainNavigation {
+        min-height: 68px;
+    }
+
+    .navigationLinks {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 290px;
+        max-width: 85%;
+        height: 100vh;
+        padding: 75px 28px 30px;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.12);
+        transition: right 0.3s ease;
+        z-index: 200;
+        overflow-y: auto;
+    }
+
+    .navigationLinks.open {
+        right: 0;
+    }
+
+    .navigationLinks > a {
+        width: 100%;
+        padding: 13px 0;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .navigationLinks > a::after {
+        width: 0;
+    }
+
+    .navigationLinks > a:hover::after {
+        width: 100%;
+    }
+
+    .closeMenuButton {
+        position: absolute;
+        top: 18px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        padding: 0;
+        border: 1px solid #dddddd;
+        border-radius: 50%;
+        background-color: transparent;
+        color: #17351f;
+        font-size: 27px;
+        line-height: 1;
+    }
+
+    .mobileAccountLinks {
+        display: flex;
+        flex-direction: column;
+        margin-top: 12px;
+        padding-top: 5px;
+        border-top: 1px solid #dddddd;
+    }
+
+    .mobileAccountLinks a {
+        width: 100%;
+        padding: 13px 0;
+        border-bottom: 1px solid #e5e5e5;
+        color: #111111;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .mobileAccountLinks a::after {
+        display: none;
+    }
+
+    .mobileProfileLink {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .profileIcon {
+        font-size: 19px;
+    }
+
+    .mobileSignupLink {
+        margin-top: 12px;
+        padding: 10px 15px !important;
+        border: 0 !important;
+        border-radius: 5px;
+        background-color: #228b22;
+        color: #ffffff !important;
+        text-align: center;
+        font-size: 13px !important;
+        font-weight: 800 !important;
+    }
+
+    .mobileSignupLink:hover {
+        background-color: #176b17;
+    }
+
+    .desktopProfileLink,
+    .loginLink,
+    .signupButton {
+        display: none;
+    }
+
+    .mobileMenuButton {
+        display: block;
+    }
+
+    .equipmentHero {
+        min-height: 390px;
+    }
+
+    .equipmentHeroContent h1 {
+        font-size: 44px;
+    }
+
+    .equipmentTop {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .equipmentSearch {
+        width: 100%;
+        max-width: 430px;
+    }
+
+    .equipmentGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .equipmentImage {
+        height: 175px;
+    }
+
+    .equipmentDetails {
+        padding: 13px;
+    }
+
+    .equipmentDetails h3 {
+        font-size: 17px;
+    }
+
+    .equipmentDescription {
+        font-size: 12px;
+    }
+
+    .equipmentCtaContent h2 {
+        font-size: 37px;
+    }
+
+    .footerMain {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footerBrand {
+        grid-column: span 2;
+    }
+
+    body.darkMode .navigationLinks {
+        background-color: #172019;
+    }
+
+    body.darkMode .navigationLinks > a,
+    body.darkMode .mobileAccountLinks a {
+        color: #eeeeee;
+        border-color: #303b33;
+    }
+
+    body.darkMode .closeMenuButton {
+        border-color: #465349;
+        color: #ffffff;
+    }
+
+    body.darkMode .mobileAccountLinks {
+        border-color: #303b33;
+    }
+}
+
+@media (max-width: 560px) {
+
+    .mainNavigation {
+        width: 90%;
+    }
+
+    .brandLogo {
+        font-size: 25px;
+    }
+
+    .navigationActions {
+        gap: 7px;
+    }
+
+    .themeToggle {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+    }
+
+    .mobileMenuButton {
+        width: 34px;
+        height: 34px;
+    }
+
+    .equipmentHero {
+        min-height: 390px;
+    }
+
+    .equipmentHeroContent {
+        width: 90%;
+    }
+
+    .equipmentHeroContent h1 {
+        max-width: 360px;
+        font-size: 38px;
+    }
+
+    .equipmentHeroContent p:not(.sectionEyebrow) {
+        font-size: 14px;
+    }
+
+    .equipmentSection {
+        width: 90%;
+        padding: 43px 0 50px;
+    }
+
+    .equipmentTop h2 {
+        font-size: 31px;
+    }
+
+    .equipmentGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .equipmentImage {
+        height: 135px;
+    }
+
+    .availabilityBadge {
+        top: 7px;
+        left: 7px;
+        padding: 4px 6px;
+        font-size: 8px;
+    }
+
+    .equipmentDetails {
+        padding: 10px;
+    }
+
+    .equipmentLocation {
+        margin-bottom: 4px;
+        font-size: 10px;
+    }
+
+    .equipmentDetails h3 {
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+
+    .equipmentDescription {
+        min-height: 38px;
+        margin-bottom: 10px;
+        font-size: 10px;
+        line-height: 1.4;
+    }
+
+    .equipmentBottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+        padding-top: 9px;
+    }
+
+    .priceAmount {
+        font-size: 13px;
+    }
+
+    .pricePeriod {
+        font-size: 9px;
+    }
+
+    .rentButton {
+        width: auto;
+        min-height: 31px;
+        padding: 0 10px;
+        font-size: 9px;
+    }
+
+    .equipmentCta {
+        min-height: 390px;
+    }
+
+    .equipmentCtaContent {
+        width: 90%;
+    }
+
+    .equipmentCtaContent h2 {
+        font-size: 34px;
+    }
+
+    .equipmentCtaContent p:not(.sectionEyebrow) {
+        font-size: 14px;
+    }
+
+    .footerMain {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px 17px;
+    }
+
+    .footerBrand {
+        grid-column: span 2;
+    }
+
+    .footerBrand p {
+        font-size: 12px;
+    }
+
+    .footerColumn a,
+    .footerColumn p {
+        font-size: 12px;
+    }
+
+    .footerBottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footerBottom p,
+    .footerBottomLinks a {
+        font-size: 11px;
+    }
+
+    .modalBackdrop {
+        padding: 12px;
+    }
+
+    .equipmentModal {
+        max-height: 94vh;
+        display: block;
+        border-radius: 7px;
+    }
+
+    .modalImage {
+        min-height: 220px;
+        height: 220px;
+    }
+
+    .modalContent {
+        padding: 24px 20px 22px;
+    }
+
+    .modalContent h2 {
+        font-size: 28px;
+    }
+
+    .modalDescription {
+        font-size: 13px;
+    }
+
+    .modalPrice strong {
+        font-size: 24px;
+    }
+
+    .modalFeatures {
+        gap: 5px;
+    }
+
+    .modalFeatures div {
+        padding: 9px 6px;
+    }
+
+    .modalFeatures p {
+        font-size: 9px;
+    }
+
+    .modalCloseButton {
+        top: 9px;
+        right: 9px;
+        width: 33px;
+        height: 33px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

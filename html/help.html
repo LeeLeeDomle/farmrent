@@ -1,0 +1,714 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmRent | Help & Support</title>
+    <link rel="stylesheet" href="/css/help.css">
+</head>
+<body>
+
+    <div class="pageLoader" id="pageLoader"></div>
+
+    <header class="siteHeader">
+        <nav class="mainNavigation">
+
+            <a href="index.html" class="brandLogo">
+                Farm<span>Rent</span>
+            </a>
+
+            <div class="navigationLinks" id="navigationLinks">
+
+                <button class="closeMenuButton" id="closeMenuButton" aria-label="Close menu">
+                    ×
+                </button>
+
+                <a href="index.html">Home</a>
+                <a href="equipment.html">Equipment</a>
+                <a href="agro-products.html">Agro Products</a>
+                <a href="about.html">About</a>
+                <a href="help.html" class="activeLink">Help</a>
+
+                <a href="profile.html" class="mobileProfileLink">
+                    <span class="profileIcon">♙</span>
+                    Profile
+                </a>
+<a href="#" class="mobileLogoutLink" id="mobileLogoutLink">
+    Log Out
+</a>
+            </div>
+
+            <div class="navigationActions">
+
+                <button class="themeToggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span id="themeIcon">☾</span>
+                </button>
+
+                <a href="profile.html" class="desktopProfileLink" aria-label="Profile">
+                    ♙
+                </a>
+
+                <a href="login.html" class="loginLink">
+                    Login
+                </a>
+
+                <a href="register.html" class="signupButton">
+                    Sign Up
+                </a>
+
+                <button class="mobileMenuButton" id="mobileMenuButton" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="helpHero">
+
+            <div class="helpHeroImage"></div>
+            <div class="helpHeroOverlay"></div>
+
+            <div class="helpHeroContent">
+
+                <p class="sectionEyebrow">HELP & SUPPORT</p>
+
+                <h1>
+                    How can we help you?
+                </h1>
+
+                <p>
+                    Find answers to common questions or contact the FarmRent
+                    support team when you need assistance.
+                </p>
+
+                <div class="helpSearch">
+
+                    <input
+                        type="search"
+                        id="helpSearch"
+                        placeholder="Search for help..."
+                        aria-label="Search for help"
+                    >
+<button class="searchButton" aria-label="Search">
+    <svg class="searchIcon" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"></circle>
+        <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+    </svg>
+</button>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="helpCategories">
+
+            <div class="sectionHeading">
+
+                <p class="sectionEyebrow">HELP TOPICS</p>
+
+                <h2>
+                    What do you need help with?
+                </h2>
+
+            </div>
+
+            <div class="categoryGrid">
+
+                <button class="categoryCard" data-category="equipment">
+
+                    <span class="categoryNumber">01</span>
+
+                    <h3>
+                        Equipment Rental
+                    </h3>
+
+                    <p>
+                        Learn about finding equipment, rental requests,
+                        availability and equipment listings.
+                    </p>
+
+                    <span class="categoryArrow">→</span>
+
+                </button>
+
+                <button class="categoryCard" data-category="agro">
+
+                    <span class="categoryNumber">02</span>
+
+                    <h3>
+                        Agro Products
+                    </h3>
+
+                    <p>
+                        Get help finding agricultural products and connecting
+                        with agro product sellers.
+                    </p>
+
+                    <span class="categoryArrow">→</span>
+
+                </button>
+
+                <button class="categoryCard" data-category="account">
+
+                    <span class="categoryNumber">03</span>
+
+                    <h3>
+                        Account & Profile
+                    </h3>
+
+                    <p>
+                        Get assistance with registration, login, profile
+                        information and account access.
+                    </p>
+
+                    <span class="categoryArrow">→</span>
+
+                </button>
+
+                <button class="categoryCard" data-category="booking">
+
+                    <span class="categoryNumber">04</span>
+
+                    <h3>
+                        Booking & Payment
+                    </h3>
+
+                    <p>
+                        Find information about booking requests, payments and
+                        rental transactions.
+                    </p>
+
+                    <span class="categoryArrow">→</span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <section class="faqSection">
+
+            <div class="sectionHeading">
+
+                <p class="sectionEyebrow">FREQUENTLY ASKED QUESTIONS</p>
+
+                <h2>
+                    Answers to common questions.
+                </h2>
+
+            </div>
+
+            <div class="faqList" id="faqList">
+
+                <article class="faqItem" data-topic="equipment">
+
+                    <button class="faqQuestion">
+
+                        <span>
+                            How do I rent equipment on FarmRent?
+                        </span>
+
+                        <span class="faqIcon">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="faqAnswer">
+
+                        <p>
+                            Browse the Equipment page, choose the equipment
+                            that suits your needs and select Rent Now. You can
+                            review the equipment details before continuing with
+                            the booking process.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="faqItem" data-topic="equipment">
+
+                    <button class="faqQuestion">
+
+                        <span>
+                            Can I list my own equipment?
+                        </span>
+
+                        <span class="faqIcon">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="faqAnswer">
+
+                        <p>
+                            Yes. Equipment owners can use the List Equipment
+                            page to provide information about their machines
+                            and make them available to farmers looking to rent.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="faqItem" data-topic="agro">
+
+                    <button class="faqQuestion">
+
+                        <span>
+                            Where can I find agro products?
+                        </span>
+
+                        <span class="faqIcon">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="faqAnswer">
+
+                        <p>
+                            Visit the Agro Products page to browse agricultural
+                            products available from sellers on the platform.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="faqItem" data-topic="account">
+
+                    <button class="faqQuestion">
+
+                        <span>
+                            Do I need an account to use FarmRent?
+                        </span>
+
+                        <span class="faqIcon">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="faqAnswer">
+
+                        <p>
+                            You can browse available equipment and products
+                            without an account. However, some actions such as
+                            booking or managing your profile may require you to
+                            log in or create an account.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="faqItem" data-topic="booking">
+
+                    <button class="faqQuestion">
+
+                        <span>
+                            What happens after I request a rental?
+                        </span>
+
+                        <span class="faqIcon">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="faqAnswer">
+
+                        <p>
+                            Your request can be reviewed and the relevant
+                            rental details can then be confirmed before the
+                            transaction is completed.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="faqItem" data-topic="account">
+
+                    <button class="faqQuestion">
+
+                        <span>
+                            I cannot log into my account. What should I do?
+                        </span>
+
+                        <span class="faqIcon">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="faqAnswer">
+
+                        <p>
+                            Check that your login details are correct. If you
+                            still cannot access your account, contact FarmRent
+                            support using the support form below.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="noFaqResults" id="noFaqResults">
+
+                <h3>
+                    No matching help topic found.
+                </h3>
+
+                <p>
+                    Try another search term or contact our support team.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="contactSection">
+
+            <div class="contactIntro">
+
+                <p class="sectionEyebrow">CONTACT US</p>
+
+                <h2>
+                    Still need help?
+                </h2>
+
+                <p>
+                    If you cannot find the answer you need, send us a message.
+                    Our support team can help with questions about FarmRent,
+                    equipment, agro products and your account.
+                </p>
+
+                <div class="contactDetails">
+
+                    <div class="contactDetail">
+
+                        <span class="contactIcon">
+                            ✉
+                        </span>
+
+                        <div>
+                            <strong>
+                                Email Support
+                            </strong>
+
+                            <p>
+                                support@farmrent.com
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="contactDetail">
+
+                        <span class="contactIcon">
+                            ◉
+                        </span>
+
+                        <div>
+                            <strong>
+                                Location
+                            </strong>
+
+                            <p>
+                                Jos, Plateau State, Nigeria
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <form class="supportForm" id="supportForm">
+
+                <div class="formRow">
+
+                    <div class="formGroup">
+
+                        <label for="supportName">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="supportName"
+                            name="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="formGroup">
+
+                        <label for="supportEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="supportEmail"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+                <div class="formGroup">
+
+                    <label for="supportTopic">
+                        What do you need help with?
+                    </label>
+
+                    <select id="supportTopic" name="topic" required>
+
+                        <option value="">
+                            Select a topic
+                        </option>
+
+                        <option value="equipment">
+                            Equipment Rental
+                        </option>
+
+                        <option value="agro">
+                            Agro Products
+                        </option>
+
+                        <option value="account">
+                            Account & Profile
+                        </option>
+
+                        <option value="booking">
+                            Booking & Payment
+                        </option>
+
+                        <option value="other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="formGroup">
+
+                    <label for="supportMessage">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="supportMessage"
+                        name="message"
+                        rows="6"
+                        placeholder="Tell us how we can help..."
+                        required
+                    ></textarea>
+
+                </div>
+
+                <button type="submit" class="sendButton">
+                    Send Message
+                </button>
+
+                <p class="formMessage" id="formMessage"></p>
+
+            </form>
+
+        </section>
+
+        <section class="helpCta">
+
+            <div class="helpCtaContent">
+
+                <p class="sectionEyebrow">
+                    READY TO GET STARTED?
+                </p>
+
+                <h2>
+                    Find the agricultural resources you need.
+                </h2>
+
+                <p>
+                    Browse available equipment or explore agricultural
+                    products on FarmRent.
+                </p>
+
+                <div class="ctaButtons">
+
+                    <a href="equipment.html" class="primaryButton">
+                        Browse Equipment
+                    </a>
+
+                    <a href="agro-products.html" class="secondaryButton">
+                        Agro Products
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="siteFooter">
+
+        <div class="footerMain">
+
+            <div class="footerBrand">
+
+                <a href="index.html" class="footerLogo">
+                    Farm<span>Rent</span>
+                </a>
+
+                <p>
+                    A farm rental and agricultural marketplace connecting
+                    farmers, equipment owners and agro product sellers.
+                </p>
+
+                <p class="footerCompany">
+                    Domsal&Bonks Nigeria Limited
+                </p>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>
+                    FarmRent
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About Us
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="help.html">
+                    Help Center
+                </a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>
+                    Equipment
+                </h3>
+
+                <a href="equipment.html">
+                    Browse Equipment
+                </a>
+
+                <a href="list-equipment.html">
+                    List Equipment
+                </a>
+
+                <a href="equipment.html">
+                    Rent Equipment
+                </a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>
+                    Agro Products
+                </h3>
+
+                <a href="agro-products.html">
+                    Browse Products
+                </a>
+
+                <a href="list-agro-product.html">
+                    List Products
+                </a>
+
+                <a href="register.html">
+                    Create Account
+                </a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    Jos, Plateau State
+                </p>
+
+                <p>
+                    Nigeria
+                </p>
+
+                <a href="help.html">
+                    Contact Support
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footerBottom">
+
+            <p>
+                © 2026 FarmRent. All rights reserved.
+            </p>
+
+            <div class="footerBottomLinks">
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <button class="backToTop" id="backToTop" aria-label="Back to top">
+        ↑
+    </button>
+
+    <script src="/js/help.js"></script>
+
+</body>
+</html>
+```

@@ -1,0 +1,614 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #111111;
+    background-color: #f7f5ed;
+}
+
+a {
+    text-decoration: none;
+}
+
+.siteHeader {
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navigationBar {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    min-height: 76px;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.brandLogo {
+    color: #17351f;
+    font-size: 27px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.brandLogo span {
+    color: #228b22;
+}
+
+.navigationLinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+.navigationLinks a {
+    color: #222222;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navigationLinks a:hover {
+    color: #228b22;
+}
+
+.navigationLinks .activeLink {
+    color: #228b22;
+}
+
+.navigationActions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.themeToggle {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #d5d5d5;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #17351f;
+    cursor: pointer;
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginLink {
+    color: #17351f;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.loginLink:hover {
+    color: #228b22;
+}
+
+.signupButton {
+    background-color: #17351f;
+    color: #ffffff;
+    padding: 12px 19px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.signupButton:hover {
+    background-color: #228b22;
+}
+
+.profileLink {
+    color: #17351f;
+    font-size: 25px;
+    line-height: 1;
+}
+
+.profileLink:hover {
+    color: #228b22;
+}
+
+.mobileMenuButton {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #d5d5d5;
+    border-radius: 7px;
+    background-color: #ffffff;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.mobileMenuButton span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #17351f;
+    margin: 5px 0;
+}
+
+.mobileMenuTop {
+    display: none;
+}
+
+.mobileOnlyLinks {
+    display: none;
+}
+
+.termsPage {
+    width: 100%;
+}
+
+.termsHero {
+    background-color: #17351f;
+    padding: 75px 25px 70px;
+}
+
+.termsHeroContent {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sectionEyebrow {
+    margin: 0 0 14px;
+    color: #79c879;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.termsHero h1 {
+    margin: 0 0 18px;
+    color: #ffffff;
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.termsHero p {
+    margin: 0;
+    color: #eeeeee;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.termsContent {
+    width: 100%;
+    padding: 70px 25px;
+}
+
+.termsContainer {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 65px;
+    align-items: start;
+}
+
+.termsNavigation {
+    position: sticky;
+    top: 105px;
+    border: 1px solid #dddddd;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 22px;
+}
+
+.termsNavigation h3 {
+    margin: 0 0 16px;
+    color: #17351f;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.termsNavigation a {
+    display: block;
+    color: #333333;
+    font-size: 14px;
+    line-height: 1.45;
+    padding: 8px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.termsNavigation a:last-child {
+    border-bottom: none;
+}
+
+.termsNavigation a:hover {
+    color: #228b22;
+}
+
+.termsArticle {
+    min-width: 0;
+}
+
+.termsSection {
+    padding: 0 0 32px;
+    margin: 0 0 32px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.termsSection:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.termsSection h2 {
+    margin: 0 0 15px;
+    color: #17351f;
+    font-size: 25px;
+    line-height: 1.3;
+    font-weight: 800;
+}
+
+.termsSection p {
+    margin: 0 0 14px;
+    color: #333333;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.termsSection p:last-child {
+    margin-bottom: 0;
+}
+
+.termsSection ul {
+    margin: 12px 0 0;
+    padding-left: 25px;
+}
+
+.termsSection li {
+    margin-bottom: 10px;
+    color: #333333;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.termsSection li:last-child {
+    margin-bottom: 0;
+}
+
+.termsSection strong {
+    color: #17351f;
+}
+
+.termsContactBox {
+    margin-top: 20px;
+    padding: 25px;
+    background-color: #eef4ee;
+    border-left: 5px solid #228b22;
+    border-radius: 6px;
+}
+
+.termsContactBox p {
+    margin: 0;
+    color: #333333;
+}
+
+.siteFooter {
+    background-color: #17351f;
+    color: #ffffff;
+    padding: 55px 25px 0;
+}
+
+.footerContainer {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1.2fr 1fr 1fr;
+    gap: 35px;
+    padding-bottom: 45px;
+}
+
+.footerBrand {
+    padding-right: 25px;
+}
+
+.footerLogo {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 27px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.footerLogo span {
+    color: #79c879;
+}
+
+.footerBrand p {
+    margin: 0;
+    color: #dddddd;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.footerColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 11px;
+}
+
+.footerColumn h3 {
+    margin: 0 0 7px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.footerColumn a {
+    color: #dddddd;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footerColumn a:hover {
+    color: #79c879;
+}
+
+.footerBottom {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 20px 0;
+    border-top: 1px solid #39503f;
+    text-align: center;
+}
+
+.footerBottom p {
+    margin: 0;
+    color: #dddddd;
+    font-size: 14px;
+}
+
+@media (max-width: 950px) {
+    .navigationBar {
+        min-height: 70px;
+    }
+
+    .navigationLinks {
+        gap: 18px;
+    }
+
+    .navigationLinks a {
+        font-size: 14px;
+    }
+
+    .navigationActions {
+        gap: 9px;
+    }
+
+    .termsContainer {
+        grid-template-columns: 210px 1fr;
+        gap: 40px;
+    }
+
+    .footerContainer {
+        grid-template-columns: 1.5fr 1fr 1fr;
+        row-gap: 35px;
+    }
+}
+
+@media (max-width: 720px) {
+    .navigationBar {
+        min-height: 68px;
+        padding: 0 18px;
+    }
+
+    .brandLogo {
+        font-size: 24px;
+    }
+
+    .navigationLinks {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        max-width: 88%;
+        height: 100vh;
+        background-color: #ffffff;
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.12);
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0;
+        overflow-y: auto;
+        transition: right 0.3s ease;
+    }
+
+    .navigationLinks.active {
+        right: 0;
+    }
+
+    .mobileMenuTop {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 22px;
+        margin-bottom: 12px;
+        border-bottom: 1px solid #dddddd;
+    }
+
+    .mobileMenuTop strong {
+        color: #17351f;
+        font-size: 18px;
+    }
+
+    .mobileCloseButton {
+        border: none;
+        background-color: transparent;
+        color: #17351f;
+        font-size: 28px;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .navigationLinks > a {
+        width: 100%;
+        padding: 14px 0;
+        border-bottom: 1px solid #eeeeee;
+        font-size: 16px;
+    }
+
+    .mobileOnlyLinks {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobileOnlyLinks a {
+        width: 100%;
+        color: #222222;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 14px 0;
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .navigationActions .loginLink,
+    .navigationActions .signupButton,
+    .navigationActions .profileLink {
+        display: none;
+    }
+
+    .mobileMenuButton {
+        display: block;
+    }
+
+    .termsHero {
+        padding: 55px 20px 50px;
+    }
+
+    .termsHero h1 {
+        font-size: 36px;
+    }
+
+    .termsHero p {
+        font-size: 16px;
+    }
+
+    .termsContent {
+        padding: 50px 20px;
+    }
+
+    .termsContainer {
+        display: block;
+    }
+
+    .termsNavigation {
+        position: static;
+        margin-bottom: 40px;
+    }
+
+    .termsSection h2 {
+        font-size: 23px;
+    }
+
+    .termsSection p,
+    .termsSection li {
+        font-size: 16px;
+    }
+
+    .footerContainer {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 25px;
+    }
+
+    .footerBrand {
+        grid-column: 1 / -1;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .navigationBar {
+        padding: 0 15px;
+    }
+
+    .brandLogo {
+        font-size: 22px;
+    }
+
+    .themeToggle {
+        width: 37px;
+        height: 37px;
+    }
+
+    .mobileMenuButton {
+        width: 39px;
+        height: 39px;
+    }
+
+    .termsHero {
+        padding: 48px 18px 45px;
+    }
+
+    .termsHero h1 {
+        font-size: 31px;
+    }
+
+    .termsHero p {
+        font-size: 15px;
+    }
+
+    .termsContent {
+        padding: 40px 18px;
+    }
+
+    .termsNavigation {
+        padding: 18px;
+    }
+
+    .termsSection {
+        padding-bottom: 27px;
+        margin-bottom: 27px;
+    }
+
+    .termsSection h2 {
+        font-size: 21px;
+    }
+
+    .termsSection p,
+    .termsSection li {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .termsContactBox {
+        padding: 20px;
+    }
+
+    .footerContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .footerBrand {
+        grid-column: auto;
+    }
+}

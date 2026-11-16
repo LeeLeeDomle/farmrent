@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmRent | Order Confirmation</title>
+    <link rel="stylesheet" href="/css/order-confirmation.css">
+</head>
+<body>
+
+    <header class="siteHeader">
+        <div class="headerContainer">
+
+            <a href="index.html" class="brandLogo">
+                <span class="brandIcon">F</span>
+                <span>FarmRent</span>
+            </a>
+
+            <nav class="desktopNav">
+                <a href="index.html">Home</a>
+                <a href="equipment.html">Equipment</a>
+                <a href="agro-products.html">Agro Products</a>
+                <a href="about.html">About</a>
+                <a href="help.html">Help</a>
+            </nav>
+
+            <div class="headerActions">
+
+                <button
+                    class="themeToggle"
+                    id="themeToggle"
+                    type="button"
+                    aria-label="Toggle theme"
+                >
+                    <span class="themeIcon">☾</span>
+                </button>
+
+                <a href="cart.html" class="cartButton">
+                    <span>Cart</span>
+                    <span class="cartCount" id="cartCount">0</span>
+                </a>
+
+                <a href="login.html" class="loginButton">Login</a>
+
+                <a href="register.html" class="signupButton">
+                    Sign Up
+                </a>
+
+                <button
+                    class="menuButton"
+                    id="menuButton"
+                    type="button"
+                    aria-label="Open menu"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+        </div>
+
+        <div class="mobileMenu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="equipment.html">Equipment</a>
+            <a href="agro-products.html">Agro Products</a>
+            <a href="about.html">About</a>
+            <a href="help.html">Help</a>
+            <a href="profile.html">Profile</a>
+            <a href="cart.html">Cart</a>
+            <a href="login.html" id="mobileLogout">Logout</a>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="confirmationSection">
+
+            <div class="confirmationContainer">
+
+                <div class="confirmationHeader">
+
+                    <div class="successIcon">
+                        <span>✓</span>
+                    </div>
+
+                    <p class="sectionLabel">ORDER CONFIRMED</p>
+
+                    <h1>Thank you for your order!</h1>
+
+                    <p>
+                        Your order has been received successfully.
+                        Here are the details of your purchase.
+                    </p>
+
+                    <div class="orderNumberBox">
+                        <span>Order number</span>
+                        <strong id="orderNumber">FR00000000</strong>
+                    </div>
+
+                </div>
+
+                <div class="confirmationLayout">
+
+                    <div class="confirmationMain">
+
+                        <div class="detailsCard">
+
+                            <div class="cardHeader">
+                                <div>
+                                    <p class="cardLabel">ORDER DETAILS</p>
+                                    <h2>Your products</h2>
+                                </div>
+
+                                <span class="orderStatus" id="orderStatus">
+                                    Payment Confirmed
+                                </span>
+                            </div>
+
+                            <div
+                                class="confirmationProducts"
+                                id="confirmationProducts"
+                            ></div>
+
+                            <div class="detailsDivider"></div>
+
+                            <div class="summaryRows">
+
+                                <div class="summaryRow">
+                                    <span>Items</span>
+                                    <strong id="itemCount">0</strong>
+                                </div>
+
+                                <div class="summaryRow">
+                                    <span>Subtotal</span>
+                                    <strong id="subtotal">₦0</strong>
+                                </div>
+
+                                <div class="summaryRow">
+                                    <span>Delivery</span>
+                                    <strong>Calculated later</strong>
+                                </div>
+
+                            </div>
+
+                            <div class="detailsDivider"></div>
+
+                            <div class="totalRow">
+                                <span>Total</span>
+                                <strong id="total">₦0</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="detailsCard">
+
+                            <div class="cardHeader">
+                                <div>
+                                    <p class="cardLabel">DELIVERY INFORMATION</p>
+                                    <h2>Where your order is going</h2>
+                                </div>
+                            </div>
+
+                            <div class="customerDetails">
+
+                                <div class="detailItem">
+                                    <span>Customer</span>
+                                    <strong id="customerName">Not provided</strong>
+                                </div>
+
+                                <div class="detailItem">
+                                    <span>Phone number</span>
+                                    <strong id="customerPhone">Not provided</strong>
+                                </div>
+
+                                <div class="detailItem">
+                                    <span>Email address</span>
+                                    <strong id="customerEmail">Not provided</strong>
+                                </div>
+
+                                <div class="detailItem">
+                                    <span>State</span>
+                                    <strong id="customerState">Not provided</strong>
+                                </div>
+
+                                <div class="detailItem detailFull">
+                                    <span>Delivery address</span>
+                                    <strong id="customerAddress">Not provided</strong>
+                                </div>
+
+                                <div class="detailItem">
+                                    <span>City / Town</span>
+                                    <strong id="customerCity">Not provided</strong>
+                                </div>
+
+                                <div class="detailItem">
+                                    <span>Delivery method</span>
+                                    <strong id="deliveryMethod">Not provided</strong>
+                                </div>
+
+                                <div
+                                    class="detailItem detailFull"
+                                    id="deliveryNoteContainer"
+                                >
+                                    <span>Delivery note</span>
+                                    <strong id="deliveryNote">None</strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <aside class="confirmationSidebar">
+
+                        <div class="statusCard">
+
+                            <div class="statusIcon">
+                                ✓
+                            </div>
+
+                            <h2 id="paymentStatus">
+                                Payment confirmed
+                            </h2>
+
+                            <p id="paymentMessage">
+                                Your payment has been recorded and your order
+                                is now being processed.
+                            </p>
+
+                        </div>
+
+                        <div class="nextStepsCard">
+
+                            <p class="cardLabel">WHAT HAPPENS NEXT</p>
+
+                            <h2>Your order journey</h2>
+
+                            <div class="nextStep">
+
+                                <span>01</span>
+
+                                <div>
+                                    <h3>Order received</h3>
+                                    <p>
+                                        FarmRent has received your order details.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div class="nextStep">
+
+                                <span>02</span>
+
+                                <div>
+                                    <h3>Order processing</h3>
+                                    <p>
+                                        Your products will be prepared for the
+                                        selected delivery method.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div class="nextStep">
+
+                                <span>03</span>
+
+                                <div>
+                                    <h3>Order fulfilled</h3>
+                                    <p>
+                                        You will receive your products according
+                                        to the delivery arrangement.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </aside>
+
+                </div>
+
+                <div class="confirmationActions">
+
+                    <a href="agro-products.html" class="primaryButton">
+                        Continue Shopping
+                    </a>
+
+                    <a href="index.html" class="secondaryButton">
+                        Back to Home
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="trustSection">
+
+            <div class="trustContainer">
+
+                <div class="trustItem">
+                    <span>01</span>
+
+                    <div>
+                        <h3>Order recorded</h3>
+                        <p>
+                            Your purchase details have been saved for reference.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="trustItem">
+                    <span>02</span>
+
+                    <div>
+                        <h3>Clear information</h3>
+                        <p>
+                            Your order and delivery details are displayed clearly.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="trustItem">
+                    <span>03</span>
+
+                    <div>
+                        <h3>FarmRent support</h3>
+                        <p>
+                            Need help with your order? Visit our Help Center.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="siteFooter">
+
+        <div class="footerContainer">
+
+            <div class="footerBrand">
+
+                <a href="index.html" class="brandLogo">
+                    <span class="brandIcon">F</span>
+                    <span>FarmRent</span>
+                </a>
+
+                <p>
+                    Connecting farmers with quality agricultural equipment
+                    and products across Nigeria.
+                </p>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>Explore</h3>
+
+                <a href="index.html">Home</a>
+                <a href="equipment.html">Equipment</a>
+                <a href="agro-products.html">Agro Products</a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>Shopping</h3>
+
+                <a href="agro-products.html">Browse Products</a>
+                <a href="cart.html">Shopping Cart</a>
+                <a href="checkout.html">Checkout</a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>Support</h3>
+
+                <a href="about.html">About Us</a>
+                <a href="help.html">Help Center</a>
+                <a href="profile.html">My Profile</a>
+
+            </div>
+
+        </div>
+
+        <div class="footerBottom">
+            <p>© 2026 FarmRent. All rights reserved.</p>
+        </div>
+
+    </footer>
+
+    <button
+        class="backToTop"
+        id="backToTop"
+        type="button"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+    <script src="/js/order-confirmation.js"></script>
+
+</body>
+</html>

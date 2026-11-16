@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmRent | Payment</title>
+    <link rel="stylesheet" href="/css/payment.css">
+</head>
+<body>
+
+    <header class="siteHeader">
+        <div class="headerContainer">
+
+            <a href="index.html" class="brandLogo">
+                <span class="brandIcon">F</span>
+                <span>FarmRent</span>
+            </a>
+
+            <nav class="desktopNav">
+                <a href="index.html">Home</a>
+                <a href="equipment.html">Equipment</a>
+                <a href="agro-products.html">Agro Products</a>
+                <a href="about.html">About</a>
+                <a href="help.html">Help</a>
+            </nav>
+
+            <div class="headerActions">
+                <button class="themeToggle" id="themeToggle" type="button" aria-label="Toggle theme">
+                    <span class="themeIcon">☾</span>
+                </button>
+
+                <a href="cart.html" class="cartButton">
+                    <span>Cart</span>
+                    <span class="cartCount" id="cartCount">0</span>
+                </a>
+
+                <a href="login.html" class="loginButton">Login</a>
+                <a href="register.html" class="signupButton">Sign Up</a>
+
+                <button class="menuButton" id="menuButton" type="button" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+        </div>
+
+        <div class="mobileMenu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="equipment.html">Equipment</a>
+            <a href="agro-products.html">Agro Products</a>
+            <a href="about.html">About</a>
+            <a href="help.html">Help</a>
+            <a href="profile.html">Profile</a>
+            <a href="cart.html">Cart</a>
+            <a href="login.html" id="mobileLogout">Logout</a>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="paymentSection">
+
+            <div class="paymentContainer">
+
+                <div class="pageHeading">
+                    <p class="sectionLabel">PAYMENT</p>
+                    <h1>Complete your payment</h1>
+                    <p>Review your order and choose how you would like to pay.</p>
+                </div>
+
+                <div class="paymentLayout">
+
+                    <div class="paymentMain">
+
+                        <div class="checkoutSteps">
+                            <div class="step completed">
+                                <span>01</span>
+                                <div>
+                                    <strong>Delivery</strong>
+                                    <small>Completed</small>
+                                </div>
+                            </div>
+
+                            <div class="step completed">
+                                <span>02</span>
+                                <div>
+                                    <strong>Review</strong>
+                                    <small>Completed</small>
+                                </div>
+                            </div>
+
+                            <div class="step active">
+                                <span>03</span>
+                                <div>
+                                    <strong>Payment</strong>
+                                    <small>Current step</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="paymentCard">
+
+                            <div class="cardHeader">
+                                <div>
+                                    <h2>Payment method</h2>
+                                    <p>Select your preferred payment option.</p>
+                                </div>
+                            </div>
+
+                            <div class="paymentMethods">
+
+                                <label class="paymentMethod active">
+                                    <input type="radio" name="paymentMethod" value="card" checked>
+
+                                    <div class="methodIcon">
+                                        <span>▣</span>
+                                    </div>
+
+                                    <div class="methodContent">
+                                        <strong>Card Payment</strong>
+                                        <span>Pay securely with your debit or credit card.</span>
+                                    </div>
+
+                                    <span class="radioCircle"></span>
+                                </label>
+
+                                <label class="paymentMethod">
+                                    <input type="radio" name="paymentMethod" value="bank">
+
+                                    <div class="methodIcon">
+                                        <span>₦</span>
+                                    </div>
+
+                                    <div class="methodContent">
+                                        <strong>Bank Transfer</strong>
+                                        <span>Receive bank details after confirming your order.</span>
+                                    </div>
+
+                                    <span class="radioCircle"></span>
+                                </label>
+
+                            </div>
+
+                            <div class="cardPaymentForm" id="cardPaymentForm">
+
+                                <div class="formHeading">
+                                    <h3>Card details</h3>
+                                    <p>Enter the details associated with your payment card.</p>
+                                </div>
+
+                                <div class="formGroup">
+                                    <label for="cardName">Name on card</label>
+                                    <input
+                                        type="text"
+                                        id="cardName"
+                                        name="cardName"
+                                        placeholder="Enter name on card"
+                                    >
+                                    <small class="errorMessage" id="cardNameError"></small>
+                                </div>
+
+                                <div class="formGroup">
+                                    <label for="cardNumber">Card number</label>
+                                    <input
+                                        type="text"
+                                        id="cardNumber"
+                                        name="cardNumber"
+                                        placeholder="1234 5678 9012 3456"
+                                        maxlength="19"
+                                        inputmode="numeric"
+                                    >
+                                    <small class="errorMessage" id="cardNumberError"></small>
+                                </div>
+
+                                <div class="formRow">
+
+                                    <div class="formGroup">
+                                        <label for="expiryDate">Expiry date</label>
+                                        <input
+                                            type="text"
+                                            id="expiryDate"
+                                            name="expiryDate"
+                                            placeholder="MM/YY"
+                                            maxlength="5"
+                                            inputmode="numeric"
+                                        >
+                                        <small class="errorMessage" id="expiryError"></small>
+                                    </div>
+
+                                    <div class="formGroup">
+                                        <label for="cvv">CVV</label>
+                                        <input
+                                            type="password"
+                                            id="cvv"
+                                            name="cvv"
+                                            placeholder="123"
+                                            maxlength="4"
+                                            inputmode="numeric"
+                                        >
+                                        <small class="errorMessage" id="cvvError"></small>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="bankPaymentInfo" id="bankPaymentInfo">
+
+                                <div class="bankIcon">₦</div>
+
+                                <div>
+                                    <h3>Bank transfer</h3>
+                                    <p>
+                                        After you confirm your order, your bank transfer instructions
+                                        will be displayed on the order confirmation page.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div class="paymentNotice">
+                                <span>✓</span>
+                                <p>Your payment information is handled securely.</p>
+                            </div>
+
+                            <button class="payButton" id="payButton" type="button">
+                                <span>Pay Now</span>
+                                <span id="payAmount">₦0</span>
+                            </button>
+
+                            <a href="checkout.html" class="backCheckout">
+                                ← Back to checkout
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <aside class="orderSidebar">
+
+                        <div class="orderCard">
+
+                            <div class="orderHeader">
+                                <div>
+                                    <p class="orderLabel">YOUR ORDER</p>
+                                    <h2>Order summary</h2>
+                                </div>
+
+                                <a href="cart.html">Edit</a>
+                            </div>
+
+                            <div class="orderProducts" id="orderProducts"></div>
+
+                            <div class="orderDivider"></div>
+
+                            <div class="summaryRow">
+                                <span>Items</span>
+                                <strong id="summaryItemCount">0</strong>
+                            </div>
+
+                            <div class="summaryRow">
+                                <span>Subtotal</span>
+                                <strong id="summarySubtotal">₦0</strong>
+                            </div>
+
+                            <div class="summaryRow">
+                                <span>Delivery</span>
+                                <strong>Calculated later</strong>
+                            </div>
+
+                            <div class="orderDivider"></div>
+
+                            <div class="totalRow">
+                                <span>Total</span>
+                                <strong id="summaryTotal">₦0</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="deliveryCard">
+
+                            <div class="deliveryIcon">✓</div>
+
+                            <div>
+                                <h3>Order protected</h3>
+                                <p>
+                                    Your order details will be saved after payment confirmation.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </aside>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="trustSection">
+
+            <div class="trustContainer">
+
+                <div class="trustItem">
+                    <span>01</span>
+                    <div>
+                        <h3>Secure checkout</h3>
+                        <p>Your order information is kept protected.</p>
+                    </div>
+                </div>
+
+                <div class="trustItem">
+                    <span>02</span>
+                    <div>
+                        <h3>Clear order details</h3>
+                        <p>Review your products and total before completing payment.</p>
+                    </div>
+                </div>
+
+                <div class="trustItem">
+                    <span>03</span>
+                    <div>
+                        <h3>Order confirmation</h3>
+                        <p>Get your order details after payment is completed.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="siteFooter">
+
+        <div class="footerContainer">
+
+            <div class="footerBrand">
+                <a href="index.html" class="brandLogo">
+                    <span class="brandIcon">F</span>
+                    <span>FarmRent</span>
+                </a>
+
+                <p>
+                    Connecting farmers with quality agricultural equipment
+                    and products across Nigeria.
+                </p>
+            </div>
+
+            <div class="footerColumn">
+                <h3>Explore</h3>
+                <a href="index.html">Home</a>
+                <a href="equipment.html">Equipment</a>
+                <a href="agro-products.html">Agro Products</a>
+            </div>
+
+            <div class="footerColumn">
+                <h3>Shopping</h3>
+                <a href="agro-products.html">Browse Products</a>
+                <a href="cart.html">Shopping Cart</a>
+                <a href="checkout.html">Checkout</a>
+            </div>
+
+            <div class="footerColumn">
+                <h3>Support</h3>
+                <a href="about.html">About Us</a>
+                <a href="help.html">Help Center</a>
+                <a href="profile.html">My Profile</a>
+            </div>
+
+        </div>
+
+        <div class="footerBottom">
+            <p>© 2026 FarmRent. All rights reserved.</p>
+        </div>
+
+    </footer>
+
+    <button class="backToTop" id="backToTop" type="button" aria-label="Back to top">
+        ↑
+    </button>
+
+    <script src="/js/payment.js"></script>
+</body>
+</html>

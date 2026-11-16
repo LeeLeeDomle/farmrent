@@ -1,0 +1,863 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f5ed;
+    color: #17351f;
+    overflow-x: hidden;
+}
+
+body.darkMode {
+    background: #101712;
+    color: #ffffff;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.pageLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: #228b22;
+    z-index: 9999;
+    transition: width 0.8s ease;
+}
+
+.siteHeader {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #dddddd;
+}
+
+.darkMode .siteHeader {
+    background: #121b15;
+    border-bottom-color: #303b34;
+}
+
+.mainNavigation {
+    width: min(1200px, 92%);
+    min-height: 78px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.brandLogo,
+.footerLogo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.brandLogo span,
+.footerLogo span {
+    color: #228b22;
+}
+
+.navigationLinks {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.navigationLinks a {
+    position: relative;
+    padding: 8px 0;
+    color: #222222;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.darkMode .navigationLinks a {
+    color: #eeeeee;
+}
+
+.navigationLinks a:hover,
+.navigationLinks .activeLink {
+    color: #228b22;
+}
+
+.navigationActions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.themeToggle {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #cccccc;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #17351f;
+}
+
+.darkMode .themeToggle {
+    background: #1b261f;
+    border-color: #3c473f;
+    color: #ffffff;
+}
+
+.desktopProfileLink {
+    font-size: 24px;
+}
+
+.loginLink {
+    color: #17351f;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.darkMode .loginLink {
+    color: #ffffff;
+}
+
+.activeLogin {
+    color: #228b22;
+}
+
+.signupButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 43px;
+    padding: 0 20px;
+    border: 1px solid #228b22;
+    border-radius: 7px;
+    background: #228b22;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.signupButton:hover,
+.loginButton:hover {
+    background: #176b1b;
+}
+
+.mobileMenuButton,
+.closeMenuButton,
+.mobileProfileLink {
+    display: none;
+}
+
+.loginSection {
+    min-height: 650px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.loginImage {
+    position: relative;
+    min-height: 650px;
+    background-image: url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=85");
+    background-size: cover;
+    background-position: center;
+}
+
+.loginImageOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 31, 17, 0.58);
+}
+
+.loginImageContent {
+    position: relative;
+    z-index: 2;
+    max-width: 530px;
+    padding: 100px 70px;
+    color: #ffffff;
+}
+
+.sectionEyebrow {
+    margin-bottom: 12px;
+    color: #228b22;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.loginImageContent .sectionEyebrow {
+    color: #bde5bd;
+}
+
+.loginImageContent h1 {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: clamp(42px, 5vw, 62px);
+    line-height: 1.04;
+    letter-spacing: -2px;
+}
+
+.loginImageContent > p:last-child {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.loginFormArea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 40px;
+    background: #ffffff;
+}
+
+.darkMode .loginFormArea {
+    background: #121b15;
+}
+
+.loginFormContainer {
+    width: min(460px, 100%);
+}
+
+.formHeading {
+    margin-bottom: 35px;
+}
+
+.formHeading h2 {
+    margin-bottom: 10px;
+    color: #17351f;
+    font-size: 40px;
+    line-height: 1.1;
+}
+
+.darkMode .formHeading h2 {
+    color: #ffffff;
+}
+
+.formHeading > p:last-child {
+    color: #222222;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.darkMode .formHeading > p:last-child {
+    color: #eeeeee;
+}
+
+.formGroup {
+    margin-bottom: 22px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 8px;
+    color: #17351f;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.darkMode .formGroup label {
+    color: #ffffff;
+}
+
+.passwordLabel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.passwordLabel label {
+    margin-bottom: 8px;
+}
+
+.passwordLabel a {
+    margin-bottom: 8px;
+    color: #228b22;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.formGroup input {
+    width: 100%;
+    height: 48px;
+    padding: 0 14px;
+    border: 1px solid #c8cdc8;
+    border-radius: 6px;
+    outline: 0;
+    background: #ffffff;
+    color: #17351f;
+    font-size: 14px;
+}
+
+.formGroup input:focus {
+    border-color: #228b22;
+}
+
+.darkMode .formGroup input {
+    background: #182119;
+    border-color: #3c473f;
+    color: #ffffff;
+}
+
+.passwordInput {
+    position: relative;
+}
+
+.passwordInput input {
+    padding-right: 48px;
+}
+
+.passwordInput button {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background: transparent;
+    color: #17351f;
+    transform: translateY(-50%);
+}
+
+.darkMode .passwordInput button {
+    color: #ffffff;
+}
+
+.rememberMe {
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #222222;
+    font-size: 13px;
+}
+
+.darkMode .rememberMe {
+    color: #eeeeee;
+}
+
+.rememberMe input {
+    width: 16px;
+    height: 16px;
+    accent-color: #228b22;
+}
+
+.loginButton {
+    width: 100%;
+    min-height: 48px;
+    border: 1px solid #228b22;
+    border-radius: 7px;
+    background: #228b22;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.loginMessage {
+    display: none;
+    margin-top: 12px;
+    color: #228b22;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.loginMessage.showMessage {
+    display: block;
+}
+
+.divider {
+    margin: 27px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #555555;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.darkMode .divider {
+    color: #dddddd;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #d6d6d6;
+}
+
+.socialLogin {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.socialButton {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border: 1px solid #cccccc;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #17351f;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.socialButton:hover {
+    border-color: #228b22;
+    background: #f7f5ed;
+}
+
+.darkMode .socialButton {
+    background: #182119;
+    border-color: #3c473f;
+    color: #ffffff;
+}
+
+.darkMode .socialButton:hover {
+    background: #202d25;
+}
+
+.googleIcon {
+    color: #4285f4;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.facebookIcon {
+    color: #1877f2;
+    font-size: 23px;
+    font-weight: 900;
+}
+
+.secondDivider {
+    margin: 25px 0;
+}
+
+.createAccountButton {
+    width: 100%;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #228b22;
+    border-radius: 7px;
+    background: transparent;
+    color: #228b22;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.createAccountButton:hover {
+    background: #228b22;
+    color: #ffffff;
+}
+
+.registerNotice {
+    margin-top: 22px;
+    color: #222222;
+    text-align: center;
+    font-size: 13px;
+}
+
+.darkMode .registerNotice {
+    color: #eeeeee;
+}
+
+.registerNotice a {
+    color: #228b22;
+    font-weight: 800;
+}
+
+.siteFooter {
+    background: #122019;
+    color: #ffffff;
+}
+
+.footerMain {
+    width: min(1200px, 92%);
+    margin: auto;
+    padding: 65px 0 50px;
+    display: grid;
+    grid-template-columns: 1.6fr repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footerBrand p {
+    max-width: 340px;
+    margin-top: 17px;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.footerBrand .footerCompany {
+    color: #ffffff;
+    font-weight: 800;
+}
+
+.footerColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footerColumn h3 {
+    margin-bottom: 7px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.footerColumn a,
+.footerColumn p {
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.footerColumn a:hover {
+    color: #a9dda9;
+}
+
+.footerBottom {
+    width: min(1200px, 92%);
+    margin: auto;
+    padding: 22px 0;
+    border-top: 1px solid #3a4940;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footerBottom p,
+.footerBottomLinks a {
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.footerBottomLinks {
+    display: flex;
+    gap: 20px;
+}
+
+.backToTop {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 45px;
+    height: 45px;
+    border: 0;
+    border-radius: 50%;
+    background: #228b22;
+    color: #ffffff;
+    font-size: 21px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.25s ease;
+    z-index: 900;
+}
+
+.backToTop.showButton {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+@media (max-width: 1050px) {
+
+    .navigationLinks {
+        gap: 17px;
+    }
+
+    .footerMain {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footerBrand {
+        grid-column: span 3;
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .mainNavigation {
+        min-height: 70px;
+    }
+
+    .navigationLinks {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(320px, 86%);
+        height: 100vh;
+        padding: 75px 30px 30px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 7px;
+        background: #ffffff;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+        transition: right 0.3s ease;
+        z-index: 2000;
+    }
+
+    .darkMode .navigationLinks {
+        background: #121b15;
+    }
+
+    .navigationLinks.menuOpen {
+        right: 0;
+    }
+
+    .navigationLinks a {
+        width: 100%;
+        padding: 13px 0;
+        font-size: 15px;
+    }
+
+    .closeMenuButton {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: block;
+        width: 40px;
+        height: 40px;
+        border: 0;
+        background: transparent;
+        color: #17351f;
+        font-size: 30px;
+    }
+
+    .darkMode .closeMenuButton {
+        color: #ffffff;
+    }
+
+    .mobileProfileLink {
+        display: flex !important;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .desktopProfileLink,
+    .loginLink {
+        display: none;
+    }
+
+    .mobileMenuButton {
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        border: 0;
+        background: transparent;
+    }
+
+    .mobileMenuButton span {
+        width: 24px;
+        height: 2px;
+        background: #17351f;
+    }
+
+    .darkMode .mobileMenuButton span {
+        background: #ffffff;
+    }
+
+    .loginSection {
+        grid-template-columns: 1fr;
+    }
+
+    .loginImage {
+        min-height: 400px;
+    }
+
+    .loginImageContent {
+        max-width: 650px;
+        padding: 75px 8%;
+    }
+
+    .loginImageContent h1 {
+        font-size: 48px;
+    }
+
+    .loginFormArea {
+        padding: 65px 8%;
+    }
+
+}
+
+@media (max-width: 560px) {
+
+    .mainNavigation {
+        width: 94%;
+        min-height: 64px;
+    }
+
+    .brandLogo {
+        font-size: 21px;
+    }
+
+    .navigationActions {
+        gap: 6px;
+    }
+
+    .themeToggle {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .signupButton {
+        min-height: 34px;
+        padding: 0 10px;
+        font-size: 11px;
+    }
+
+    .mobileMenuButton {
+        width: 35px;
+        height: 35px;
+    }
+
+    .mobileMenuButton span {
+        width: 21px;
+    }
+
+    .loginImage {
+        min-height: 350px;
+    }
+
+    .loginImageContent {
+        padding: 55px 6%;
+    }
+
+    .loginImageContent h1 {
+        margin-bottom: 15px;
+        font-size: 36px;
+        letter-spacing: -1px;
+    }
+
+    .loginImageContent > p:last-child {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .loginFormArea {
+        padding: 50px 6%;
+    }
+
+    .formHeading {
+        margin-bottom: 28px;
+    }
+
+    .formHeading h2 {
+        font-size: 31px;
+    }
+
+    .formHeading > p:last-child {
+        font-size: 14px;
+    }
+
+    .formGroup input {
+        height: 45px;
+    }
+
+    .socialLogin {
+        grid-template-columns: 1fr;
+    }
+
+    .socialButton {
+        min-height: 46px;
+    }
+
+    .footerMain {
+        width: 94%;
+        grid-template-columns: 1fr 1fr;
+        gap: 27px 18px;
+        padding: 42px 0 32px;
+    }
+
+    .footerBrand {
+        grid-column: span 2;
+    }
+
+    .footerBrand p {
+        max-width: 100%;
+        margin-top: 12px;
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+    .footerBrand .footerCompany {
+        font-size: 12px;
+    }
+
+    .footerColumn {
+        gap: 8px;
+    }
+
+    .footerColumn h3 {
+        margin-bottom: 4px;
+        font-size: 13px;
+    }
+
+    .footerColumn a,
+    .footerColumn p {
+        font-size: 11px;
+        line-height: 1.45;
+    }
+
+    .footerBottom {
+        width: 94%;
+        padding: 17px 0;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footerBottom p,
+    .footerBottomLinks a {
+        font-size: 10px;
+    }
+
+    .footerBottomLinks {
+        gap: 15px;
+    }
+
+    .backToTop {
+        right: 14px;
+        bottom: 14px;
+        width: 38px;
+        height: 38px;
+        font-size: 17px;
+    }
+
+}
+

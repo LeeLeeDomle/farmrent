@@ -1,0 +1,515 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmRent | Rental Booking</title>
+    <link rel="stylesheet" href="/css/rental.css">
+</head>
+<body>
+
+    <div class="pageLoader" id="pageLoader"></div>
+
+    <header class="siteHeader">
+
+        <nav class="mainNavigation">
+
+            <a href="index.html" class="brandLogo">
+                Farm<span>Rent</span>
+            </a>
+
+            <div class="navigationLinks" id="navigationLinks">
+
+                <button
+                    class="closeMenuButton"
+                    id="closeMenuButton"
+                    aria-label="Close menu"
+                >
+                    ×
+                </button>
+
+                <a href="index.html">Home</a>
+                <a href="equipment.html">Equipment</a>
+                <a href="agro-products.html">Agro Products</a>
+                <a href="about.html">About</a>
+                <a href="help.html">Help</a>
+
+                <a href="profile.html" class="mobileProfileLink">
+                    ♙ Profile
+                </a>
+
+                <a href="#" class="mobileLogoutLink" id="mobileLogoutLink">
+                    Log Out
+                </a>
+
+            </div>
+
+            <div class="navigationActions">
+
+                <button
+                    class="themeToggle"
+                    id="themeToggle"
+                    aria-label="Toggle dark mode"
+                >
+                    <span id="themeIcon">☾</span>
+                </button>
+
+                <a
+                    href="profile.html"
+                    class="desktopProfileLink"
+                    aria-label="Profile"
+                >
+                    ♙
+                </a>
+
+                <a href="login.html" class="loginLink">
+                    Login
+                </a>
+
+                <a href="register.html" class="signupButton">
+                    Sign Up
+                </a>
+
+                <button
+                    class="mobileMenuButton"
+                    id="mobileMenuButton"
+                    aria-label="Open menu"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="bookingSection">
+
+            <div class="bookingContainer">
+
+                <div class="bookingIntro">
+
+                    <p class="sectionEyebrow">
+                        RENT EQUIPMENT
+                    </p>
+
+                    <h1>
+                        Book the equipment you need.
+                    </h1>
+
+                    <p>
+                        Choose your rental dates, provide your details
+                        and confirm your equipment booking with FarmRent.
+                    </p>
+
+                    <div class="bookingSteps">
+
+                        <div class="bookingStep">
+                            <span>01</span>
+                            <div>
+                                <h3>Choose your dates</h3>
+                                <p>
+                                    Select when you need the equipment
+                                    and how long you want to rent it.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bookingStep">
+                            <span>02</span>
+                            <div>
+                                <h3>Provide your details</h3>
+                                <p>
+                                    Tell us where the equipment will be
+                                    used and how we can contact you.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bookingStep">
+                            <span>03</span>
+                            <div>
+                                <h3>Confirm your booking</h3>
+                                <p>
+                                    Review the rental information before
+                                    completing your request.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="bookingCard">
+
+                    <div class="bookingCardHeader">
+
+                        <p class="sectionEyebrow">
+                            BOOKING DETAILS
+                        </p>
+
+                        <h2>
+                            Complete your rental
+                        </h2>
+
+                    </div>
+
+                    <div class="selectedEquipment">
+
+                        <div class="equipmentPreview" id="equipmentPreview">
+                            <span>Farm Tractor</span>
+                        </div>
+
+                        <div class="selectedEquipmentDetails">
+
+                            <p id="selectedLocation">
+                                Jos, Plateau State
+                            </p>
+
+                            <h3 id="selectedEquipment">
+                                Farm Tractor
+                            </h3>
+
+                            <strong id="selectedPrice">
+                                ₦80,000
+                            </strong>
+
+                            <span>
+                                / day
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <form id="bookingForm" novalidate>
+
+                        <div class="formRow">
+
+                            <div class="formGroup">
+
+                                <label for="startDate">
+                                    Rental Start Date
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="startDate"
+                                    name="startDate"
+                                    required
+                                >
+
+                                <small
+                                    class="errorMessage"
+                                    id="startDateError"
+                                ></small>
+
+                            </div>
+
+                            <div class="formGroup">
+
+                                <label for="endDate">
+                                    Rental End Date
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="endDate"
+                                    name="endDate"
+                                    required
+                                >
+
+                                <small
+                                    class="errorMessage"
+                                    id="endDateError"
+                                ></small>
+
+                            </div>
+
+                        </div>
+
+                        <div class="formGroup">
+
+                            <label for="deliveryOption">
+                                Equipment Delivery
+                            </label>
+
+                            <select
+                                id="deliveryOption"
+                                name="deliveryOption"
+                                required
+                            >
+                                <option value="">
+                                    Select an option
+                                </option>
+
+                                <option value="pickup">
+                                    I will pick up the equipment
+                                </option>
+
+                                <option value="delivery">
+                                    Deliver the equipment to me
+                                </option>
+                            </select>
+
+                            <small
+                                class="errorMessage"
+                                id="deliveryError"
+                            ></small>
+
+                        </div>
+
+                        <div
+                            class="deliveryAddressGroup"
+                            id="deliveryAddressGroup"
+                        >
+
+                            <label for="deliveryAddress">
+                                Delivery Address
+                            </label>
+
+                            <textarea
+                                id="deliveryAddress"
+                                name="deliveryAddress"
+                                rows="3"
+                                placeholder="Enter the address where the equipment should be delivered"
+                            ></textarea>
+
+                            <small
+                                class="errorMessage"
+                                id="addressError"
+                            ></small>
+
+                        </div>
+
+                        <div class="formRow">
+
+                            <div class="formGroup">
+
+                                <label for="phoneNumber">
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="phoneNumber"
+                                    name="phoneNumber"
+                                    placeholder="0800 000 0000"
+                                    required
+                                >
+
+                                <small
+                                    class="errorMessage"
+                                    id="phoneError"
+                                ></small>
+
+                            </div>
+
+                            <div class="formGroup">
+
+                                <label for="farmLocation">
+                                    Farm Location
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="farmLocation"
+                                    name="farmLocation"
+                                    placeholder="e.g. Jos"
+                                    required
+                                >
+
+                                <small
+                                    class="errorMessage"
+                                    id="farmLocationError"
+                                ></small>
+
+                            </div>
+
+                        </div>
+
+                        <div class="formGroup">
+
+                            <label for="bookingNotes">
+                                Additional Notes
+                            </label>
+
+                            <textarea
+                                id="bookingNotes"
+                                name="bookingNotes"
+                                rows="3"
+                                placeholder="Anything the equipment owner should know?"
+                            ></textarea>
+
+                        </div>
+
+                        <div class="priceSummary">
+
+                            <div>
+                                <span>Daily rental rate</span>
+                                <strong id="summaryDailyPrice">
+                                    ₦80,000
+                                </strong>
+                            </div>
+
+                            <div>
+                                <span>Rental duration</span>
+                                <strong id="rentalDays">
+                                    0 days
+                                </strong>
+                            </div>
+
+                            <div class="totalRow">
+                                <span>Estimated total</span>
+                                <strong id="estimatedTotal">
+                                    ₦0
+                                </strong>
+                            </div>
+
+                        </div>
+
+                        <label class="confirmationCheck">
+
+                            <input
+                                type="checkbox"
+                                id="bookingConfirmation"
+                                required
+                            >
+
+                            <span>
+                                I confirm that the information provided is
+                                accurate and I agree to the rental terms.
+                            </span>
+
+                        </label>
+
+                        <small
+                            class="errorMessage"
+                            id="confirmationError"
+                        ></small>
+
+                        <button
+                            type="submit"
+                            class="confirmBookingButton"
+                            id="confirmBookingButton"
+                        >
+                            Confirm Rental
+                        </button>
+
+                    </form>
+
+                    <p class="bookingNotice">
+                        Your booking request will be reviewed before
+                        the rental is confirmed.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="siteFooter">
+
+        <div class="footerMain">
+
+            <div class="footerBrand">
+
+                <a href="index.html" class="footerLogo">
+                    Farm<span>Rent</span>
+                </a>
+
+                <p>
+                    A farm equipment rental and agricultural marketplace
+                    connecting farmers, equipment owners and agro product sellers.
+                </p>
+
+                <p class="footerCompany">
+                    Domsal&Bonks Nigeria Limited
+                </p>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>FarmRent</h3>
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="about.html">About</a>
+                <a href="help.html">Help Center</a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>Equipment</h3>
+
+                <a href="equipment.html">Browse Equipment</a>
+                <a href="list-equipment.html">List Equipment</a>
+                <a href="equipment.html">Rent Equipment</a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>Services</h3>
+
+                <a href="agro-products.html">Agro Products</a>
+                <a href="register.html">Create Account</a>
+                <a href="login.html">Login</a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>Contact</h3>
+
+                <p>Jos, Plateau State</p>
+                <p>Nigeria</p>
+
+                <a href="help.html">Contact Support</a>
+
+            </div>
+
+        </div>
+
+        <div class="footerBottom">
+
+            <p>
+                © 2026 FarmRent. All rights reserved.
+            </p>
+
+            <div class="footerBottomLinks">
+
+                <a href="#">
+                    Terms
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <button
+        class="backToTop"
+        id="backToTop"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+    <script src="/js/rental.js"></script>
+
+</body>
+</html>

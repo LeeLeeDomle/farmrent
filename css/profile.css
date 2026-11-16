@@ -1,0 +1,1459 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f5ed;
+    color: #17351f;
+    overflow-x: hidden;
+}
+
+body.darkMode {
+    background: #101712;
+    color: #ffffff;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.pageLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: #228b22;
+    z-index: 9999;
+    transition: width 0.8s ease;
+}
+
+.siteHeader {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 1px solid #dddddd;
+}
+
+.darkMode .siteHeader {
+    background: #121b15;
+    border-bottom-color: #303b34;
+}
+
+.mainNavigation {
+    width: min(1200px, 92%);
+    min-height: 78px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.brandLogo,
+.footerLogo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.brandLogo span,
+.footerLogo span {
+    color: #228b22;
+}
+
+.navigationLinks {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.navigationLinks a {
+    padding: 8px 0;
+    color: #222222;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.darkMode .navigationLinks a {
+    color: #ffffff;
+}
+
+.navigationLinks a:hover,
+.activeProfileLink {
+    color: #228b22 !important;
+}
+
+.navigationActions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.themeToggle {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #cccccc;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #17351f;
+}
+
+.darkMode .themeToggle {
+    background: #1b261f;
+    border-color: #3c473f;
+    color: #ffffff;
+}
+
+.desktopProfileLink {
+    font-size: 26px;
+}
+
+.loginLink {
+    color: #17351f;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.darkMode .loginLink {
+    color: #ffffff;
+}
+
+.signupButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 43px;
+    padding: 0 20px;
+    border: 1px solid #228b22;
+    border-radius: 7px;
+    background: #228b22;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.signupButton:hover {
+    background: #176b1b;
+}
+
+.mobileMenuButton,
+.closeMenuButton,
+.mobileProfileLink {
+    display: none;
+}
+
+.profileHero {
+    min-height: 330px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-image: url("https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?auto=format&fit=crop&w=1600&q=85");
+    background-size: cover;
+    background-position: center;
+}
+
+.profileHero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 31, 17, 0.72);
+}
+
+.profileHeroContent {
+    position: relative;
+    z-index: 2;
+    width: min(1200px, 92%);
+    margin: auto;
+    color: #ffffff;
+}
+
+.profileHero .sectionEyebrow {
+    color: #bde5bd;
+}
+
+.profileHero h1 {
+    max-width: 700px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.profileHero p:last-child {
+    max-width: 650px;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.profileSection {
+    width: min(1200px, 92%);
+    margin: auto;
+    padding: 70px 0;
+}
+
+.profileLayout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.profileSidebar {
+    position: sticky;
+    top: 105px;
+}
+
+.profileCard {
+    padding: 30px 22px;
+    border: 1px solid #d5d5d5;
+    border-radius: 10px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.darkMode .profileCard,
+.darkMode .profilePanel {
+    background: #182119;
+    border-color: #3c473f;
+}
+
+.profileAvatar {
+    width: 78px;
+    height: 78px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #228b22;
+    color: #ffffff;
+    font-size: 31px;
+    font-weight: 800;
+}
+
+.profileCard h2 {
+    margin-bottom: 6px;
+    color: #17351f;
+    font-size: 22px;
+}
+
+.darkMode .profileCard h2 {
+    color: #ffffff;
+}
+
+.profileCard > p {
+    color: #333333;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.darkMode .profileCard > p {
+    color: #eeeeee;
+}
+
+.verificationBadge {
+    width: fit-content;
+    margin: 15px auto 20px;
+    padding: 7px 10px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    border-radius: 20px;
+    background: #e8f5e8;
+    color: #176b1b;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.verificationBadge span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #228b22;
+}
+
+.editProfileButton,
+.smallEditButton {
+    border: 1px solid #228b22;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #228b22;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.editProfileButton {
+    width: 100%;
+    min-height: 42px;
+}
+
+.editProfileButton:hover,
+.smallEditButton:hover {
+    background: #228b22;
+    color: #ffffff;
+}
+
+.darkMode .editProfileButton,
+.darkMode .smallEditButton {
+    background: #182119;
+}
+
+.profileMenu {
+    margin-top: 15px;
+    padding: 8px;
+    border: 1px solid #d5d5d5;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.darkMode .profileMenu {
+    background: #182119;
+    border-color: #3c473f;
+}
+
+.profileMenuButton {
+    width: 100%;
+    padding: 13px;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: #222222;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.darkMode .profileMenuButton {
+    color: #ffffff;
+}
+
+.profileMenuButton:hover,
+.activeMenu {
+    background: #e8f5e8;
+    color: #176b1b;
+}
+
+.profileMain {
+    min-width: 0;
+}
+
+.profilePanel {
+    margin-bottom: 25px;
+    padding: 30px;
+    border: 1px solid #d5d5d5;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.panelHeading {
+    margin-bottom: 27px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.panelHeading h2 {
+    color: #17351f;
+    font-size: 27px;
+}
+
+.darkMode .panelHeading h2 {
+    color: #ffffff;
+}
+
+.smallEditButton {
+    min-width: 70px;
+    min-height: 35px;
+}
+
+.informationGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid #dddddd;
+}
+
+.informationItem {
+    min-height: 82px;
+    padding: 17px 15px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.informationItem:nth-child(odd) {
+    border-right: 1px solid #dddddd;
+}
+
+.informationItem.fullWidth {
+    grid-column: span 2;
+    border-right: 0;
+}
+
+.informationItem span {
+    display: block;
+    margin-bottom: 8px;
+    color: #333333;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.darkMode .informationItem span {
+    color: #eeeeee;
+}
+
+.informationItem strong {
+    display: block;
+    color: #17351f;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.darkMode .informationItem strong {
+    color: #ffffff;
+}
+
+.activityGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.activityCard {
+    min-height: 175px;
+    padding: 20px;
+    border: 1px solid #d5d5d5;
+    border-radius: 8px;
+    background: #f7f5ed;
+}
+
+.darkMode .activityCard {
+    background: #121b15;
+    border-color: #3c473f;
+}
+
+.activityIcon {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background: #228b22;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.activityCard span {
+    display: block;
+    margin-bottom: 5px;
+    color: #333333;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.darkMode .activityCard span {
+    color: #eeeeee;
+}
+
+.activityCard strong {
+    display: block;
+    margin-bottom: 14px;
+    color: #17351f;
+    font-size: 25px;
+}
+
+.darkMode .activityCard strong {
+    color: #ffffff;
+}
+
+.activityCard a {
+    color: #228b22;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.ownerSection {
+    margin-top: 25px;
+    padding: 25px;
+    border-radius: 8px;
+    background: #17351f;
+}
+
+.ownerSectionHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.ownerSection .sectionEyebrow {
+    color: #a9dda9;
+}
+
+.ownerSection h3 {
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.ownerSection p:not(.sectionEyebrow) {
+    max-width: 560px;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.primaryButton {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 17px;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #17351f;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.primaryButton:hover {
+    background: #a9dda9;
+}
+
+.settingsList {
+    border-top: 1px solid #dddddd;
+}
+
+.settingItem {
+    min-height: 85px;
+    padding: 18px 0;
+    border-bottom: 1px solid #dddddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.settingItem h3 {
+    margin-bottom: 5px;
+    color: #17351f;
+    font-size: 14px;
+}
+
+.darkMode .settingItem h3 {
+    color: #ffffff;
+}
+
+.settingItem p {
+    color: #333333;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.darkMode .settingItem p {
+    color: #eeeeee;
+}
+
+.settingButton,
+.logoutButton {
+    min-height: 35px;
+    padding: 0 14px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.settingButton {
+    border: 1px solid #228b22;
+    background: #ffffff;
+    color: #228b22;
+}
+
+.logoutButton {
+    border: 1px solid #b42318;
+    background: #ffffff;
+    color: #b42318;
+}
+
+.toggleSwitch {
+    position: relative;
+    width: 45px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.toggleSwitch input {
+    display: none;
+}
+
+.toggleSwitch span {
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background: #cccccc;
+    cursor: pointer;
+}
+
+.toggleSwitch span::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #ffffff;
+    transition: left 0.2s ease;
+}
+
+.toggleSwitch input:checked + span {
+    background: #228b22;
+}
+
+.toggleSwitch input:checked + span::before {
+    left: 24px;
+}
+
+.editModalBackdrop {
+    position: fixed;
+    inset: 0;
+    padding: 25px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 3000;
+}
+
+.editModalBackdrop.showModal {
+    display: flex;
+}
+
+.editModal {
+    position: relative;
+    width: min(560px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 35px;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.darkMode .editModal {
+    background: #182119;
+}
+
+.editModal h2 {
+    margin-bottom: 25px;
+    color: #17351f;
+    font-size: 28px;
+}
+
+.darkMode .editModal h2 {
+    color: #ffffff;
+}
+
+.modalCloseButton {
+    position: absolute;
+    top: 15px;
+    right: 17px;
+    width: 35px;
+    height: 35px;
+    border: 0;
+    background: transparent;
+    color: #17351f;
+    font-size: 27px;
+}
+
+.darkMode .modalCloseButton {
+    color: #ffffff;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.formGroup {
+    margin-bottom: 17px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 7px;
+    color: #17351f;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.darkMode .formGroup label {
+    color: #ffffff;
+}
+
+.formGroup input,
+.formGroup textarea {
+    width: 100%;
+    border: 1px solid #c8cdc8;
+    border-radius: 6px;
+    outline: none;
+    background: #ffffff;
+    color: #17351f;
+    font-size: 13px;
+}
+
+.formGroup input {
+    height: 44px;
+    padding: 0 12px;
+}
+
+.formGroup textarea {
+    min-height: 75px;
+    padding: 12px;
+    resize: vertical;
+}
+
+.darkMode .formGroup input,
+.darkMode .formGroup textarea {
+    background: #121b15;
+    border-color: #3c473f;
+    color: #ffffff;
+}
+
+.saveButton {
+    width: 100%;
+    min-height: 45px;
+    border: 0;
+    border-radius: 6px;
+    background: #228b22;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.siteFooter {
+    background: #122019;
+    color: #ffffff;
+}
+
+.footerMain {
+    width: min(1200px, 92%);
+    margin: auto;
+    padding: 65px 0 50px;
+    display: grid;
+    grid-template-columns: 1.6fr repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footerBrand p {
+    max-width: 340px;
+    margin-top: 17px;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.footerBrand .footerCompany {
+    color: #ffffff;
+    font-weight: 800;
+}
+
+.footerColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footerColumn h3 {
+    margin-bottom: 7px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.footerColumn a,
+.footerColumn p {
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.footerColumn a:hover {
+    color: #a9dda9;
+}
+
+.footerBottom {
+    width: min(1200px, 92%);
+    margin: auto;
+    padding: 22px 0;
+    border-top: 1px solid #3a4940;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footerBottom p,
+.footerBottomLinks a {
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.backToTop {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 45px;
+    height: 45px;
+    border: 0;
+    border-radius: 50%;
+    background: #228b22;
+    color: #ffffff;
+    font-size: 21px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.25s ease;
+    z-index: 900;
+}
+
+.backToTop.showButton {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+@media (max-width: 1050px) {
+
+    .navigationLinks {
+        gap: 17px;
+    }
+
+    .footerMain {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footerBrand {
+        grid-column: span 3;
+    }
+
+}
+
+@media (max-width: 850px) {
+
+    .navigationLinks {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(320px, 86%);
+        height: 100vh;
+        padding: 75px 30px 30px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 7px;
+        background: #ffffff;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+        transition: right 0.3s ease;
+        z-index: 2000;
+    }
+
+    .darkMode .navigationLinks {
+        background: #121b15;
+    }
+
+    .navigationLinks.menuOpen {
+        right: 0;
+    }
+
+    .navigationLinks a {
+        width: 100%;
+        padding: 13px 0;
+        font-size: 15px;
+    }
+
+    .closeMenuButton {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: block;
+        width: 40px;
+        height: 40px;
+        border: 0;
+        background: transparent;
+        color: #17351f;
+        font-size: 30px;
+    }
+
+    .darkMode .closeMenuButton {
+        color: #ffffff;
+    }
+
+    .mobileProfileLink {
+        display: flex !important;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .desktopProfileLink,
+    .loginLink {
+        display: none;
+    }
+
+    .mobileMenuButton {
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        border: 0;
+        background: transparent;
+    }
+
+    .mobileMenuButton span {
+        width: 24px;
+        height: 2px;
+        background: #17351f;
+    }
+
+    .darkMode .mobileMenuButton span {
+        background: #ffffff;
+    }
+
+    .profileLayout {
+        grid-template-columns: 1fr;
+    }
+
+    .profileSidebar {
+        position: static;
+    }
+
+    .profileCard {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        text-align: left;
+        gap: 14px;
+    }
+
+    .profileAvatar {
+        width: 62px;
+        height: 62px;
+        margin: 0;
+    }
+
+    .verificationBadge {
+        margin: 5px 0 0;
+    }
+
+    .editProfileButton {
+        width: auto;
+        padding: 0 15px;
+    }
+
+    .profileMenu {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .profileMenuButton {
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .mainNavigation {
+        width: 94%;
+        min-height: 64px;
+    }
+
+    .brandLogo {
+        font-size: 21px;
+    }
+
+    .navigationActions {
+        gap: 6px;
+    }
+
+    .themeToggle {
+        width: 32px;
+        height: 32px;
+    }
+
+.mobileLogoutLink {
+    width: 100%;
+    padding: 13px 0;
+    border: 0;
+    background: transparent;
+    color: #222222;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+}
+
+.mobileLogoutLink:hover {
+    color: #228b22;
+}
+.darkMode .mobileLogoutLink {
+    color: #ffffff;
+}
+
+.darkMode .mobileLogoutLink:hover {
+    color: #228b22;
+}
+    .signupButton {
+        min-height: 34px;
+        padding: 0 10px;
+        font-size: 11px;
+    }
+
+    .mobileMenuButton {
+        width: 35px;
+        height: 35px;
+    }
+
+    .mobileMenuButton span {
+        width: 21px;
+    }
+
+    .profileHero {
+        min-height: 290px;
+    }
+
+    .profileHeroContent {
+        width: 88%;
+    }
+
+    .profileHero h1 {
+        font-size: 38px;
+        letter-spacing: -1px;
+    }
+
+    .profileHero p:last-child {
+        font-size: 13px;
+    }
+
+    .profileSection {
+        width: 92%;
+        padding: 45px 0;
+    }
+
+    .profileCard {
+        grid-template-columns: 60px 1fr;
+    }
+
+    .profileCard .editProfileButton {
+        grid-column: span 2;
+        width: 100%;
+    }
+
+    .verificationBadge {
+        font-size: 13px;
+    }
+
+    .profileMenu {
+        grid-template-columns: 1fr;
+    }
+
+    .profileMenuButton {
+        padding: 11px;
+        text-align: left;
+    }
+
+    .profilePanel {
+        padding: 21px 17px;
+    }
+
+    .panelHeading {
+        margin-bottom: 20px;
+    }
+
+    .panelHeading h2 {
+        font-size: 25px;
+    }
+
+    .informationGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .informationItem,
+    .informationItem.fullWidth {
+        grid-column: span 1;
+        border-right: 0;
+    }
+
+    .informationItem:nth-child(odd) {
+        border-right: 0;
+    }
+
+    .activityGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .activityCard {
+        min-height: 145px;
+    }
+
+    .ownerSection {
+        padding: 20px;
+    }
+
+    .ownerSectionHeader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .primaryButton {
+        width: 100%;
+    }
+
+    .settingItem {
+        align-items: flex-start;
+    }
+
+    .formRow {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .editModal {
+        padding: 27px 20px;
+    }
+
+    .footerMain {
+        width: 94%;
+        grid-template-columns: 1fr 1fr;
+        gap: 27px 18px;
+        padding: 42px 0 32px;
+    }
+
+    .footerBrand {
+        grid-column: span 2;
+    }
+
+    .footerBrand p {
+        max-width: 100%;
+        margin-top: 12px;
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+    .footerColumn {
+        gap: 8px;
+    }
+
+    .footerColumn h3 {
+        margin-bottom: 4px;
+        font-size: 13px;
+    }
+
+    .footerColumn a,
+    .footerColumn p {
+        font-size: 11px;
+    }
+
+    .footerBottom {
+        width: 94%;
+        padding: 17px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .footerBottom p,
+    .footerBottomLinks a {
+        font-size: 10px;
+    }
+
+    .backToTop {
+        right: 14px;
+        bottom: 14px;
+        width: 38px;
+        height: 38px;
+        font-size: 17px;
+    }
+
+}
+
+
+.myRentalsSection {
+    width: min(1100px, 92%);
+    margin: 45px auto 70px;
+}
+
+.myRentalsHeader h2 {
+    margin-bottom: 10px;
+    color: #17351f;
+    font-size: 32px;
+}
+
+.myRentalsHeader > div > p:last-child {
+    color: #333333;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.rentalTabs {
+    margin: 25px 0;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #d5d5d5;
+}
+
+.rentalTab {
+    padding: 11px 16px;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    background: transparent;
+    color: #333333;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.rentalTab:hover {
+    color: #228b22;
+}
+
+.rentalTab.activeRentalTab {
+    border-bottom-color: #228b22;
+    color: #228b22;
+}
+
+.rentalHistory {
+    display: grid;
+    gap: 15px;
+}
+
+.rentalCard {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    border: 1px solid #d5d5d5;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.rentalCardMain {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.rentalCardImage {
+    width: 110px;
+    height: 85px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.rentalCardDetails p {
+    margin-bottom: 5px;
+    color: #333333;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.rentalCardDetails h3 {
+    margin-bottom: 7px;
+    color: #17351f;
+    font-size: 18px;
+}
+
+.rentalDates {
+    color: #333333;
+    font-size: 12px;
+}
+
+.rentalCardSide {
+    min-width: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 9px;
+}
+
+.rentalStatus {
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: #e7f4e7;
+    color: #176b1b;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.rentalStatus.activeStatus {
+    background: #e2f0e8;
+    color: #176b1b;
+}
+
+.rentalStatus.completedStatus {
+    background: #eeeeee;
+    color: #333333;
+}
+
+.rentalAmount {
+    color: #17351f;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.rentalViewButton {
+    padding: 8px 12px;
+    border: 1px solid #228b22;
+    border-radius: 5px;
+    background: transparent;
+    color: #228b22;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.rentalViewButton:hover {
+    background: #228b22;
+    color: #ffffff;
+}
+
+.emptyRentalState {
+    padding: 55px 20px;
+    border: 1px dashed #bfc5bf;
+    border-radius: 8px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.emptyRentalIcon {
+    margin-bottom: 15px;
+    font-size: 35px;
+}
+
+.emptyRentalState h3 {
+    margin-bottom: 8px;
+    color: #17351f;
+    font-size: 20px;
+}
+
+.emptyRentalState p {
+    max-width: 420px;
+    margin: 0 auto 20px;
+    color: #333333;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.browseEquipmentButton {
+    min-height: 42px;
+    padding: 0 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background: #228b22;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.browseEquipmentButton:hover {
+    background: #176b1b;
+}
+
+@media (max-width: 600px) {
+
+    .myRentalsSection {
+        width: 92%;
+        margin: 35px auto 50px;
+    }
+
+    .myRentalsHeader h2 {
+        font-size: 26px;
+    }
+
+    .myRentalsHeader > div > p:last-child {
+        font-size: 13px;
+    }
+
+    .rentalTabs {
+        margin: 20px 0;
+        gap: 3px;
+    }
+
+    .rentalTab {
+        padding: 9px 11px;
+        font-size: 11px;
+    }
+
+    .rentalCard {
+        padding: 14px;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .rentalCardMain {
+        gap: 12px;
+    }
+
+    .rentalCardImage {
+        width: 85px;
+        height: 70px;
+    }
+
+    .rentalCardDetails h3 {
+        font-size: 15px;
+    }
+
+    .rentalCardDetails p,
+    .rentalDates {
+        font-size: 10px;
+    }
+
+    .rentalCardSide {
+        min-width: 0;
+        width: 100%;
+        padding-top: 12px;
+        align-items: flex-start;
+        border-top: 1px solid #eeeeee;
+    }
+
+    .rentalAmount {
+        font-size: 14px;
+    }
+
+    .emptyRentalState {
+        padding: 40px 15px;
+    }
+
+}
+

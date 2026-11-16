@@ -1,0 +1,53 @@
+# FarmRent
+
+> FarmRent is a farm equipment rental platform connecting farmers with equipment owners and providing access to agro products.
+
+## About FarmRent
+
+FarmRent makes it easier for farmers to find and access agricultural equipment for their farming needs.
+
+Equipment owners can list their machines and make them available to farmers looking for equipment to rent.
+
+FarmRent also provides access to agro products and agricultural resources.
+
+FarmRent is operated by Domsal&Bonks Nigeria Limited.
+
+## Main Pages
+
+- [Home](https://yourdomain.com/index.html): FarmRent homepage and overview of available services.
+- [Equipment](https://yourdomain.com/equipment.html): Browse farm equipment available through FarmRent.
+- [Agro Products](https://yourdomain.com/agro-products.html): Explore agricultural products and resources.
+- [About](https://yourdomain.com/about.html): Learn more about FarmRent and how the platform operates.
+- [Help](https://yourdomain.com/help.html): Find answers and assistance about using FarmRent.
+- [List Equipment](https://yourdomain.com/list-equipment.html): Information and access for equipment owners who want to list their machines.
+
+## Equipment Rental
+
+FarmRent allows users to browse farm equipment and explore rental options.
+
+Equipment listings may include tractors, power tillers, irrigation systems, combine harvesters, and other agricultural equipment.
+
+## Equipment Owners
+
+Equipment owners can use FarmRent to list their agricultural machines and make them available to farmers who need them.
+
+## Agro Products
+
+FarmRent includes an agro products section where users can explore agricultural products and resources.
+
+## Account Pages
+
+- [Login](https://yourdomain.com/login.html): User login page.
+- [Register](https://yourdomain.com/register.html): User account registration page.
+- [Profile](https://yourdomain.com/profile.html): User profile page.
+
+## Policies
+
+- [Privacy](https://yourdomain.com/privacy.html): FarmRent privacy information.
+- [Terms](https://yourdomain.com/terms.html): FarmRent terms and conditions.
+
+## Important Notes
+
+FarmRent is a frontend web platform. Information about equipment, availability, rental prices, products, and other services should be treated as information provided through the website.
+
+For the most current information, refer to the relevant FarmRent page.

@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse farming equipment available for rent on FarmRent. Find tractors, tillers, irrigation systems and harvesters for your next farming job.">
+    <meta name="robots" content="index, follow">
+    <title>FarmRent | Farm Equipment Rental</title>
+    <link rel="stylesheet" href="../css/equipment.css">
+</head>
+
+<body>
+
+    <div class="pageLoader" id="pageLoader"></div>
+
+    <header class="siteHeader">
+        <nav class="mainNavigation">
+
+            <a href="index.html" class="brandLogo">
+                Farm<span>Rent</span>
+            </a>
+
+            <div class="navigationLinks" id="navigationLinks">
+
+                <button
+                    class="closeMenuButton"
+                    id="closeMenuButton"
+                    type="button"
+                    aria-label="Close menu"
+                >
+                    ×
+                </button>
+
+                <a href="index.html">Home</a>
+                <a href="equipment.html" class="activeLink">Equipment</a>
+                <a href="agro-products.html">Agro Products</a>
+                <a href="about.html">About</a>
+                <a href="help.html">Help</a>
+
+                <div class="mobileAccountLinks">
+
+                    <a href="profile.html" class="mobileProfileLink">
+                        <span class="profileIcon">♙</span>
+                        Profile
+                    </a>
+
+                    <a href="login.html" class="mobileLoginLink">
+                        Login
+                    </a>
+
+                    <a href="register.html" class="mobileSignupLink">
+                        Sign Up
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="navigationActions">
+
+                <button
+                    class="themeToggle"
+                    id="themeToggle"
+                    type="button"
+                    aria-label="Toggle dark mode"
+                >
+                    <span id="themeIcon">☾</span>
+                </button>
+
+                <a
+                    href="profile.html"
+                    class="desktopProfileLink"
+                    aria-label="Profile"
+                >
+                    ♙
+                </a>
+
+                <a href="login.html" class="loginLink">
+                    Login
+                </a>
+
+                <a href="register.html" class="signupButton">
+                    Sign Up
+                </a>
+
+                <button
+                    class="mobileMenuButton"
+                    id="mobileMenuButton"
+                    type="button"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                    aria-controls="navigationLinks"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="equipmentHero">
+
+            <div
+                class="equipmentHeroImage"
+                role="img"
+                aria-label="Farm tractor in an agricultural field"
+            ></div>
+
+            <div class="equipmentHeroOverlay"></div>
+
+            <div class="equipmentHeroContent">
+
+                <p class="sectionEyebrow">FARM EQUIPMENT</p>
+
+                <h1>
+                    Find the right equipment for your farm.
+                </h1>
+
+                <p>
+                    Browse reliable agricultural equipment available for
+                    rental and find what you need for your next farming job.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="equipmentSection">
+
+            <div class="equipmentTop">
+
+                <div>
+                    <p class="sectionEyebrow">AVAILABLE EQUIPMENT</p>
+
+                    <h2>
+                        Equipment ready when you need it.
+                    </h2>
+                </div>
+
+                <div class="equipmentSearch">
+
+                    <input
+                        type="search"
+                        id="equipmentSearch"
+                        placeholder="Search equipment..."
+                        aria-label="Search equipment"
+                    >
+
+                    <button
+                        class="searchButton"
+                        id="searchButton"
+                        type="button"
+                        aria-label="Search"
+                    >
+                        <svg
+                            class="searchIcon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <circle cx="11" cy="11" r="7"></circle>
+                            <line
+                                x1="16.5"
+                                y1="16.5"
+                                x2="21"
+                                y2="21"
+                            ></line>
+                        </svg>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div
+                class="equipmentFilters"
+                aria-label="Equipment categories"
+            >
+
+                <button
+                    class="filterButton activeFilter"
+                    data-filter="all"
+                    type="button"
+                    aria-pressed="true"
+                >
+                    All Equipment
+                </button>
+
+                <button
+                    class="filterButton"
+                    data-filter="tractor"
+                    type="button"
+                    aria-pressed="false"
+                >
+                    Tractors
+                </button>
+
+                <button
+                    class="filterButton"
+                    data-filter="tiller"
+                    type="button"
+                    aria-pressed="false"
+                >
+                    Tillers
+                </button>
+
+                <button
+                    class="filterButton"
+                    data-filter="irrigation"
+                    type="button"
+                    aria-pressed="false"
+                >
+                    Irrigation
+                </button>
+
+                <button
+                    class="filterButton"
+                    data-filter="harvester"
+                    type="button"
+                    aria-pressed="false"
+                >
+                    Harvesters
+                </button>
+
+            </div>
+
+            <div class="equipmentGrid" id="equipmentGrid">
+
+                <article
+                    class="equipmentCard"
+                    data-category="tractor"
+                    data-name="Farm Tractor"
+                    data-location="Jos, Plateau State"
+                    data-price="₦80,000"
+                    data-description="Reliable tractor suitable for ploughing, hauling, field preparation and other major farm operations."
+                    data-image="tractor"
+                >
+                    <div
+                        class="equipmentImage equipmentImageOne"
+                        role="img"
+                        aria-label="Farm tractor available for rent"
+                    >
+                        <span class="availabilityBadge">
+                            Available
+                        </span>
+                    </div>
+
+                    <div class="equipmentDetails">
+
+                        <p class="equipmentLocation">
+                            Jos, Plateau State
+                        </p>
+
+                        <h3>Farm Tractor</h3>
+
+                        <p class="equipmentDescription">
+                            Reliable tractor for ploughing, hauling and field preparation.
+                        </p>
+
+                        <div class="equipmentBottom">
+
+                            <div>
+                                <span class="priceAmount">₦80,000</span>
+                                <span class="pricePeriod">/ day</span>
+                            </div>
+
+                            <button
+                                class="rentButton"
+                                type="button"
+                            >
+                                Rent Now
+                            </button>
+
+                        </div>
+
+                    </div>
+                </article>
+
+                <article
+                    class="equipmentCard"
+                    data-category="tiller"
+                    data-name="Power Tiller"
+                    data-location="Jos, Plateau State"
+                    data-price="₦35,000"
+                    data-description="Compact and practical equipment suitable for smaller farm operations and field preparation."
+                    data-image="tiller"
+                >
+                    <div
+                        class="equipmentImage equipmentImageTwo"
+                        role="img"
+                        aria-label="Power tiller available for rent"
+                    >
+                        <span class="availabilityBadge">
+                            Available
+                        </span>
+                    </div>
+
+                    <div class="equipmentDetails">
+
+                        <p class="equipmentLocation">
+                            Jos, Plateau State
+                        </p>
+
+                        <h3>Power Tiller</h3>
+
+                        <p class="equipmentDescription">
+                            Compact equipment suitable for smaller farm operations.
+                        </p>
+
+                        <div class="equipmentBottom">
+
+                            <div>
+                                <span class="priceAmount">₦35,000</span>
+                                <span class="pricePeriod">/ day</span>
+                            </div>
+
+                            <button
+                                class="rentButton"
+                                type="button"
+                            >
+                                Rent Now
+                            </button>
+
+                        </div>
+
+                    </div>
+                </article>
+
+                <article
+                    class="equipmentCard"
+                    data-category="irrigation"
+                    data-name="Irrigation System"
+                    data-location="Jos, Plateau State"
+                    data-price="₦25,000"
+                    data-description="Efficient irrigation equipment designed to help farmers provide consistent watering for their crops."
+                    data-image="irrigation"
+                >
+                    <div
+                        class="equipmentImage equipmentImageThree"
+                        role="img"
+                        aria-label="Irrigation system available for rent"
+                    >
+                        <span class="availabilityBadge">
+                            Available
+                        </span>
+                    </div>
+
+                    <div class="equipmentDetails">
+
+                        <p class="equipmentLocation">
+                            Jos, Plateau State
+                        </p>
+
+                        <h3>Irrigation System</h3>
+
+                        <p class="equipmentDescription">
+                            Irrigation equipment for efficient crop watering.
+                        </p>
+
+                        <div class="equipmentBottom">
+
+                            <div>
+                                <span class="priceAmount">₦25,000</span>
+                                <span class="pricePeriod">/ day</span>
+                            </div>
+
+                            <button
+                                class="rentButton"
+                                type="button"
+                            >
+                                Rent Now
+                            </button>
+
+                        </div>
+
+                    </div>
+                </article>
+
+                <article
+                    class="equipmentCard"
+                    data-category="harvester"
+                    data-name="Combine Harvester"
+                    data-location="Jos, Plateau State"
+                    data-price="₦120,000"
+                    data-description="Efficient harvesting equipment designed for larger farming operations and faster crop harvesting."
+                    data-image="harvester"
+                >
+                    <div
+                        class="equipmentImage equipmentImageFour"
+                        role="img"
+                        aria-label="Combine harvester available for rent"
+                    >
+                        <span class="availabilityBadge">
+                            Available
+                        </span>
+                    </div>
+
+                    <div class="equipmentDetails">
+
+                        <p class="equipmentLocation">
+                            Jos, Plateau State
+                        </p>
+
+                        <h3>Combine Harvester</h3>
+
+                        <p class="equipmentDescription">
+                            Efficient harvesting equipment for larger farms.
+                        </p>
+
+                        <div class="equipmentBottom">
+
+                            <div>
+                                <span class="priceAmount">₦120,000</span>
+                                <span class="pricePeriod">/ day</span>
+                            </div>
+
+                            <button
+                                class="rentButton"
+                                type="button"
+                            >
+                                Rent Now
+                            </button>
+
+                        </div>
+
+                    </div>
+                </article>
+
+                <article
+                    class="equipmentCard"
+                    data-category="tractor"
+                    data-name="Heavy Duty Tractor"
+                    data-location="Bukuru, Plateau State"
+                    data-price="₦95,000"
+                    data-description="Heavy duty tractor for demanding field work, transportation, ploughing and land preparation."
+                    data-image="tractor"
+                >
+                    <div
+                        class="equipmentImage equipmentImageFive"
+                        role="img"
+                        aria-label="Heavy duty tractor available for rent"
+                    >
+                        <span class="availabilityBadge">
+                            Available
+                        </span>
+                    </div>
+
+                    <div class="equipmentDetails">
+
+                        <p class="equipmentLocation">
+                            Bukuru, Plateau State
+                        </p>
+
+                        <h3>Heavy Duty Tractor</h3>
+
+                        <p class="equipmentDescription">
+                            Heavy duty machine for demanding farm operations.
+                        </p>
+
+                        <div class="equipmentBottom">
+
+                            <div>
+                                <span class="priceAmount">₦95,000</span>
+                                <span class="pricePeriod">/ day</span>
+                            </div>
+
+                            <button
+                                class="rentButton"
+                                type="button"
+                            >
+                                Rent Now
+                            </button>
+
+                        </div>
+
+                    </div>
+                </article>
+
+                <article
+                    class="equipmentCard"
+                    data-category="tiller"
+                    data-name="Diesel Power Tiller"
+                    data-location="Rayfield, Plateau State"
+                    data-price="₦40,000"
+                    data-description="Strong diesel-powered tiller suitable for preparing smaller fields and working between crop rows."
+                    data-image="tiller"
+                >
+                    <div
+                        class="equipmentImage equipmentImageSix"
+                        role="img"
+                        aria-label="Diesel power tiller available for rent"
+                    >
+                        <span class="availabilityBadge">
+                            Available
+                        </span>
+                    </div>
+
+                    <div class="equipmentDetails">
+
+                        <p class="equipmentLocation">
+                            Rayfield, Plateau State
+                        </p>
+
+                        <h3>Diesel Power Tiller</h3>
+
+                        <p class="equipmentDescription">
+                            Practical tiller for smaller fields and crop rows.
+                        </p>
+
+                        <div class="equipmentBottom">
+
+                            <div>
+                                <span class="priceAmount">₦40,000</span>
+                                <span class="pricePeriod">/ day</span>
+                            </div>
+
+                            <button
+                                class="rentButton"
+                                type="button"
+                            >
+                                Rent Now
+                            </button>
+
+                        </div>
+
+                    </div>
+                </article>
+
+                <article
+                    class="equipmentCard"
+                    data-category="irrigation"
+                    data-name="Mobile Irrigation Unit"
+                    data-location="Jos, Plateau State"
+                    data-price="₦30,000"
+                    data-description="Mobile irrigation unit for farms that need flexible and reliable crop watering."
+                    data-image="irrigation"
+                >
+                    <div
+                        class="equipmentImage equipmentImageSeven"
+                        role="img"
+                        aria-label="Mobile irrigation unit available for rent"
+                    >
+                        <span class="availabilityBadge">
+                            Available
+                        </span>
+                    </div>
+
+                    <div class="equipmentDetails">
+
+                        <p class="equipmentLocation">
+                            Jos, Plateau State
+                        </p>
+
+                        <h3>Mobile Irrigation Unit</h3>
+
+                        <p class="equipmentDescription">
+                            Flexible irrigation solution for crop watering.
+                        </p>
+
+                        <div class="equipmentBottom">
+
+                            <div>
+                                <span class="priceAmount">₦30,000</span>
+                                <span class="pricePeriod">/ day</span>
+                            </div>
+
+                            <button
+                                class="rentButton"
+                                type="button"
+                            >
+                                Rent Now
+                            </button>
+
+                        </div>
+
+                    </div>
+                </article>
+
+                <article
+                    class="equipmentCard"
+                    data-category="harvester"
+                    data-name="Grain Harvester"
+                    data-location="Barkin Ladi, Plateau State"
+                    data-price="₦110,000"
+                    data-description="Reliable harvesting equipment for grain crops and larger agricultural operations."
+                    data-image="harvester"
+                >
+                    <div
+                        class="equipmentImage equipmentImageEight"
+                        role="img"
+                        aria-label="Grain harvester available for rent"
+                    >
+                        <span class="availabilityBadge">
+                            Available
+                        </span>
+                    </div>
+
+                    <div class="equipmentDetails">
+
+                        <p class="equipmentLocation">
+                            Barkin Ladi, Plateau State
+                        </p>
+
+                        <h3>Grain Harvester</h3>
+
+                        <p class="equipmentDescription">
+                            Reliable harvester for grain and larger operations.
+                        </p>
+
+                        <div class="equipmentBottom">
+
+                            <div>
+                                <span class="priceAmount">₦110,000</span>
+                                <span class="pricePeriod">/ day</span>
+                            </div>
+
+                            <button
+                                class="rentButton"
+                                type="button"
+                            >
+                                Rent Now
+                            </button>
+
+                        </div>
+
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="noResults" id="noResults">
+                <h3>No equipment found</h3>
+                <p>
+                    Try another equipment name or choose a different category.
+                </p>
+            </div>
+
+        </section>
+
+        <section class="equipmentCta">
+
+            <div class="equipmentCtaContent">
+
+                <p class="sectionEyebrow">EQUIPMENT OWNERS</p>
+
+                <h2>
+                    Have equipment available for rent?
+                </h2>
+
+                <p>
+                    List your machines on FarmRent and connect with farmers
+                    looking for equipment.
+                </p>
+
+                <a href="list-equipment.html" class="primaryButton">
+                    List Your Equipment
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="siteFooter">
+
+        <div class="footerMain">
+
+            <div class="footerBrand">
+
+                <a href="index.html" class="footerLogo">
+                    Farm<span>Rent</span>
+                </a>
+
+                <p>
+                    A farm equipment rental platform connecting farmers,
+                    equipment owners and agricultural service providers.
+                </p>
+
+                <p class="footerCompany">
+                    Domsal&Bonks Nigeria Limited
+                </p>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>FarmRent</h3>
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="help.html">Help Center</a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>Equipment</h3>
+
+                <a href="equipment.html">Browse Equipment</a>
+                <a href="list-equipment.html">List Equipment</a>
+                <a href="equipment.html">Rent Equipment</a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>Services</h3>
+
+                <a href="agro-products.html">Agro Products</a>
+                <a href="register.html">Create Account</a>
+                <a href="login.html">Login</a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>Contact</h3>
+
+                <p>Jos, Plateau State</p>
+                <p>Nigeria</p>
+
+                <a href="help.html">Contact Support</a>
+
+            </div>
+
+        </div>
+
+        <div class="footerBottom">
+
+            <p>
+                © 2026 FarmRent. All rights reserved.
+            </p>
+
+            <div class="footerBottomLinks">
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <button
+        class="backToTop"
+        id="backToTop"
+        type="button"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+    <div
+        class="modalBackdrop"
+        id="modalBackdrop"
+        role="presentation"
+    >
+
+        <div
+            class="equipmentModal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalTitle"
+            aria-describedby="modalDescription"
+        >
+
+            <button
+                class="modalCloseButton"
+                id="modalCloseButton"
+                type="button"
+                aria-label="Close equipment details"
+            >
+                ×
+            </button>
+
+            <div
+                class="modalImage"
+                id="modalImage"
+                role="img"
+                aria-label="Selected equipment"
+            ></div>
+
+            <div class="modalContent">
+
+                <p class="modalLocation" id="modalLocation">
+                    Jos, Plateau State
+                </p>
+
+                <h2 id="modalTitle">
+                    Farm Tractor
+                </h2>
+
+                <div class="modalAvailability">
+                    <span></span>
+                    Available for rent
+                </div>
+
+                <p class="modalDescription" id="modalDescription">
+                    Reliable farm equipment.
+                </p>
+
+                <div class="modalPrice">
+
+                    <strong id="modalPrice">
+                        ₦80,000
+                    </strong>
+
+                    <span>
+                        / day
+                    </span>
+
+                </div>
+
+                <div class="modalFeatures">
+
+                    <div>
+                        <span>01</span>
+                        <p>Reliable Equipment</p>
+                    </div>
+
+                    <div>
+                        <span>02</span>
+                        <p>Flexible Rental</p>
+                    </div>
+
+                    <div>
+                        <span>03</span>
+                        <p>Local Availability</p>
+                    </div>
+
+                </div>
+
+                <button
+                    class="bookButton"
+                    id="bookButton"
+                    type="button"
+                >
+                    Book Now
+                </button>
+
+                <p class="loginNotice">
+                    You will need to log in before completing your booking.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../js/equipment.js"></script>
+
+</body>
+</html>

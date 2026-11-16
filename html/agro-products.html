@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse agricultural products available on FarmRent. Find seeds, fertilizers, crop protection products and farm tools from local sellers.">
+    <meta name="robots" content="index, follow">
+    <title>FarmRent | Agro Products</title>
+    <link rel="stylesheet" href="/css/agro-products.css">
+</head>
+
+<body>
+
+    <div class="pageLoader" id="pageLoader"></div>
+
+    <header class="siteHeader">
+
+        <nav class="mainNavigation">
+
+            <a href="index.html" class="brandLogo">
+                Farm<span>Rent</span>
+            </a>
+
+            <div class="navigationLinks" id="navigationLinks">
+
+                <button
+                    class="closeMenuButton"
+                    id="closeMenuButton"
+                    type="button"
+                    aria-label="Close menu"
+                >
+                    ×
+                </button>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="equipment.html">
+                    Equipment
+                </a>
+
+                <a
+                    href="agro-products.html"
+                    class="activeLink"
+                >
+                    Agro Products
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="help.html">
+                    Help
+                </a>
+
+                <a
+                    href="cart.html"
+                    class="mobileCartLink"
+                >
+                    🛒 Cart
+                </a>
+
+                <a
+                    href="profile.html"
+                    class="mobileProfileLink"
+                >
+                    <span class="profileIcon">
+                        ♙
+                    </span>
+                    Profile
+                </a>
+
+            </div>
+
+            <div class="navigationActions">
+
+                <a
+                    href="cart.html"
+                    class="cartButton"
+                    aria-label="Shopping cart"
+                >
+                    <span class="cartIcon">
+                        🛒
+                    </span>
+
+                    <span
+                        class="cartCount"
+                        id="cartCount"
+                    >
+                        0
+                    </span>
+                </a>
+
+                <button
+                    class="themeToggle"
+                    id="themeToggle"
+                    type="button"
+                    aria-label="Toggle dark mode"
+                >
+                    <span id="themeIcon">
+                        ☾
+                    </span>
+                </button>
+
+                <a
+                    href="profile.html"
+                    class="desktopProfileLink"
+                    aria-label="Profile"
+                >
+                    ♙
+                </a>
+
+                <a
+                    href="login.html"
+                    class="loginLink"
+                >
+                    Login
+                </a>
+
+                <a
+                    href="register.html"
+                    class="signupButton"
+                >
+                    Sign Up
+                </a>
+
+                <button
+                    class="mobileMenuButton"
+                    id="mobileMenuButton"
+                    type="button"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                    aria-controls="navigationLinks"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="agroHero">
+
+            <div
+                class="agroHeroImage"
+                role="img"
+                aria-label="Agricultural products and farm supplies"
+            ></div>
+
+            <div class="agroHeroOverlay"></div>
+
+            <div class="agroHeroContent">
+
+                <p class="sectionEyebrow">
+                    AGRO PRODUCTS
+                </p>
+
+                <h1>
+                    Find quality products for your farm.
+                </h1>
+
+                <p>
+                    Discover agricultural products from trusted sellers and
+                    get the supplies you need for your next farming season.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="agroSection">
+
+            <div class="agroTop">
+
+                <div>
+
+                    <p class="sectionEyebrow">
+                        AVAILABLE PRODUCTS
+                    </p>
+
+                    <h2>
+                        Products for every farming need.
+                    </h2>
+
+                </div>
+
+                <div class="agroSearch">
+
+                    <input
+                        type="search"
+                        id="agroSearch"
+                        placeholder="Search products..."
+                        aria-label="Search products"
+                    >
+
+                    <button
+                        class="searchButton"
+                        id="searchButton"
+                        type="button"
+                        aria-label="Search"
+                    >
+                        <svg
+                            class="searchIcon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <circle
+                                cx="11"
+                                cy="11"
+                                r="7"
+                            ></circle>
+
+                            <line
+                                x1="16.5"
+                                y1="16.5"
+                                x2="21"
+                                y2="21"
+                            ></line>
+                        </svg>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div
+                class="agroFilters"
+                aria-label="Product categories"
+            >
+
+                <button
+                    class="filterButton activeFilter"
+                    data-filter="all"
+                    type="button"
+                    aria-pressed="true"
+                >
+                    All Products
+                </button>
+
+                <button
+                    class="filterButton"
+                    data-filter="seeds"
+                    type="button"
+                    aria-pressed="false"
+                >
+                    Seeds
+                </button>
+
+                <button
+                    class="filterButton"
+                    data-filter="fertilizer"
+                    type="button"
+                    aria-pressed="false"
+                >
+                    Fertilizers
+                </button>
+
+                <button
+                    class="filterButton"
+                    data-filter="pesticide"
+                    type="button"
+                    aria-pressed="false"
+                >
+                    Crop Protection
+                </button>
+
+                <button
+                    class="filterButton"
+                    data-filter="tools"
+                    type="button"
+                    aria-pressed="false"
+                >
+                    Farm Tools
+                </button>
+
+            </div>
+
+            <div
+                class="agroGrid"
+                id="agroGrid"
+            >
+
+                <article
+                    class="agroCard"
+                    data-category="seeds"
+                    data-name="Maize Seeds"
+                    data-location="Jos, Plateau State"
+                    data-price="₦18,000"
+                    data-period="/ bag"
+                    data-description="Quality maize seeds suitable for reliable crop establishment and good field performance."
+                >
+
+                    <div class="agroImage agroImageOne">
+
+                        <span class="productBadge">
+                            Available
+                        </span>
+
+                    </div>
+
+                    <div class="agroDetails">
+
+                        <p class="agroLocation">
+                            Jos, Plateau State
+                        </p>
+
+                        <h3>
+                            Maize Seeds
+                        </h3>
+
+                        <p class="agroDescription">
+                            Quality maize seeds suitable for reliable crop production.
+                        </p>
+
+                        <div class="agroBottom">
+
+                            <div>
+                                <span class="priceAmount">
+                                    ₦18,000
+                                </span>
+
+                                <span class="pricePeriod">
+                                    / bag
+                                </span>
+                            </div>
+
+                            <button
+                                class="viewButton"
+                                type="button"
+                            >
+                                View Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article
+                    class="agroCard"
+                    data-category="seeds"
+                    data-name="Tomato Seeds"
+                    data-location="Bukuru, Plateau State"
+                    data-price="₦12,000"
+                    data-period="/ pack"
+                    data-description="Selected tomato seeds suitable for vegetable farmers and small to medium scale farm production."
+                >
+
+                    <div class="agroImage agroImageTwo">
+
+                        <span class="productBadge">
+                            Available
+                        </span>
+
+                    </div>
+
+                    <div class="agroDetails">
+
+                        <p class="agroLocation">
+                            Bukuru, Plateau State
+                        </p>
+
+                        <h3>
+                            Tomato Seeds
+                        </h3>
+
+                        <p class="agroDescription">
+                            Selected seeds for healthy tomato production.
+                        </p>
+
+                        <div class="agroBottom">
+
+                            <div>
+                                <span class="priceAmount">
+                                    ₦12,000
+                                </span>
+
+                                <span class="pricePeriod">
+                                    / pack
+                                </span>
+                            </div>
+
+                            <button
+                                class="viewButton"
+                                type="button"
+                            >
+                                View Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article
+                    class="agroCard"
+                    data-category="fertilizer"
+                    data-name="NPK Fertilizer"
+                    data-location="Jos, Plateau State"
+                    data-price="₦32,000"
+                    data-period="/ bag"
+                    data-description="Balanced NPK fertilizer formulated to provide essential nutrients for healthy crop growth and improved farm productivity."
+                >
+
+                    <div class="agroImage agroImageThree">
+
+                        <span class="productBadge">
+                            Available
+                        </span>
+
+                    </div>
+
+                    <div class="agroDetails">
+
+                        <p class="agroLocation">
+                            Jos, Plateau State
+                        </p>
+
+                        <h3>
+                            NPK Fertilizer
+                        </h3>
+
+                        <p class="agroDescription">
+                            Balanced fertilizer for healthy crop development.
+                        </p>
+
+                        <div class="agroBottom">
+
+                            <div>
+                                <span class="priceAmount">
+                                    ₦32,000
+                                </span>
+
+                                <span class="pricePeriod">
+                                    / bag
+                                </span>
+                            </div>
+
+                            <button
+                                class="viewButton"
+                                type="button"
+                            >
+                                View Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article
+                    class="agroCard"
+                    data-category="fertilizer"
+                    data-name="Organic Fertilizer"
+                    data-location="Rayfield, Plateau State"
+                    data-price="₦24,000"
+                    data-period="/ bag"
+                    data-description="Organic fertilizer suitable for farmers interested in improving soil condition and supporting healthy crop growth."
+                >
+
+                    <div class="agroImage agroImageFour">
+
+                        <span class="productBadge">
+                            Available
+                        </span>
+
+                    </div>
+
+                    <div class="agroDetails">
+
+                        <p class="agroLocation">
+                            Rayfield, Plateau State
+                        </p>
+
+                        <h3>
+                            Organic Fertilizer
+                        </h3>
+
+                        <p class="agroDescription">
+                            Natural fertilizer for improved soil and crop growth.
+                        </p>
+
+                        <div class="agroBottom">
+
+                            <div>
+                                <span class="priceAmount">
+                                    ₦24,000
+                                </span>
+
+                                <span class="pricePeriod">
+                                    / bag
+                                </span>
+                            </div>
+
+                            <button
+                                class="viewButton"
+                                type="button"
+                            >
+                                View Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article
+                    class="agroCard"
+                    data-category="pesticide"
+                    data-name="Crop Protection Spray"
+                    data-location="Jos, Plateau State"
+                    data-price="₦15,000"
+                    data-period="/ bottle"
+                    data-description="Crop protection product designed to help farmers manage common agricultural pests and protect their crops."
+                >
+
+                    <div class="agroImage agroImageFive">
+
+                        <span class="productBadge">
+                            Available
+                        </span>
+
+                    </div>
+
+                    <div class="agroDetails">
+
+                        <p class="agroLocation">
+                            Jos, Plateau State
+                        </p>
+
+                        <h3>
+                            Crop Protection Spray
+                        </h3>
+
+                        <p class="agroDescription">
+                            Crop protection solution for managing common pests.
+                        </p>
+
+                        <div class="agroBottom">
+
+                            <div>
+                                <span class="priceAmount">
+                                    ₦15,000
+                                </span>
+
+                                <span class="pricePeriod">
+                                    / bottle
+                                </span>
+                            </div>
+
+                            <button
+                                class="viewButton"
+                                type="button"
+                            >
+                                View Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article
+                    class="agroCard"
+                    data-category="tools"
+                    data-name="Farm Tool Set"
+                    data-location="Bukuru, Plateau State"
+                    data-price="₦22,000"
+                    data-period="/ set"
+                    data-description="Practical collection of essential farm tools suitable for routine field work, planting and general farm maintenance."
+                >
+
+                    <div class="agroImage agroImageSix">
+
+                        <span class="productBadge">
+                            Available
+                        </span>
+
+                    </div>
+
+                    <div class="agroDetails">
+
+                        <p class="agroLocation">
+                            Bukuru, Plateau State
+                        </p>
+
+                        <h3>
+                            Farm Tool Set
+                        </h3>
+
+                        <p class="agroDescription">
+                            Essential tools for everyday farm operations.
+                        </p>
+
+                        <div class="agroBottom">
+
+                            <div>
+                                <span class="priceAmount">
+                                    ₦22,000
+                                </span>
+
+                                <span class="pricePeriod">
+                                    / set
+                                </span>
+                            </div>
+
+                            <button
+                                class="viewButton"
+                                type="button"
+                            >
+                                View Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article
+                    class="agroCard"
+                    data-category="seeds"
+                    data-name="Pepper Seeds"
+                    data-location="Jos, Plateau State"
+                    data-price="₦10,000"
+                    data-period="/ pack"
+                    data-description="Quality pepper seeds for vegetable farmers looking for a practical option for small and medium scale production."
+                >
+
+                    <div class="agroImage agroImageSeven">
+
+                        <span class="productBadge">
+                            Available
+                        </span>
+
+                    </div>
+
+                    <div class="agroDetails">
+
+                        <p class="agroLocation">
+                            Jos, Plateau State
+                        </p>
+
+                        <h3>
+                            Pepper Seeds
+                        </h3>
+
+                        <p class="agroDescription">
+                            Quality seeds for pepper and vegetable production.
+                        </p>
+
+                        <div class="agroBottom">
+
+                            <div>
+                                <span class="priceAmount">
+                                    ₦10,000
+                                </span>
+
+                                <span class="pricePeriod">
+                                    / pack
+                                </span>
+                            </div>
+
+                            <button
+                                class="viewButton"
+                                type="button"
+                            >
+                                View Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article
+                    class="agroCard"
+                    data-category="tools"
+                    data-name="Knapsack Sprayer"
+                    data-location="Barkin Ladi, Plateau State"
+                    data-price="₦28,000"
+                    data-period="/ unit"
+                    data-description="Durable knapsack sprayer suitable for applying crop protection products and other agricultural treatments."
+                >
+
+                    <div class="agroImage agroImageEight">
+
+                        <span class="productBadge">
+                            Available
+                        </span>
+
+                    </div>
+
+                    <div class="agroDetails">
+
+                        <p class="agroLocation">
+                            Barkin Ladi, Plateau State
+                        </p>
+
+                        <h3>
+                            Knapsack Sprayer
+                        </h3>
+
+                        <p class="agroDescription">
+                            Practical sprayer for crop treatment and farm maintenance.
+                        </p>
+
+                        <div class="agroBottom">
+
+                            <div>
+                                <span class="priceAmount">
+                                    ₦28,000
+                                </span>
+
+                                <span class="pricePeriod">
+                                    / unit
+                                </span>
+                            </div>
+
+                            <button
+                                class="viewButton"
+                                type="button"
+                            >
+                                View Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div
+                class="noResults"
+                id="noResults"
+            >
+
+                <h3>
+                    No products found
+                </h3>
+
+                <p>
+                    Try another product name or choose a different category.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="agroCta">
+
+            <div class="agroCtaContent">
+
+                <p class="sectionEyebrow">
+                    AGRO PRODUCT SELLERS
+                </p>
+
+                <h2>
+                    Have agricultural products to sell?
+                </h2>
+
+                <p>
+                    List your agro products on FarmRent and connect with
+                    farmers looking for quality agricultural supplies.
+                </p>
+
+                <a
+                    href="list-agro-product.html"
+                    class="primaryButton"
+                >
+                    List Your Products
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="siteFooter">
+
+        <div class="footerMain">
+
+            <div class="footerBrand">
+
+                <a
+                    href="index.html"
+                    class="footerLogo"
+                >
+                    Farm<span>Rent</span>
+                </a>
+
+                <p>
+                    A farm rental and agricultural marketplace connecting
+                    farmers, equipment owners and agro product sellers.
+                </p>
+
+                <p class="footerCompany">
+                    Domsal&Bonks Nigeria Limited
+                </p>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>
+                    FarmRent
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="help.html">
+                    Help Center
+                </a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>
+                    Equipment
+                </h3>
+
+                <a href="equipment.html">
+                    Browse Equipment
+                </a>
+
+                <a href="list-equipment.html">
+                    List Equipment
+                </a>
+
+                <a href="equipment.html">
+                    Rent Equipment
+                </a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>
+                    Agro Products
+                </h3>
+
+                <a href="agro-products.html">
+                    Browse Products
+                </a>
+
+                <a href="list-agro-product.html">
+                    List Products
+                </a>
+
+                <a href="cart.html">
+                    Cart
+                </a>
+
+            </div>
+
+            <div class="footerColumn">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    Jos, Plateau State
+                </p>
+
+                <p>
+                    Nigeria
+                </p>
+
+                <a href="help.html">
+                    Contact Support
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footerBottom">
+
+            <p>
+                © 2026 FarmRent. All rights reserved.
+            </p>
+
+            <div class="footerBottomLinks">
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <button
+        class="backToTop"
+        id="backToTop"
+        type="button"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+    <div
+        class="modalBackdrop"
+        id="modalBackdrop"
+    >
+
+        <div
+            class="agroModal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalTitle"
+            aria-describedby="modalDescription"
+        >
+
+            <button
+                class="modalCloseButton"
+                id="modalCloseButton"
+                type="button"
+                aria-label="Close product details"
+            >
+                ×
+            </button>
+
+            <div
+                class="modalImage"
+                id="modalImage"
+                role="img"
+                aria-label="Selected agricultural product"
+            ></div>
+
+            <div class="modalContent">
+
+                <p
+                    class="modalLocation"
+                    id="modalLocation"
+                >
+                    Jos, Plateau State
+                </p>
+
+                <h2 id="modalTitle">
+                    Maize Seeds
+                </h2>
+
+                <div class="modalAvailability">
+
+                    <span></span>
+
+                    Available
+
+                </div>
+
+                <p
+                    class="modalDescription"
+                    id="modalDescription"
+                >
+                    Quality agricultural product.
+                </p>
+
+                <div class="modalPrice">
+
+                    <strong id="modalPrice">
+                        ₦18,000
+                    </strong>
+
+                    <span id="modalPeriod">
+                        / bag
+                    </span>
+
+                </div>
+
+                <div class="modalFeatures">
+
+                    <div>
+
+                        <span>
+                            01
+                        </span>
+
+                        <p>
+                            Quality Products
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            02
+                        </span>
+
+                        <p>
+                            Local Sellers
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            03
+                        </span>
+
+                        <p>
+                            Farm Ready
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="modalActions">
+
+                    <button
+                        class="addToCartButton"
+                        id="addToCartButton"
+                        type="button"
+                    >
+                        Add to Cart
+                    </button>
+
+                    <button
+                        class="buyNowButton"
+                        id="buyNowButton"
+                        type="button"
+                    >
+                        Buy Now
+                    </button>
+
+                </div>
+
+                <p class="loginNotice">
+                    Add products to your cart or buy them directly.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="/js/agro-products.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,385 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #111111;
+    background-color: #f7f5ed;
+}
+
+.siteHeader {
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.mainNavigation {
+    width: 100%;
+    max-width: 1400px;
+    min-height: 80px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.brandLogo {
+    color: #17351f;
+    font-size: 28px;
+    font-weight: 800;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.brandLogo span {
+    color: #228b22;
+}
+
+.navigationLinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.navigationLinks a {
+    color: #111111;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navigationLinks a:hover {
+    color: #228b22;
+}
+
+.navigationActions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.loginLink {
+    color: #111111;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.loginLink:hover {
+    color: #228b22;
+}
+
+.signupButton {
+    padding: 12px 20px;
+    border-radius: 6px;
+    background-color: #17351f;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.signupButton:hover {
+    background-color: #228b22;
+}
+
+.profileLink {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #d5d5d5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #17351f;
+    text-decoration: none;
+}
+
+.profileLink:hover {
+    border-color: #228b22;
+}
+
+.profileIcon {
+    font-size: 20px;
+}
+
+.successSection {
+    min-height: 620px;
+    padding: 80px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.successCard {
+    width: 100%;
+    max-width: 650px;
+    padding: 60px 50px;
+    border: 1px solid #dedbd0;
+    border-radius: 14px;
+    background-color: #ffffff;
+    text-align: center;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+}
+
+.successIcon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 28px;
+    border-radius: 50%;
+    background-color: #17351f;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.sectionEyebrow {
+    margin: 0 0 14px;
+    color: #228b22;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.successCard h1 {
+    margin: 0 0 18px;
+    color: #17351f;
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.successDescription {
+    max-width: 500px;
+    margin: 0 auto;
+    color: #333333;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.successActions {
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton {
+    min-width: 180px;
+    padding: 14px 22px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.primaryButton {
+    background-color: #17351f;
+    color: #ffffff;
+}
+
+.primaryButton:hover {
+    background-color: #228b22;
+}
+
+.secondaryButton {
+    border: 1px solid #17351f;
+    background-color: #ffffff;
+    color: #17351f;
+}
+
+.secondaryButton:hover {
+    background-color: #17351f;
+    color: #ffffff;
+}
+
+.siteFooter {
+    background-color: #17351f;
+    color: #ffffff;
+}
+
+.footerMain {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 40px 45px;
+    display: grid;
+    grid-template-columns: 1.5fr repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footerLogo {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.footerLogo span {
+    color: #228b22;
+}
+
+.footerBrand p {
+    max-width: 330px;
+    margin: 20px 0 0;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.footerBrand .footerCompany {
+    margin-top: 15px;
+    font-weight: 700;
+}
+
+.footerColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.footerColumn h3 {
+    margin: 0 0 8px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.footerColumn a {
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footerColumn a:hover {
+    color: #228b22;
+}
+
+.footerBottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 22px 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footerBottom p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.footerBottomLinks {
+    display: flex;
+    gap: 22px;
+}
+
+.footerBottomLinks a {
+    color: #ffffff;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.footerBottomLinks a:hover {
+    color: #228b22;
+}
+
+@media (max-width: 900px) {
+    .mainNavigation {
+        padding: 0 25px;
+    }
+
+    .navigationLinks {
+        gap: 18px;
+    }
+
+    .footerMain {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 50px 30px 40px;
+    }
+}
+
+@media (max-width: 650px) {
+    .mainNavigation {
+        min-height: 70px;
+        padding: 0 18px;
+    }
+
+    .navigationLinks {
+        display: none;
+    }
+
+    .navigationActions {
+        gap: 10px;
+    }
+
+    .loginLink {
+        display: none;
+    }
+
+    .successSection {
+        min-height: 520px;
+        padding: 50px 18px;
+    }
+
+    .successCard {
+        padding: 45px 22px;
+    }
+
+    .successIcon {
+        width: 70px;
+        height: 70px;
+        font-size: 35px;
+    }
+
+    .successCard h1 {
+        font-size: 36px;
+    }
+
+    .successDescription {
+        font-size: 16px;
+    }
+
+    .successActions {
+        flex-direction: column;
+    }
+
+    .primaryButton,
+    .secondaryButton {
+        width: 100%;
+    }
+
+    .footerMain {
+        grid-template-columns: 1fr;
+        padding: 45px 20px 35px;
+        gap: 30px;
+    }
+
+    .footerBottom {
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

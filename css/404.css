@@ -1,0 +1,436 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #111111;
+    background-color: #f7f5ed;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.siteHeader {
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #dddddd;
+}
+
+.mainNavigation {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 18px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.brandLogo {
+    color: #17351f;
+    font-size: 25px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.brandLogo span {
+    color: #228b22;
+}
+
+.navigationLinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+.navigationLinks a {
+    color: #111111;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navigationLinks a:hover {
+    color: #228b22;
+}
+
+.navigationActions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.loginLink {
+    color: #111111;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.loginLink:hover {
+    color: #228b22;
+}
+
+.signupButton {
+    padding: 11px 19px;
+    border-radius: 7px;
+    background-color: #17351f;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.signupButton:hover {
+    background-color: #228b22;
+}
+
+.profileLink {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #d2d2d2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #17351f;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.profileLink:hover {
+    border-color: #228b22;
+    color: #228b22;
+}
+
+.profileIcon {
+    font-size: 21px;
+}
+
+.errorSection {
+    min-height: 570px;
+    padding: 90px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.errorContent {
+    width: 100%;
+    max-width: 700px;
+}
+
+.errorCode {
+    margin: 0 0 18px;
+    color: #17351f;
+    font-size: 120px;
+    line-height: 1;
+    font-weight: 800;
+}
+
+.sectionEyebrow {
+    margin: 0 0 14px;
+    color: #228b22;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.errorContent h1 {
+    margin: 0 0 20px;
+    color: #111111;
+    font-size: 42px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.errorDescription {
+    max-width: 580px;
+    margin: 0 auto;
+    color: #333333;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.errorButtons {
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton {
+    min-height: 48px;
+    padding: 13px 24px;
+    border-radius: 7px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.primaryButton {
+    background-color: #17351f;
+    color: #ffffff;
+}
+
+.primaryButton:hover {
+    background-color: #228b22;
+}
+
+.secondaryButton {
+    border: 1px solid #17351f;
+    background-color: transparent;
+    color: #17351f;
+}
+
+.secondaryButton:hover {
+    background-color: #17351f;
+    color: #ffffff;
+}
+
+.siteFooter {
+    background-color: #17351f;
+    color: #ffffff;
+}
+
+.footerMain {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 55px 30px 45px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footerBrand {
+    max-width: 330px;
+}
+
+.footerLogo {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.footerLogo span {
+    color: #8fcf8f;
+}
+
+.footerBrand p {
+    margin: 0 0 14px;
+    color: #eeeeee;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.footerBrand .footerCompany {
+    margin-top: 18px;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.footerColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 11px;
+}
+
+.footerColumn h3 {
+    margin: 0 0 8px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.footerColumn a {
+    color: #eeeeee;
+    font-size: 14px;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+.footerColumn a:hover {
+    color: #ffffff;
+}
+
+.footerBottom {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footerBottom p {
+    margin: 0;
+    color: #eeeeee;
+    font-size: 13px;
+}
+
+.footerBottomLinks {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footerBottomLinks a {
+    color: #eeeeee;
+    font-size: 13px;
+}
+
+.footerBottomLinks a:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 950px) {
+    .mainNavigation {
+        padding: 18px 22px;
+    }
+
+    .navigationLinks {
+        gap: 18px;
+    }
+
+    .navigationLinks a {
+        font-size: 14px;
+    }
+
+    .footerMain {
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 35px;
+    }
+}
+
+@media (max-width: 700px) {
+    .mainNavigation {
+        padding: 16px 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .brandLogo {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navigationLinks {
+        width: 100%;
+        gap: 12px 18px;
+        flex-wrap: wrap;
+    }
+
+    .navigationActions {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .errorSection {
+        min-height: 500px;
+        padding: 70px 20px;
+    }
+
+    .errorCode {
+        font-size: 90px;
+    }
+
+    .errorContent h1 {
+        font-size: 34px;
+    }
+
+    .errorDescription {
+        font-size: 16px;
+    }
+
+    .footerMain {
+        grid-template-columns: 1fr 1fr;
+        padding: 45px 25px 35px;
+        gap: 35px 25px;
+    }
+
+    .footerBrand {
+        grid-column: 1 / -1;
+    }
+
+    .footerBottom {
+        padding: 20px 25px;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .mainNavigation {
+        padding: 15px;
+    }
+
+    .navigationLinks {
+        gap: 10px 14px;
+    }
+
+    .navigationLinks a {
+        font-size: 13px;
+    }
+
+    .navigationActions {
+        gap: 12px;
+    }
+
+    .errorCode {
+        font-size: 75px;
+    }
+
+    .errorContent h1 {
+        font-size: 28px;
+    }
+
+    .errorDescription {
+        font-size: 15px;
+    }
+
+    .errorButtons {
+        flex-direction: column;
+    }
+
+    .primaryButton,
+    .secondaryButton {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .footerMain {
+        grid-template-columns: 1fr;
+        padding: 40px 20px 30px;
+    }
+
+    .footerBrand {
+        grid-column: auto;
+    }
+
+    .footerBottom {
+        padding: 18px 20px;
+    }
+}
